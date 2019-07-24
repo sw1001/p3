@@ -538,7 +538,7 @@ Literal Suff::findMostInfl(vector<vector<Literal> > sp) {
     double max = 0.0;
     string name = "";
     for(map<string, double>::const_iterator it = infl_x.begin(); it != infl_x.end(); ++it) {
-        if(it->second > max && it->first.compare("r1") != 0 && it->first.compare("r2") != 0 && it->first.compare("r3") != 0) {
+        if(it->second > max && it->first.compare("r1") != 0 && it->first.compare("r2") != 0 && it->first.compare("r3") != 0 && it->first.compare("ra") != 0) {
             max = it->second;
             name = it->first;
         }
