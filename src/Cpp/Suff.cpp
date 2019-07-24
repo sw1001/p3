@@ -576,7 +576,7 @@ Literal Suff::p_findMostInfl(vector<vector<Literal> >sp, cl::Context context, cl
 		}
 	}			
 	vector <float> h_influence(index1);//int literals = index1;
-	cout<< "index1= "<<index1<<" "<<"size= "<<size<<" "<<"dim1_size= "<<dim1_size<<endl<<endl;	
+	cout<< "index1= "<<index1<<" "<<"size= "<<size<<" "<<"dim1_size= "<<dim1_size<<endl;	
 
 	cl::Buffer d_lambdas, d_lambdap, d_dim2_size, d_influence;
 	d_lambdas = cl::Buffer(context, h_lambdas.begin(), h_lambdas.end(), true);
@@ -585,26 +585,20 @@ Literal Suff::p_findMostInfl(vector<vector<Literal> >sp, cl::Context context, cl
 	d_influence = cl::Buffer(context, CL_MEM_WRITE_ONLY, sizeof(float) * index1);
 
 	cl::make_kernel<int, int, int, cl::Buffer, cl::Buffer, cl::Buffer, cl::Buffer> setInfluence(program, "setInfluence");
-	clock_t tpara = clock();
 	cl::NDRange global(index1);
     setInfluence(cl::EnqueueArgs(queue, global), index1, size, dim1_size, d_lambdas, d_lambdap, d_dim2_size, d_influence);
     queue.finish();		
-	tpara = clock() - tpara;
-	cout<<endl<<"Parallel influence running time: "<<((float) tpara)/CLOCKS_PER_SEC<<" seconds"<<endl;
 	cl::copy(queue, d_influence, h_influence.begin(), h_influence.end());
 	
 	//output the parallel results
-	int k = 0;
 	map <string, double> para_influence;
 	map <string, double> seq_influence = getInfluence();
 	for(map<string, int>::const_iterator it = str2index.begin(); it != str2index.end(); ++it){
 		para_influence[it->first] = h_influence[str2index[it->first]];
-		cout<< it->first << "  deltaInfl=" << abs(para_influence[it->first] - seq_influence[it->first]) <<"  ";
-		cout<< it->first << "  paraInfl=" << para_influence[it->first] <<endl;
-		k++;	
+		//cout<< it->first << "  deltaInfl=" << abs(para_influence[it->first] - seq_influence[it->first]) <<"  ";
+		//cout<< it->first << "  paraInfl=" << para_influence[it->first] <<endl;
 			
 	}
-	//cout<<"k="<<k<<endl;
 	
 	double max = 0.0;
 	string max_name = "";
@@ -614,7 +608,7 @@ Literal Suff::p_findMostInfl(vector<vector<Literal> >sp, cl::Context context, cl
 		    max_name = it->first;
 		}
 	}
-	cout<<"Parallel maxInfluence Literal: "<< max_name <<" "<< max <<endl;
+
 	return Literal(max_name, max);
 	
 }
@@ -633,7 +627,7 @@ Suff::changedLiterals(vector< vector<Literal> > lambda, double t) {
         return v;
     }
     //find most influential literal(or randomly)
-    Literal xm = Suff::findMostInfl(lambda);
+    Literal xm = Suff::p_findMostInfl(lambda);
 
     if(p < t) {
         // increase most influential literal
