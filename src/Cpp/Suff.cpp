@@ -6,9 +6,10 @@
 
 /* 
  * File:   Suff.cpp
- * Author: shaobo
+ * Author: shaobo, chenyuan
  * 
  * Created on October 12, 2018, 5:43 AM
+ * Updated on July 22, 2019
  */
 
 #include <algorithm>
@@ -68,9 +69,13 @@ vector< vector<Literal> > Suff::findSuff(vector< vector<Literal> > lambda, doubl
 
         return p_lhs < p_rhs;
     });
-
+	
+	clock_t tmc = clock();
     double pLambda = probMC(lambda);
-    double t = pLambda - epsilon;
+    double t = pLambda - epsilon * pLambda;
+    tmc = clock()-tmc;
+    cout<<endl<<"suffcount=0"<<"  "<<"MC running time: "<<((float)tmc)/CLOCKS_PER_SEC<<" seconds"<<endl;
+    
     /*
     while (1) {
         for (int i = 0; i < 10; i ++)
@@ -97,6 +102,7 @@ vector< vector<Literal> > Suff::findSuff(vector< vector<Literal> > lambda, doubl
      */
     int l = 0;
     int r = lambda.size()-1;
+    int suffcount = 1;
     while(l <= r){
         int m = floor((l+r)/2);
         vector< vector<Literal> > v_temp(0);
@@ -105,8 +111,13 @@ vector< vector<Literal> > Suff::findSuff(vector< vector<Literal> > lambda, doubl
         v_temp1.assign(lambda.begin()+m+1,lambda.end());
         //copy(lambda.begin()+m,lambda.end(),v_temp.begin());
         //copy(lambda.begin()+m+1,lambda.end(),v_temp1.begin());
+        clock_t tmc = clock();
         double p = probMC(v_temp);
         double p1 = probMC(v_temp1);
+        tmc = clock()-tmc;
+        cout<<endl<<"suffcount="<<suffcount<<"  ";
+        cout<<"MC running time: "<<((float)tmc)/CLOCKS_PER_SEC<<" seconds"<<endl;
+    	suffcount ++;
         if(p < t && p1 < t) {
             //cut less
             r = m;
@@ -117,6 +128,7 @@ vector< vector<Literal> > Suff::findSuff(vector< vector<Literal> > lambda, doubl
             //right there
             return v_temp;
         } else {
+        	//not gonna happen
             cout<<"Not found! "<<endl;
         }
     }

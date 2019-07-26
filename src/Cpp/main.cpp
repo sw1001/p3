@@ -69,7 +69,7 @@ int main(int argc, char** argv) {
     chosen_device.push_back(device);
     context = cl::Context(chosen_device);
     queue = cl::CommandQueue(context, device);
-    program = cl::Program(context, util::loadProgram("../C_setInfluence_v2.cl"), true);
+    program = cl::Program(context, util::loadProgram("../C_setInfluence.cl"), true);
     
 //-------------------------------------------------------------------------------
 // Read in the test data
@@ -147,6 +147,7 @@ int main(int argc, char** argv) {
 	DNF dnf (prov, p);
 	t1 = clock()-t1;
 	cout<<"DNF running time: "<<((float)t1)/CLOCKS_PER_SEC<<" seconds"<<endl;
+	cout<<"DNF number of monomials: "<<dnf.getLambda().size()<<endl;
 	//dnf.ShowStructure();
 	//cout<<dnf.ToString()<<endl;
 
@@ -158,7 +159,7 @@ int main(int argc, char** argv) {
 
 
 	clock_t tsuff = clock();
-	double epsilon = 1*0.01*pLambda; // approximation error
+	double epsilon = 0.01; // approximation error
 	suff.setSuffProv(dnf.getLambda(), epsilon);
 	tsuff = clock() - tsuff;
 	cout<<"Suff lineage time: "<<((float) tsuff)/CLOCKS_PER_SEC<<" seconds"<<endl;
@@ -171,9 +172,9 @@ int main(int argc, char** argv) {
 	clock_t t2 = clock();
 	//suff.setInfluence(dnf.getLambda());
 	suff.setInfluence(suff.getSuffProv());
+	Literal x = suff.maxInfluence();
 	t2 = clock() - t2;
 	cout<<"Sequential influence running time: "<<((float) t2)/CLOCKS_PER_SEC<<" seconds"<<endl;
-	Literal x = suff.maxInfluence();
 	cout<<"Sequential maxInfluence Literal: "<<x.getName()<<" "<<x.getProb()<<endl;
 	cout<<endl;
 										
@@ -191,17 +192,19 @@ int main(int argc, char** argv) {
 // Parallel queries
 //----------------------------------------------------------------------------------
 	clock_t tpara = clock();
+	//Literal maxInfl= suff.p_findMostInfl(dnf.getLambda());
 	Literal maxInfl= suff.p_findMostInfl(suff.getSuffProv());
 	tpara = clock() - tpara;
 	cout<<endl<<"Parallel influence running time: "<<((float) tpara)/CLOCKS_PER_SEC<<" seconds"<<endl;
 	cout<<"Parallel maxInfluence Literal: "<< maxInfl.getName()<<" "<<"Infl="<< maxInfl.getProb() <<endl;
 	
+	/*
 	clock_t t3 = clock();
-	//vector<Literal> vcl = suff.changedLiterals(dnf.getLambda(), 0.9);
-	vector<Literal> vcl = suff.changedLiterals(suff.getSuffProv(), 0.9);
+	vector<Literal> vcl = suff.changedLiterals(dnf.getLambda(), 0.9);
+	//vector<Literal> vcl = suff.changedLiterals(suff.getSuffProv(), 0.9);
 	t3 = clock() - t3;
 	cout<<"Parallel changed literals running time: "<<((float)t3)/CLOCKS_PER_SEC<<" seconds"<<endl<<endl;
-	
+	*/
 	
 	
 	return EXIT_SUCCESS;
