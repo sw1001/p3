@@ -90,7 +90,7 @@ int main(int argc, char** argv) {
     }
     */
     //code to read prov from files
-    ifstream pfin("/home/sleepytodeath/rapidnet_v1.0/data/prov/mutualTrustPath1-2_50.txt");
+    ifstream pfin("/home/sleepytodeath/rapidnet_v1.0/data/vqa/prov_eval_house.txt");
     stringstream buffer;
     buffer << pfin.rdbuf();
     string prov = buffer.str();
@@ -104,7 +104,8 @@ int main(int argc, char** argv) {
 
 
     //code to read trust data from files
-    ifstream fin("/home/sleepytodeath/rapidnet_v1.0/data/trust/sample_50.csv");
+    /*
+    ifstream fin("/home/sleepytodeath/rapidnet-beta/data/trust/sample_200.csv");
     string line;
     int i = 0;
     while (getline(fin, line))
@@ -128,7 +129,61 @@ int main(int argc, char** argv) {
         cout<<name<<" "<<p[name]<<endl;
     }
     cout<<"total number of element: "<<i<<endl;
+    */
     
+    
+    //code to read vqa data from files
+    //need to change ...maxInfluence, p_findMostInfl(Suff.cpp)
+    vector<string> filenames;
+    filenames.push_back("/home/sleepytodeath/rapidnet_v1.0/data/vqa/eval/word_obs.txt");
+    filenames.push_back("/home/sleepytodeath/rapidnet_v1.0/data/vqa/eval/sim_obs.txt");
+    filenames.push_back("/home/sleepytodeath/rapidnet_v1.0/data/vqa/eval/hasq_obs.txt");
+    filenames.push_back("/home/sleepytodeath/rapidnet_v1.0/data/vqa/eval/hasimg_obs.txt");
+    for(int i = 0; i < filenames.size(); i++){
+    	vector<string> re;
+		string s;
+		ifstream f(filenames[i], ios_base::in);
+		while(!f.eof()){
+			getline(f, s);
+			re.push_back(s);
+		}
+		f.close();
+		
+		for(int j = 0; j < re.size(); j++){
+			string line = re[j];
+			if(line.size()==0) continue;
+			vector<string> tokens;
+			stringstream ss(line);      
+			string intermediate;
+			while(getline(ss, intermediate, '\t')) 
+			{ 
+		    	tokens.push_back(intermediate); 
+			}
+			double pp = atof(tokens.back().c_str());
+			
+			string pname("");
+			switch(i){
+				case 0 : 
+					pname += "word";
+					break;
+				case 1 :
+					pname += "sim";
+					break;
+				case 2 :
+					pname += "hasQ";
+					break;
+				case 3 :
+					pname += "hasImg";
+					break;			
+			}
+			for(int k = 0; k < tokens.size() -1; k++){
+				pname += tokens[k];
+			}
+			p[pname] = pp;		
+			//cout<<"pname="<<pname<<" pp="<<p[pname]<<endl;
+		}		
+    }
+        
     p["ra"] = 1.0;
     p["rb"] = 1.0;
     p["r0"] = 1.0;
@@ -148,25 +203,25 @@ int main(int argc, char** argv) {
 	t1 = clock()-t1;
 	cout<<"DNF running time: "<<((float)t1)/CLOCKS_PER_SEC<<" seconds"<<endl;
 	cout<<"DNF number of monomials: "<<dnf.getLambda().size()<<endl;
-	//dnf.ShowStructure();
-	//cout<<dnf.ToString()<<endl;
-
+	dnf.ShowStructure();
+	cout<<endl<<dnf.ToString()<<endl;
+	
 	Suff suff;    
 	//cout<<"Original formula: "<<endl;
 	//suff.printProv(dnf.getLambda());
 	double pLambda = suff.probMC(dnf.getLambda());
 	cout<<"pLambda = "<<pLambda<<endl;
 
-
+	
 	clock_t tsuff = clock();
-	double epsilon = 0.01; // approximation error
+	double epsilon = 1*0.01*pLambda; // approximation error
 	suff.setSuffProv(dnf.getLambda(), epsilon);
 	tsuff = clock() - tsuff;
 	cout<<"Suff lineage time: "<<((float) tsuff)/CLOCKS_PER_SEC<<" seconds"<<endl;
 	cout<<"Sufficient lineage: "<<endl;
 	suff.printProv(suff.getSuffProv());
 	cout<<endl;
-
+	
 
 	cout<<"Influence:" <<endl;
 	clock_t t2 = clock();
@@ -180,8 +235,8 @@ int main(int argc, char** argv) {
 										
 	/*
 	clock_t t3 = clock();
-	//vector<Literal> vcl = suff.changedLiterals(dnf.getLambda(), 0.9);
-	vector<Literal> vcl = suff.changedLiterals(suff.getSuffProv(), 0.9);
+	vector<Literal> vcl = suff.changedLiterals(dnf.getLambda(), 0.9);
+	//vector<Literal> vcl = suff.changedLiterals(suff.getSuffProv(), 0.9);
 	t3 = clock() - t3;
 	cout<<"Sequential changed literals running time: "<<((float)t3)/CLOCKS_PER_SEC<<" seconds"<<endl<<endl;
 	//cout<<"Changed Literals: "<<endl;
@@ -191,12 +246,14 @@ int main(int argc, char** argv) {
 //----------------------------------------------------------------------------------
 // Parallel queries
 //----------------------------------------------------------------------------------
+	/*
 	clock_t tpara = clock();
 	//Literal maxInfl= suff.p_findMostInfl(dnf.getLambda());
 	Literal maxInfl= suff.p_findMostInfl(suff.getSuffProv());
 	tpara = clock() - tpara;
 	cout<<endl<<"Parallel influence running time: "<<((float) tpara)/CLOCKS_PER_SEC<<" seconds"<<endl;
 	cout<<"Parallel maxInfluence Literal: "<< maxInfl.getName()<<" "<<"Infl="<< maxInfl.getProb() <<endl;
+	*/
 	
 	/*
 	clock_t t3 = clock();

@@ -1,0 +1,803 @@
+prov_learn_barn:right
+
+pLambda = 0.0194
+t=0.019206
+suffcount=0  MC running time: 0.210894 seconds
+
+p=0.0194 p1=0.0225
+suffcount=1  MC running time: 0.26546 seconds
+
+p=0.019 p1=0.019
+suffcount=2  MC running time: 0.10506 seconds
+
+p=0.0208 p1=0.019
+suffcount=3  MC running time: 0.161807 seconds
+
+Suff lineage time: 0.743539 seconds
+Sufficient lineage: 
+hasImghorsecolorgrey, hasQbuildingisWHAT, r2, r6, ra, rb, simbarnhorse, simbuildinggrey, simiscolor, wordbarn, 
+hasImghorseinbackground, hasImgtreebehindfence, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundtree, simbarnfence, simbarnhorse, simbarntree, simbuildingbackground, simbuildingfence, siminbehind, simisin, wordbarn, 
+hasImghorsecolorgrey, hasImgtreebehindfence, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundgrey, simbackgroundtree, simbarnfence, simbarnhorse, simbarntree, simbuildingcolor, simbuildingfence, siminbehind, wordbarn, 
+hasImghorseinbackground, hasImgtreebehindfence, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbackground, simbackgroundtree, simbarnfence, simbarnhorse, simbarntree, simbuildingfence, simbuildingin, siminbehind, wordbarn, 
+hasImgtreebehindfence, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundfence, simbarntree, simbuildingbehind, wordbarn, 
+hasImgtreebehindfence, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundtree, simbarnfence, simbarntree, simbuildingfence, siminbehind, simisbehind, wordbarn, 
+hasImghorseinbackground, hasQbuildingisWHAT, r2, r6, ra, rb, simbarnhorse, simbuildingbackground, simisin, wordbarn, 
+hasImghorsecolorgrey, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundgrey, simbarnhorse, simbuildingcolor, wordbarn, 
+hasImgtreebehindfence, hasQbuildingisWHAT, r2, r6, ra, rb, simbarntree, simbuildingfence, simisbehind, wordbarn, 
+hasImghorseinbackground, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundbackground, simbarnhorse, simbuildingin, wordbarn, 
+vector[0] prob: 1.29953e-06
+vector[1] prob: 1.83529e-06
+vector[2] prob: 5.04938e-06
+vector[3] prob: 1.91281e-05
+vector[4] prob: 2.72979e-05
+vector[5] prob: 6.36e-05
+vector[6] prob: 0.001212
+vector[7] prob: 0.00333455
+vector[8] prob: 0.00416495
+vector[9] prob: 0.012632
+
+Influence:
+Literal influence running time: 0.287848 seconds
+hasImghorsecolorgrey seqInfl= 0.0023
+Literal influence running time: 0.291641 seconds
+hasImghorseinbackground seqInfl= 0.016
+Literal influence running time: 0.288359 seconds
+hasQbackgroundbuildingWHAT seqInfl= 0.0158
+Literal influence running time: 0.229881 seconds
+hasQbuildinginbackground seqInfl= 0
+Literal influence running time: 0.243363 seconds
+r1 seqInfl= 0
+Literal influence running time: 0.24287 seconds
+r3 seqInfl= 0
+Literal influence running time: 0.203465 seconds
+r6 seqInfl= 0.0206
+Literal influence running time: 0.204303 seconds
+ra seqInfl= 0.0206
+Literal influence running time: 0.203606 seconds
+rb seqInfl= 0.0206
+Literal influence running time: 0.368609 seconds
+simbackgroundbackground seqInfl= 0.0135
+Literal influence running time: 0.292406 seconds
+simbackgroundhorse seqInfl= 0
+Literal influence running time: 0.38741 seconds
+simbarngrey seqInfl= 0
+Literal influence running time: 0.234415 seconds
+simbarnhorse seqInfl= 0.0523
+Literal influence running time: 0.327578 seconds
+simbuildinggrey seqInfl= 0
+Literal influence running time: 0.368586 seconds
+simbuildingin seqInfl= 0.0715
+Literal influence running time: 0.35447 seconds
+simincolor seqInfl= 0
+Literal influence running time: 0.204688 seconds
+wordbarn seqInfl= 0.0727
+Literal influence running time: 0.364798 seconds
+simbackgroundgrey seqInfl= 0.0116
+Literal influence running time: 0.350772 seconds
+simbarnbackground seqInfl= 0
+Literal influence running time: 0.345521 seconds
+simbuildingbackground seqInfl= 0.0059
+Literal influence running time: 0.370039 seconds
+simbuildingcolor seqInfl= 0.0187
+Literal influence running time: 0.351647 seconds
+siminin seqInfl= 0
+Literal influence running time: 0.305708 seconds
+hasQbuildingisWHAT seqInfl= 0.0046
+Literal influence running time: 0.407384 seconds
+simiscolor seqInfl= 0.0126
+Literal influence running time: 0.380767 seconds
+simisin seqInfl= 0.0085
+Literal influence running time: 0.298877 seconds
+hasImgtreebehindfence seqInfl= 0.0047
+Literal influence running time: 0.37537 seconds
+simbackgroundfence seqInfl= 0.0082
+Literal influence running time: 0.310124 seconds
+simbarntree seqInfl= 0.0105
+Literal influence running time: 0.376008 seconds
+simbuildingbehind seqInfl= 0.0004
+Literal influence running time: 0.356803 seconds
+simbackgroundtree seqInfl= 0
+Literal influence running time: 0.372122 seconds
+simbarnfence seqInfl= 0
+Literal influence running time: 0.329312 seconds
+simbuildingfence seqInfl= 0.012
+Literal influence running time: 0.359227 seconds
+siminbehind seqInfl= 0
+Literal influence running time: 0.383313 seconds
+simisbehind seqInfl= 0.0241
+Literal influence running time: 0.404918 seconds
+r2 seqInfl= 0.0204
+Total number of literals: 35
+Sequential influence running time: 11.1772 seconds
+Sequential maxInfluence Literal: simbuildingin 0.0715
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+prov_eval_barn:wrong
+
+pLambda = 0.0331
+t=0.032769
+suffcount=0  MC running time: 0.620375 seconds
+
+p=0.0347 p1=0.0347
+suffcount=1  MC running time: 0.56034 seconds
+
+p=0.0347 p1=0.0347
+suffcount=2  MC running time: 0.261603 seconds
+
+p=0.0411 p1=0.032
+suffcount=3  MC running time: 0.127356 seconds
+
+Suff lineage time: 1.57054 seconds
+Sufficient lineage: 
+hasImgtreebehindfence, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundfence, simbarntree, simbuildingbehind, wordbarn, 
+hasImgsteepleonbuilding, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundbuilding, simbarnsteeple, simbuildingon, wordbarn, 
+hasImgcrossonbuilding, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundbuilding, simbarncross, simbuildingon, wordbarn, 
+hasImghorseinbackground, hasQbuildingisWHAT, r2, r6, ra, rb, simbarnhorse, simbuildingbackground, simisin, wordbarn, 
+hasImghorsecolorgrey, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundgrey, simbarnhorse, simbuildingcolor, wordbarn, 
+hasImgtreebehindfence, hasQbuildingisWHAT, r2, r6, ra, rb, simbarntree, simbuildingfence, simisbehind, wordbarn, 
+hasImgsteepleonbuilding, hasQbuildingisWHAT, r2, r6, ra, rb, simbarnsteeple, simbuildingbuilding, simison, wordbarn, 
+hasImgcrossonbuilding, hasQbuildingisWHAT, r2, r6, ra, rb, simbarncross, simbuildingbuilding, simison, wordbarn, 
+hasImghorseinbackground, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundbackground, simbarnhorse, simbuildingin, wordbarn, 
+vector[0] prob: 0.000386988
+vector[1] prob: 0.000391203
+vector[2] prob: 0.000424639
+vector[3] prob: 0.00097853
+vector[4] prob: 0.00292338
+vector[5] prob: 0.00357225
+vector[6] prob: 0.00974712
+vector[7] prob: 0.0105802
+vector[8] prob: 0.0112289
+
+Influence:
+Literal influence running time: 1.0155 seconds
+hasImgcrossonbuilding seqInfl= 0.0093
+Literal influence running time: 0.977942 seconds
+hasImghorsecolorgrey seqInfl= 0.0025
+Literal influence running time: 0.843154 seconds
+hasQbackgroundbuildingWHAT seqInfl= 0.0146
+Literal influence running time: 0.599354 seconds
+hasQbuildinginbackground seqInfl= 0
+Literal influence running time: 0.612475 seconds
+r1 seqInfl= 0
+Literal influence running time: 0.633262 seconds
+r3 seqInfl= 0
+Literal influence running time: 0.529088 seconds
+r6 seqInfl= 0.0372
+Literal influence running time: 0.533356 seconds
+ra seqInfl= 0.0372
+Literal influence running time: 0.525163 seconds
+rb seqInfl= 0.0372
+Literal influence running time: 1.01058 seconds
+simbackgroundbuilding seqInfl= 0.0051
+Literal influence running time: 0.993461 seconds
+simbackgroundhorse seqInfl= 0
+Literal influence running time: 0.993414 seconds
+simbarncross seqInfl= 0.0274
+Literal influence running time: 1.13063 seconds
+simbarngrey seqInfl= 0
+Literal influence running time: 0.78966 seconds
+simbarnhorse seqInfl= 0.0383
+Literal influence running time: 1.03168 seconds
+simbuildinggrey seqInfl= 0.0004
+Literal influence running time: 0.982719 seconds
+simbuildingon seqInfl= 0.0134
+Literal influence running time: 1.10855 seconds
+simincolor seqInfl= 0
+Literal influence running time: 0.542663 seconds
+wordbarn seqInfl= 0.1303
+Literal influence running time: 1.12497 seconds
+simbackgroundcross seqInfl= 0
+Literal influence running time: 1.15964 seconds
+simbackgroundgrey seqInfl= 0.0089
+Literal influence running time: 0.994931 seconds
+simbarnbuilding seqInfl= 0
+Literal influence running time: 0.816224 seconds
+simbuildingbuilding seqInfl= 0.018
+Literal influence running time: 1.16383 seconds
+simbuildingcolor seqInfl= 0.0176
+Literal influence running time: 0.995084 seconds
+siminon seqInfl= 0
+Literal influence running time: 0.788722 seconds
+hasQbuildingisWHAT seqInfl= 0.0217
+Literal influence running time: 1.13806 seconds
+simiscolor seqInfl= 0.0166
+Literal influence running time: 1.11975 seconds
+simison seqInfl= 0.1146
+Literal influence running time: 0.965008 seconds
+hasImghorseinbackground seqInfl= 0.0132
+Literal influence running time: 1.15671 seconds
+simbackgroundbackground seqInfl= 0.0111
+Literal influence running time: 1.20043 seconds
+simbuildingin seqInfl= 0.075
+Literal influence running time: 1.11272 seconds
+simbarnbackground seqInfl= 0
+Literal influence running time: 1.04147 seconds
+simbuildingbackground seqInfl= 0.006
+Literal influence running time: 1.11117 seconds
+siminin seqInfl= 0
+Literal influence running time: 1.20162 seconds
+simisin seqInfl= 0.0086
+Literal influence running time: 0.877324 seconds
+hasImgsteepleonbuilding seqInfl= 0.0061
+Literal influence running time: 0.905652 seconds
+simbarnsteeple seqInfl= 0.0263
+Literal influence running time: 1.11044 seconds
+simbackgroundsteeple seqInfl= 0
+Literal influence running time: 0.939857 seconds
+hasImgtreebehindfence seqInfl= 0.0046
+Literal influence running time: 1.08956 seconds
+simbackgroundtree seqInfl= 0
+Literal influence running time: 1.10856 seconds
+simbarnfence seqInfl= 0
+Literal influence running time: 0.90453 seconds
+simbarntree seqInfl= 0.0091
+Literal influence running time: 0.989013 seconds
+simbuildingfence seqInfl= 0.0092
+Literal influence running time: 1.11118 seconds
+siminbehind seqInfl= 0
+Literal influence running time: 1.1358 seconds
+simbackgroundfence seqInfl= 0.0061
+Literal influence running time: 1.13975 seconds
+simbuildingbehind seqInfl= 0.0029
+Literal influence running time: 1.16995 seconds
+simisbehind seqInfl= 0.0229
+Literal influence running time: 1.13817 seconds
+r2 seqInfl= 0.0368
+Total number of literals: 47
+Sequential influence running time: 45.5656 seconds
+Sequential maxInfluence Literal: simison 0.1146
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+prov_eval_church:wrong
+
+pLambda = 0.0271
+t=0.026829
+suffcount=0  MC running time: 0.647541 seconds
+
+p=0.0259 p1=0.0259
+suffcount=1  MC running time: 0.626112 seconds
+
+p=0.0271 p1=0.0271
+suffcount=2  MC running time: 0.983314 seconds
+
+p=0.0271 p1=0.0271
+suffcount=3  MC running time: 0.751532 seconds
+
+p=0.0271 p1=0.0259
+suffcount=4  MC running time: 0.66142 seconds
+
+Suff lineage time: 3.67101 seconds
+Sufficient lineage: 
+hasImghorsecolorgrey, hasImghorseinbackground, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbackground, simbackgroundhorse, simbuildinggrey, simbuildingin, simchurchgrey, simchurchhorse, simincolor, wordchurch, 
+hasImghorsecolorgrey, hasImgsteepleonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundsteeple, simbuildingbuilding, simbuildinggrey, simchurchbuilding, simchurchhorse, simchurchsteeple, siminon, simiscolor, wordchurch, 
+hasImgsteepleonbuilding, hasImgtreebehindfence, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundfence, simbackgroundsteeple, simbuildingbehind, simbuildingbuilding, simchurchbuilding, simchurchsteeple, simchurchtree, siminon, wordchurch, 
+hasImgcrossonbuilding, hasImghorseinbackground, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundcross, simbuildingbackground, simbuildingbuilding, simchurchbuilding, simchurchcross, simchurchhorse, siminon, simisin, wordchurch, 
+hasImgcrossonbuilding, hasImgtreebehindfence, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundcross, simbuildingbuilding, simbuildingfence, simchurchbuilding, simchurchcross, simchurchtree, siminon, simisbehind, wordchurch, 
+hasImgcrossonbuilding, hasImghorseinbackground, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundhorse, simbuildingbackground, simbuildingbuilding, simchurchbackground, simchurchcross, simchurchhorse, siminin, simison, wordchurch, 
+hasImgsteepleonbuilding, hasImgtreebehindfence, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundtree, simbuildingbuilding, simbuildingfence, simchurchfence, simchurchsteeple, simchurchtree, siminbehind, simison, wordchurch, 
+hasImgcrossonbuilding, hasImgsteepleonbuilding, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbuilding, simbackgroundsteeple, simbuildingbuilding, simbuildingon, simchurchbuilding, simchurchcross, simchurchsteeple, siminon, wordchurch, 
+hasImgcrossonbuilding, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbuilding, simbackgroundcross, simbuildingbuilding, simbuildingon, simchurchbuilding, simchurchcross, siminon, wordchurch, 
+hasImgcrossonbuilding, hasImghorsecolorgrey, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundcross, simbackgroundgrey, simbuildingbuilding, simbuildingcolor, simchurchbuilding, simchurchcross, simchurchhorse, siminon, wordchurch, 
+hasImghorsecolorgrey, hasImghorseinbackground, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundgrey, simbackgroundhorse, simbuildingbackground, simbuildingcolor, simchurchbackground, simchurchhorse, siminin, wordchurch, 
+hasImgtreebehindfence, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundtree, simbuildingfence, simchurchfence, simchurchtree, siminbehind, simisbehind, wordchurch, 
+hasImghorseinbackground, hasImgsteepleonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundhorse, simbuildingbackground, simbuildingbuilding, simchurchbackground, simchurchhorse, simchurchsteeple, siminin, simison, wordchurch, 
+hasImghorseinbackground, hasImgsteepleonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundsteeple, simbuildingbackground, simbuildingbuilding, simchurchbuilding, simchurchhorse, simchurchsteeple, siminon, simisin, wordchurch, 
+hasImghorseinbackground, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundhorse, simbuildingbackground, simchurchbackground, simchurchhorse, siminin, simisin, wordchurch, 
+hasImgsteepleonbuilding, hasImgtreebehindfence, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundsteeple, simbuildingbuilding, simbuildingfence, simchurchbuilding, simchurchsteeple, simchurchtree, siminon, simisbehind, wordchurch, 
+hasImgcrossonbuilding, hasImghorseinbackground, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbackground, simbackgroundcross, simbuildingbuilding, simbuildingin, simchurchbuilding, simchurchcross, simchurchhorse, siminon, wordchurch, 
+hasImghorseinbackground, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbackground, simbackgroundhorse, simbuildingbackground, simbuildingin, simchurchbackground, simchurchhorse, siminin, wordchurch, 
+hasImgcrossonbuilding, hasImgsteepleonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundcross, simbuildingbuilding, simchurchbuilding, simchurchcross, simchurchsteeple, siminon, simison, wordchurch, 
+hasImgsteepleonbuilding, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbuilding, simbackgroundsteeple, simbuildingbuilding, simbuildingon, simchurchbuilding, simchurchsteeple, siminon, wordchurch, 
+hasImghorsecolorgrey, hasImgsteepleonbuilding, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundgrey, simbackgroundsteeple, simbuildingbuilding, simbuildingcolor, simchurchbuilding, simchurchhorse, simchurchsteeple, siminon, wordchurch, 
+hasImgcrossonbuilding, hasImgsteepleonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundsteeple, simbuildingbuilding, simchurchbuilding, simchurchcross, simchurchsteeple, siminon, simison, wordchurch, 
+hasImgcrossonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundcross, simbuildingbuilding, simchurchbuilding, simchurchcross, siminon, simison, wordchurch, 
+hasImghorseinbackground, hasImgsteepleonbuilding, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbackground, simbackgroundsteeple, simbuildingbuilding, simbuildingin, simchurchbuilding, simchurchhorse, simchurchsteeple, siminon, wordchurch, 
+hasImghorsecolorgrey, hasQbuildingisWHAT, r2, r6, ra, rb, simbuildinggrey, simchurchhorse, simiscolor, wordchurch, 
+hasImgtreebehindfence, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundfence, simbuildingbehind, simchurchtree, wordchurch, 
+hasImgsteepleonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundsteeple, simbuildingbuilding, simchurchbuilding, simchurchsteeple, siminon, simison, wordchurch, 
+hasImgcrossonbuilding, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundbuilding, simbuildingon, simchurchcross, wordchurch, 
+hasImgsteepleonbuilding, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundbuilding, simbuildingon, simchurchsteeple, wordchurch, 
+hasImghorseinbackground, hasQbuildingisWHAT, r2, r6, ra, rb, simbuildingbackground, simchurchhorse, simisin, wordchurch, 
+hasImgtreebehindfence, hasQbuildingisWHAT, r2, r6, ra, rb, simbuildingfence, simchurchtree, simisbehind, wordchurch, 
+hasImghorsecolorgrey, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundgrey, simbuildingcolor, simchurchhorse, wordchurch, 
+hasImgcrossonbuilding, hasQbuildingisWHAT, r2, r6, ra, rb, simbuildingbuilding, simchurchcross, simison, wordchurch, 
+hasImghorseinbackground, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundbackground, simbuildingin, simchurchhorse, wordchurch, 
+hasImgsteepleonbuilding, hasQbuildingisWHAT, r2, r6, ra, rb, simbuildingbuilding, simchurchsteeple, simison, wordchurch, 
+vector[0] prob: 1.83926e-07
+vector[1] prob: 1.91675e-07
+vector[2] prob: 2.05324e-07
+vector[3] prob: 2.07425e-07
+vector[4] prob: 2.56761e-07
+vector[5] prob: 2.60793e-07
+vector[6] prob: 2.6901e-07
+vector[7] prob: 3.97624e-07
+vector[8] prob: 6.17248e-07
+vector[9] prob: 6.19689e-07
+vector[10] prob: 6.41113e-07
+vector[11] prob: 8.58248e-07
+vector[12] prob: 8.58433e-07
+vector[13] prob: 1.53115e-06
+vector[14] prob: 1.81493e-06
+vector[15] prob: 1.89533e-06
+vector[16] prob: 2.38025e-06
+vector[17] prob: 2.79835e-06
+vector[18] prob: 4.41775e-06
+vector[19] prob: 4.55633e-06
+vector[20] prob: 4.57435e-06
+vector[21] prob: 9.90709e-06
+vector[22] prob: 1.53792e-05
+vector[23] prob: 1.75703e-05
+vector[24] prob: 7.80658e-05
+vector[25] prob: 8.3625e-05
+vector[26] prob: 0.000113524
+vector[27] prob: 0.000161945
+vector[28] prob: 0.000533063
+vector[29] prob: 0.000623611
+vector[30] prob: 0.000771935
+vector[31] prob: 0.00186305
+vector[32] prob: 0.00403499
+vector[33] prob: 0.00715607
+vector[34] prob: 0.0132817
+
+Influence:
+Literal influence running time: 1.07451 seconds
+hasImgcrossonbuilding seqInfl= 0.0031
+Literal influence running time: 1.06947 seconds
+hasImghorsecolorgrey seqInfl= 0.0018
+Literal influence running time: 0.801943 seconds
+hasQbackgroundbuildingWHAT seqInfl= 0.008
+Literal influence running time: 0.58948 seconds
+hasQbuildinginbackground seqInfl= 0
+Literal influence running time: 0.626387 seconds
+r1 seqInfl= 0
+Literal influence running time: 0.619345 seconds
+r3 seqInfl= 0
+Literal influence running time: 0.581567 seconds
+r6 seqInfl= 0.0248
+Literal influence running time: 0.545294 seconds
+ra seqInfl= 0.0248
+Literal influence running time: 0.558523 seconds
+rb seqInfl= 0.0248
+Literal influence running time: 1.01707 seconds
+simbackgroundbuilding seqInfl= 0.0036
+Literal influence running time: 1.05425 seconds
+simbackgroundhorse seqInfl= 0
+Literal influence running time: 1.1558 seconds
+simbuildinggrey seqInfl= 0.0004
+Literal influence running time: 2.45282 seconds
+simbuildingon seqInfl= 0.0109
+Literal influence running time: 2.1776 seconds
+simchurchcross seqInfl= 0.0323
+Literal influence running time: 1.88159 seconds
+simchurchgrey seqInfl= 0
+Literal influence running time: 0.812447 seconds
+simchurchhorse seqInfl= 0.0454
+Literal influence running time: 1.16417 seconds
+simincolor seqInfl= 0
+Literal influence running time: 0.580041 seconds
+wordchurch seqInfl= 0.0802
+Literal influence running time: 1.14003 seconds
+simbackgroundcross seqInfl= 0
+Literal influence running time: 1.22799 seconds
+simbackgroundgrey seqInfl= 0.007
+Literal influence running time: 0.883019 seconds
+simbuildingbuilding seqInfl= 0.0148
+Literal influence running time: 1.1846 seconds
+simbuildingcolor seqInfl= 0.0098
+Literal influence running time: 0.915713 seconds
+simchurchbuilding seqInfl= 0
+Literal influence running time: 0.962497 seconds
+siminon seqInfl= 0
+Literal influence running time: 0.821951 seconds
+hasQbuildingisWHAT seqInfl= 0.0162
+Literal influence running time: 1.22401 seconds
+simiscolor seqInfl= 0.0105
+Literal influence running time: 1.14695 seconds
+simison seqInfl= 0.1064
+Literal influence running time: 0.939945 seconds
+hasImghorseinbackground seqInfl= 0.0076
+Literal influence running time: 1.23262 seconds
+simbackgroundbackground seqInfl= 0.0061
+Literal influence running time: 1.24609 seconds
+simbuildingin seqInfl= 0.0467
+Literal influence running time: 0.976777 seconds
+simbuildingbackground seqInfl= 0.0046
+Literal influence running time: 1.22179 seconds
+simchurchbackground seqInfl= 0
+Literal influence running time: 1.18042 seconds
+siminin seqInfl= 0
+Literal influence running time: 1.22945 seconds
+simisin seqInfl= 0.0054
+Literal influence running time: 0.931097 seconds
+hasImgsteepleonbuilding seqInfl= 0.0112
+Literal influence running time: 0.932327 seconds
+simchurchsteeple seqInfl= 0.0443
+Literal influence running time: 1.14005 seconds
+simbackgroundsteeple seqInfl= 0
+Literal influence running time: 0.956706 seconds
+hasImgtreebehindfence seqInfl= 0.0008
+Literal influence running time: 1.24205 seconds
+simbackgroundtree seqInfl= 0
+Literal influence running time: 1.10807 seconds
+simbuildingfence seqInfl= 0.0025
+Literal influence running time: 1.20731 seconds
+simchurchfence seqInfl= 0
+Literal influence running time: 0.959759 seconds
+simchurchtree seqInfl= 0.0105
+Literal influence running time: 1.08914 seconds
+siminbehind seqInfl= 0
+Literal influence running time: 1.2182 seconds
+simbackgroundfence seqInfl= 0.0017
+Literal influence running time: 1.22579 seconds
+simbuildingbehind seqInfl= 0.0005
+Literal influence running time: 1.31195 seconds
+simisbehind seqInfl= 0.0046
+Literal influence running time: 1.20659 seconds
+r2 seqInfl= 0.0248
+Total number of literals: 47
+Sequential influence running time: 50.8279 seconds
+Sequential maxInfluence Literal: simison 0.1064
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+prov_eval_barn:right
+
+pLambda = 0.0268
+t=0.026532
+suffcount=0  MC running time: 0.665487 seconds
+
+p=0.0268 p1=0.0268
+suffcount=1  MC running time: 0.614957 seconds
+
+p=0.0301 p1=0.0301
+suffcount=2  MC running time: 0.270602 seconds
+
+p=0.0277 p1=0.034
+suffcount=3  MC running time: 0.131579 seconds
+
+p=0.027 p1=0.0263
+suffcount=4  MC running time: 0.071655 seconds
+
+Suff lineage time: 1.75522 seconds
+Sufficient lineage: 
+hasImgcrossonbuilding, hasQbuildingisWHAT, r2, r6, ra, rb, simbarncross, simbuildingbuilding, simison, wordbarn, 
+hasImghorsecolorgrey, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundgrey, simbarnhorse, simbuildingcolor, wordbarn, 
+hasImgtreebehindfence, hasQbuildingisWHAT, r2, r6, ra, rb, simbarntree, simbuildingfence, simisbehind, wordbarn, 
+hasImgsteepleonbuilding, hasQbuildingisWHAT, r2, r6, ra, rb, simbarnsteeple, simbuildingbuilding, simison, wordbarn, 
+hasImghorseinbackground, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundbackground, simbarnhorse, simbuildingin, wordbarn, 
+vector[0] prob: 0.00122252
+vector[1] prob: 0.00292338
+vector[2] prob: 0.00357225
+vector[3] prob: 0.00974712
+vector[4] prob: 0.0112289
+
+Influence:
+Literal influence running time: 0.062661 seconds
+hasImgcrossonbuilding seqInfl= 0.0008
+Literal influence running time: 0.048787 seconds
+hasQbuildingisWHAT seqInfl= 0.0131
+Literal influence running time: 0.037664 seconds
+r2 seqInfl= 0.0269
+Literal influence running time: 0.037419 seconds
+r6 seqInfl= 0.0269
+Literal influence running time: 0.03802 seconds
+ra seqInfl= 0.0269
+Literal influence running time: 0.046426 seconds
+rb seqInfl= 0.0269
+Literal influence running time: 0.089893 seconds
+simbarncross seqInfl= 0.0257
+Literal influence running time: 0.060496 seconds
+simbuildingbuilding seqInfl= 0.0103
+Literal influence running time: 0.057627 seconds
+simison seqInfl= 0.0677
+Literal influence running time: 0.038646 seconds
+wordbarn seqInfl= 0.102
+Literal influence running time: 0.060935 seconds
+hasImghorsecolorgrey seqInfl= 0.0024
+Literal influence running time: 0.054288 seconds
+hasQbackgroundbuildingWHAT seqInfl= 0.013
+Literal influence running time: 0.062732 seconds
+simbackgroundgrey seqInfl= 0.0118
+Literal influence running time: 0.05761 seconds
+simbarnhorse seqInfl= 0.0356
+Literal influence running time: 0.062821 seconds
+simbuildingcolor seqInfl= 0.0196
+Literal influence running time: 0.063509 seconds
+hasImgtreebehindfence seqInfl= 0.0035
+Literal influence running time: 0.064904 seconds
+simbarntree seqInfl= 0.0083
+Literal influence running time: 0.062057 seconds
+simbuildingfence seqInfl= 0.0118
+Literal influence running time: 0.063678 seconds
+simisbehind seqInfl= 0.0238
+Literal influence running time: 0.060912 seconds
+hasImgsteepleonbuilding seqInfl= 0.009
+Literal influence running time: 0.063957 seconds
+simbarnsteeple seqInfl= 0.0343
+Literal influence running time: 0.062151 seconds
+hasImghorseinbackground seqInfl= 0.0121
+Literal influence running time: 0.062346 seconds
+simbackgroundbackground seqInfl= 0.0103
+Literal influence running time: 0.06088 seconds
+simbuildingin seqInfl= 0.0756
+Total number of literals: 24
+Sequential influence running time: 1.38087 seconds
+Sequential maxInfluence Literal: simbuildingin 0.0756
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+prov_eval_church:right
+
+pLambda = 0.0272
+t=0.026928
+suffcount=0  MC running time: 0.708604 seconds
+
+p=0.0261 p1=0.0261
+suffcount=1  MC running time: 0.607019 seconds
+
+p=0.0272 p1=0.0272
+suffcount=2  MC running time: 0.971725 seconds
+
+p=0.0272 p1=0.0272
+suffcount=3  MC running time: 0.763334 seconds
+
+p=0.0261 p1=0.0261
+suffcount=4  MC running time: 0.680583 seconds
+
+p=0.0272 p1=0.0272
+suffcount=5  MC running time: 0.752532 seconds
+
+p=0.0272 p1=0.0261
+suffcount=6  MC running time: 0.700676 seconds
+
+Suff lineage time: 5.18568 seconds
+Sufficient lineage: 
+hasImghorsecolorgrey, hasImghorseinbackground, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbackground, simbackgroundhorse, simbuildinggrey, simbuildingin, simchurchgrey, simchurchhorse, simincolor, wordchurch, 
+hasImghorsecolorgrey, hasImgsteepleonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundsteeple, simbuildingbuilding, simbuildinggrey, simchurchbuilding, simchurchhorse, simchurchsteeple, siminon, simiscolor, wordchurch, 
+hasImgcrossonbuilding, hasImgsteepleonbuilding, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbuilding, simbackgroundcross, simbuildingbuilding, simbuildingon, simchurchbuilding, simchurchcross, simchurchsteeple, siminon, wordchurch, 
+hasImgsteepleonbuilding, hasImgtreebehindfence, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundfence, simbackgroundsteeple, simbuildingbehind, simbuildingbuilding, simchurchbuilding, simchurchsteeple, simchurchtree, siminon, wordchurch, 
+hasImgcrossonbuilding, hasImghorseinbackground, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundcross, simbuildingbackground, simbuildingbuilding, simchurchbuilding, simchurchcross, simchurchhorse, siminon, simisin, wordchurch, 
+hasImgsteepleonbuilding, hasImgtreebehindfence, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundtree, simbuildingbuilding, simbuildingfence, simchurchfence, simchurchsteeple, simchurchtree, siminbehind, simison, wordchurch, 
+hasImgcrossonbuilding, hasImgtreebehindfence, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundcross, simbuildingbuilding, simbuildingfence, simchurchbuilding, simchurchcross, simchurchtree, siminon, simisbehind, wordchurch, 
+hasImgcrossonbuilding, hasImghorseinbackground, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundhorse, simbuildingbackground, simbuildingbuilding, simchurchbackground, simchurchcross, simchurchhorse, siminin, simison, wordchurch, 
+hasImgcrossonbuilding, hasImgsteepleonbuilding, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbuilding, simbackgroundsteeple, simbuildingbuilding, simbuildingon, simchurchbuilding, simchurchcross, simchurchsteeple, siminon, wordchurch, 
+hasImghorsecolorgrey, hasImghorseinbackground, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundgrey, simbackgroundhorse, simbuildingbackground, simbuildingcolor, simchurchbackground, simchurchhorse, siminin, wordchurch, 
+hasImgcrossonbuilding, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbuilding, simbackgroundcross, simbuildingbuilding, simbuildingon, simchurchbuilding, simchurchcross, siminon, wordchurch, 
+hasImgcrossonbuilding, hasImghorsecolorgrey, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundcross, simbackgroundgrey, simbuildingbuilding, simbuildingcolor, simchurchbuilding, simchurchcross, simchurchhorse, siminon, wordchurch, 
+hasImgtreebehindfence, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundtree, simbuildingfence, simchurchfence, simchurchtree, siminbehind, simisbehind, wordchurch, 
+hasImghorseinbackground, hasImgsteepleonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundhorse, simbuildingbackground, simbuildingbuilding, simchurchbackground, simchurchhorse, simchurchsteeple, siminin, simison, wordchurch, 
+hasImghorseinbackground, hasImgsteepleonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundsteeple, simbuildingbackground, simbuildingbuilding, simchurchbuilding, simchurchhorse, simchurchsteeple, siminon, simisin, wordchurch, 
+hasImghorseinbackground, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundhorse, simbuildingbackground, simchurchbackground, simchurchhorse, siminin, simisin, wordchurch, 
+hasImgsteepleonbuilding, hasImgtreebehindfence, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundsteeple, simbuildingbuilding, simbuildingfence, simchurchbuilding, simchurchsteeple, simchurchtree, siminon, simisbehind, wordchurch, 
+hasImgcrossonbuilding, hasImghorseinbackground, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbackground, simbackgroundcross, simbuildingbuilding, simbuildingin, simchurchbuilding, simchurchcross, simchurchhorse, siminon, wordchurch, 
+hasImghorseinbackground, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbackground, simbackgroundhorse, simbuildingbackground, simbuildingin, simchurchbackground, simchurchhorse, siminin, wordchurch, 
+hasImgsteepleonbuilding, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbuilding, simbackgroundsteeple, simbuildingbuilding, simbuildingon, simchurchbuilding, simchurchsteeple, siminon, wordchurch, 
+hasImghorsecolorgrey, hasImgsteepleonbuilding, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundgrey, simbackgroundsteeple, simbuildingbuilding, simbuildingcolor, simchurchbuilding, simchurchhorse, simchurchsteeple, siminon, wordchurch, 
+hasImgcrossonbuilding, hasImgsteepleonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundcross, simbuildingbuilding, simchurchbuilding, simchurchcross, simchurchsteeple, siminon, simison, wordchurch, 
+hasImgcrossonbuilding, hasImgsteepleonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundsteeple, simbuildingbuilding, simchurchbuilding, simchurchcross, simchurchsteeple, siminon, simison, wordchurch, 
+hasImgcrossonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundcross, simbuildingbuilding, simchurchbuilding, simchurchcross, siminon, simison, wordchurch, 
+hasImghorseinbackground, hasImgsteepleonbuilding, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbackground, simbackgroundsteeple, simbuildingbuilding, simbuildingin, simchurchbuilding, simchurchhorse, simchurchsteeple, siminon, wordchurch, 
+hasImghorsecolorgrey, hasQbuildingisWHAT, r2, r6, ra, rb, simbuildinggrey, simchurchhorse, simiscolor, wordchurch, 
+hasImgtreebehindfence, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundfence, simbuildingbehind, simchurchtree, wordchurch, 
+hasImgsteepleonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundsteeple, simbuildingbuilding, simchurchbuilding, simchurchsteeple, siminon, simison, wordchurch, 
+hasImgcrossonbuilding, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundbuilding, simbuildingon, simchurchcross, wordchurch, 
+hasImgsteepleonbuilding, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundbuilding, simbuildingon, simchurchsteeple, wordchurch, 
+hasImghorseinbackground, hasQbuildingisWHAT, r2, r6, ra, rb, simbuildingbackground, simchurchhorse, simisin, wordchurch, 
+hasImgtreebehindfence, hasQbuildingisWHAT, r2, r6, ra, rb, simbuildingfence, simchurchtree, simisbehind, wordchurch, 
+hasImghorsecolorgrey, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundgrey, simbuildingcolor, simchurchhorse, wordchurch, 
+hasImgcrossonbuilding, hasQbuildingisWHAT, r2, r6, ra, rb, simbuildingbuilding, simchurchcross, simison, wordchurch, 
+hasImghorseinbackground, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundbackground, simbuildingin, simchurchhorse, wordchurch, 
+hasImgsteepleonbuilding, hasQbuildingisWHAT, r2, r6, ra, rb, simbuildingbuilding, simchurchsteeple, simison, wordchurch, 
+vector[0] prob: 1.83926e-07
+vector[1] prob: 1.91675e-07
+vector[2] prob: 1.97008e-07
+vector[3] prob: 2.05324e-07
+vector[4] prob: 2.30473e-07
+vector[5] prob: 2.6901e-07
+vector[6] prob: 2.8529e-07
+vector[7] prob: 2.8977e-07
+vector[8] prob: 4.41804e-07
+vector[9] prob: 6.41113e-07
+vector[10] prob: 6.85831e-07
+vector[11] prob: 6.88543e-07
+vector[12] prob: 8.58248e-07
+vector[13] prob: 8.58433e-07
+vector[14] prob: 1.53115e-06
+vector[15] prob: 1.81493e-06
+vector[16] prob: 1.89533e-06
+vector[17] prob: 2.64473e-06
+vector[18] prob: 2.79835e-06
+vector[19] prob: 4.55633e-06
+vector[20] prob: 4.57435e-06
+vector[21] prob: 4.90861e-06
+vector[22] prob: 1.10079e-05
+vector[23] prob: 1.7088e-05
+vector[24] prob: 1.75703e-05
+vector[25] prob: 7.80658e-05
+vector[26] prob: 8.3625e-05
+vector[27] prob: 0.000113524
+vector[28] prob: 0.000179939
+vector[29] prob: 0.000533063
+vector[30] prob: 0.000623611
+vector[31] prob: 0.000771935
+vector[32] prob: 0.00186305
+vector[33] prob: 0.00448332
+vector[34] prob: 0.00715607
+vector[35] prob: 0.0132817
+
+Influence:
+Literal influence running time: 0.613583 seconds
+hasImghorsecolorgrey seqInfl= 0.0018
+Literal influence running time: 0.560887 seconds
+hasImghorseinbackground seqInfl= 0.0076
+Literal influence running time: 0.525993 seconds
+hasQbackgroundbuildingWHAT seqInfl= 0.008
+Literal influence running time: 0.39153 seconds
+hasQbuildinginbackground seqInfl= 0
+Literal influence running time: 0.417153 seconds
+r1 seqInfl= 0
+Literal influence running time: 0.441821 seconds
+r3 seqInfl= 0
+Literal influence running time: 0.34672 seconds
+r6 seqInfl= 0.0253
+Literal influence running time: 0.349681 seconds
+ra seqInfl= 0.0253
+Literal influence running time: 0.347426 seconds
+rb seqInfl= 0.0253
+Literal influence running time: 0.650995 seconds
+simbackgroundbackground seqInfl= 0.0061
+Literal influence running time: 0.642629 seconds
+simbackgroundhorse seqInfl= 0
+Literal influence running time: 0.676443 seconds
+simbuildinggrey seqInfl= 0.0004
+Literal influence running time: 0.644984 seconds
+simbuildingin seqInfl= 0.0467
+Literal influence running time: 0.720728 seconds
+simchurchgrey seqInfl= 0
+Literal influence running time: 0.525554 seconds
+simchurchhorse seqInfl= 0.0454
+Literal influence running time: 0.68318 seconds
+simincolor seqInfl= 0
+Literal influence running time: 0.350435 seconds
+wordchurch seqInfl= 0.0816
+Literal influence running time: 0.502764 seconds
+hasImgsteepleonbuilding seqInfl= 0.0112
+Literal influence running time: 0.489642 seconds
+hasQbuildingisWHAT seqInfl= 0.0167
+Literal influence running time: 0.57826 seconds
+simbackgroundsteeple seqInfl= 0
+Literal influence running time: 0.470658 seconds
+simbuildingbuilding seqInfl= 0.0153
+Literal influence running time: 0.491512 seconds
+simchurchbuilding seqInfl= 0
+Literal influence running time: 0.514734 seconds
+simchurchsteeple seqInfl= 0.044
+Literal influence running time: 0.499532 seconds
+siminon seqInfl= 0
+Literal influence running time: 0.681817 seconds
+simiscolor seqInfl= 0.0105
+Literal influence running time: 0.597364 seconds
+hasImgcrossonbuilding seqInfl= 0.0031
+Literal influence running time: 0.639742 seconds
+simbackgroundbuilding seqInfl= 0.0036
+Literal influence running time: 0.624862 seconds
+simbackgroundcross seqInfl= 0
+Literal influence running time: 0.666999 seconds
+simbuildingon seqInfl= 0.0112
+Literal influence running time: 0.565193 seconds
+simchurchcross seqInfl= 0.0356
+Literal influence running time: 0.61842 seconds
+hasImgtreebehindfence seqInfl= 0.0008
+Literal influence running time: 0.669534 seconds
+simbackgroundfence seqInfl= 0.0017
+Literal influence running time: 0.669114 seconds
+simbuildingbehind seqInfl= 0.0005
+Literal influence running time: 0.623679 seconds
+simchurchtree seqInfl= 0.0105
+Literal influence running time: 0.677308 seconds
+simbuildingbackground seqInfl= 0.0046
+Literal influence running time: 0.656853 seconds
+simisin seqInfl= 0.0054
+Literal influence running time: 0.673246 seconds
+simbackgroundtree seqInfl= 0
+Literal influence running time: 0.644127 seconds
+simbuildingfence seqInfl= 0.0025
+Literal influence running time: 0.673867 seconds
+simchurchfence seqInfl= 0
+Literal influence running time: 0.703102 seconds
+siminbehind seqInfl= 0
+Literal influence running time: 0.608661 seconds
+simison seqInfl= 0.109
+Literal influence running time: 0.65534 seconds
+simisbehind seqInfl= 0.0046
+Literal influence running time: 0.639059 seconds
+simchurchbackground seqInfl= 0
+Literal influence running time: 0.686814 seconds
+siminin seqInfl= 0
+Literal influence running time: 0.655919 seconds
+simbackgroundgrey seqInfl= 0.007
+Literal influence running time: 0.660077 seconds
+simbuildingcolor seqInfl= 0.0098
+Literal influence running time: 0.659012 seconds
+r2 seqInfl= 0.0253
+Total number of literals: 47
+Sequential influence running time: 27.389 seconds
+Sequential maxInfluence Literal: simison 0.109
+

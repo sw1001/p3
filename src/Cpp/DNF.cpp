@@ -32,32 +32,63 @@ vector< vector< Literal > > DNF::getLambda() {
     return lambda;
 }
 
+
 void DNF::setLambda(map<string, double> p){
     //read in the string then split it into monomials. 
     //assume the string is the following format: (x1*x2)+(x2*x4*x6)+...
     //loop through the string and convert it to a vector  and store it in dnf
-    /*
-    //convert string to a 2D vector
-    vector <Literal> m(0);
+    int s = dnf_vector.size();
+    for (int i = 0; i < s; i++) {
+        vector <Literal> m(0);
+        int si = dnf_vector[i].size();
+        for (int j = 0; j < si; j++) {
+            //cout<<dnf_vector[i][j]<<" ";
+            Literal xi(dnf_vector[i][j], p[dnf_vector[i][j]]);
+            m.push_back(xi);        
+            //cout<<p[dnf_vector[i][j]]<<endl;
+        }
+		lambda.push_back(m);
+    }
     
-    Literal x1("x1", 0.75);
-    Literal x2("x2", 0.25);
-    Literal x3("x3", 0.125);
-    Literal x4("x4", 0.2);
-    
-    m.push_back(x1);
-    m.push_back(x2);
-    lambda.push_back(m);
-    m.pop_back();
-    m.push_back(x3);
-    lambda.push_back(m);
-    m.pop_back();
-    m.pop_back();
-    m.push_back(x2);
-    m.push_back(x3);
-    m.push_back(x4);
-    lambda.push_back(m);
-    */
+}
+
+
+/*
+void DNF::setLambda(map<string, double> p){
+    //read in the string then split it into monomials. 
+    //assume the string is the following format: (x1*x2)+(x2*x4*x6)+...
+    //loop through the string and convert it to a vector  and store it in dnf
+    int s = dnf_vector.size();
+    for (int i = 0; i < s; i++) {
+        vector <Literal> m(0);
+        int si = dnf_vector[i].size();
+        int istrustpath = 0;
+        for (int j = 0; j < si; j++) {
+            //cout<<dnf_vector[i][j]<<" ";
+            if(p.find(dnf_vector[i][j]) == p.end()){
+            	istrustpath = 1;
+            	break;         	
+            }
+            else{
+            	Literal xi(dnf_vector[i][j], p[dnf_vector[i][j]]);
+            	m.push_back(xi);
+            }
+            //cout<<p[dnf_vector[i][j]]<<endl;
+        }
+        if(istrustpath == 0){
+        	cout<<"msize="<<m.size()<<endl;
+        	lambda.push_back(m);
+        }
+    }
+}
+*/
+
+/*
+void DNF::setLambda(map<string, double> p){
+    //read in the string then split it into monomials. 
+    //assume the string is the following format: (x1*x2)+(x2*x4*x6)+...
+    //loop through the string and convert it to a vector  and store it in dnf
+
     int s = dnf_vector.size();
     for (int i = 0; i < s; i++) {
         vector <Literal> m(0);
@@ -65,15 +96,35 @@ void DNF::setLambda(map<string, double> p){
         for (int j = 0; j < si; j++) {
             //cout<<dnf_vector[i][j]<<endl;
             //cout<<p["x1"]<<endl;
-            Literal xi(dnf_vector[i][j], p[dnf_vector[i][j]]);
+            double prob = 0.0;
+            if (p.find(dnf_vector[i][j]) != p.end()) {
+                prob = p[dnf_vector[i][j]];
+            }
+            Literal xi(dnf_vector[i][j], prob);
             //cout<<p[dnf_vector[i][j]]<<endl;
             m.push_back(xi);
         }
         lambda.push_back(m);
     }
-    
+    for (vector < vector<Literal> >::iterator it = lambda.begin(); it != lambda.end();) {
+        vector <Literal> monomial = *it;
+        bool isZero = false;
+        for (vector <Literal>::iterator it2 = monomial.end(); it2 != monomial.begin(); it2--) {
+            if (it2->getProb() == 0.0 || it2->getProb() == NULL) {
+                isZero = true;
+                break;
+            }
+        }
+        if (isZero) {
+            it = lambda.erase(it);
+        } else {
+            ++it;
+        }
+    }
 
 }
+*/
+
 
 map<string, double> DNF::getProbs() {
     return probs;

@@ -54,6 +54,70 @@ vector < vector <Literal> > Suff::findMatch(vector < vector <Literal> > lambda) 
     }
     return match;
 }
+/*
+vector< vector<Literal> > Suff::findSuff(vector< vector<Literal> > lambda, double epsilon) {
+    sort(lambda.begin(), lambda.end(), [](const vector<Literal> lhs, const vector<Literal> rhs) {
+        double p_lhs = 1.0;
+        for (int i = 0; i < lhs.size(); i++) {
+            p_lhs *= lhs[i].getProb();
+        }
+
+        double p_rhs = 1.0;
+        for (int i = 0; i < rhs.size(); i++) {
+            p_rhs *= rhs[i].getProb();
+        }
+
+        return p_lhs < p_rhs;
+    });
+    //Suff::printProv(lambda);
+    //TODO: remove monomials whose probabilities equal to zero
+    for (vector < vector<Literal> >::iterator it = lambda.begin(); it != lambda.end();) {
+        vector <Literal> monomial = *it;
+        bool isZero = false;
+        for (vector <Literal>::iterator it2 = monomial.end(); it2 != monomial.begin(); it2--) {
+            if (it2->getProb() == 0.0 || it2->getProb() == NULL) {
+                isZero = true;
+                break;
+            }
+        }
+        if (isZero) {
+            it = lambda.erase(it);
+        } else {
+            ++it;
+        }
+    }
+    double pLambda = probMC(lambda);
+    double t = pLambda - epsilon;
+
+    int l = 0;
+    int r = lambda.size()-1;
+    while(l <= r){
+        int m = floor((l+r)/2);
+        vector< vector<Literal> > v_temp(0);
+        vector< vector<Literal> > v_temp1(0);
+        v_temp.assign(lambda.begin()+m,lambda.end());
+        v_temp1.assign(lambda.begin()+m+1,lambda.end());
+        //copy(lambda.begin()+m,lambda.end(),v_temp.begin());
+        //copy(lambda.begin()+m+1,lambda.end(),v_temp1.begin());
+        double p = probMC(v_temp);
+        double p1 = probMC(v_temp1);
+        if(p < t && p1 < t) {
+            //cut less
+            r = m;
+        } else if(p > t && p1 > t) {
+            //cut more
+            l = m;
+        } else if(p > t && p1 < t) {
+            //right there
+            return v_temp;
+        } else {
+            cout<<"Not found! "<<endl;
+        }
+    }
+
+    return lambda;
+}
+*/
 
 vector< vector<Literal> > Suff::findSuff(vector< vector<Literal> > lambda, double epsilon) {
     sort(lambda.begin(), lambda.end(), [](const vector<Literal> lhs, const vector<Literal> rhs) {
@@ -72,34 +136,12 @@ vector< vector<Literal> > Suff::findSuff(vector< vector<Literal> > lambda, doubl
 	
 	clock_t tmc = clock();
     double pLambda = probMC(lambda);
-    double t = pLambda - epsilon * pLambda;
+    double t = pLambda - epsilon;
     tmc = clock()-tmc;
-    cout<<endl<<"suffcount=0"<<"  "<<"MC running time: "<<((float)tmc)/CLOCKS_PER_SEC<<" seconds"<<endl;
+    cout<<"t="<<t<<endl;
+    cout<<"suffcount=0"<<"  "<<"MC running time: "<<((float)tmc)/CLOCKS_PER_SEC<<" seconds"<<endl<<endl;
     
-    /*
-    while (1) {
-        for (int i = 0; i < 10; i ++)
-            lambda.erase(lambda.begin());
-        double current = probMC(lambda);
-        if (pLambda - current > epsilon) break;
-    }
-
-    return lambda;
-    */
-    /*
-    function binary_search(A, n, T):
-    L := 0
-    R := n − 1
-    while L <= R:
-        m := floor((L + R) / 2)
-        if A[m] < T:
-            L := m + 1
-        else if A[m] > T:
-            R := m - 1
-        else:
-            return m
-    return unsuccessful
-     */
+  
     int l = 0;
     int r = lambda.size()-1;
     int suffcount = 1;
@@ -115,8 +157,8 @@ vector< vector<Literal> > Suff::findSuff(vector< vector<Literal> > lambda, doubl
         double p = probMC(v_temp);
         double p1 = probMC(v_temp1);
         tmc = clock()-tmc;
-        cout<<endl<<"suffcount="<<suffcount<<"  ";
-        cout<<"MC running time: "<<((float)tmc)/CLOCKS_PER_SEC<<" seconds"<<endl;
+        cout<<"p="<<p<<" "<<"p1="<<p1<<endl;
+        cout<<"suffcount="<<suffcount<<"  "<<"MC running time: "<<((float)tmc)/CLOCKS_PER_SEC<<" seconds"<<endl<<endl;
     	suffcount ++;
         if(p < t && p1 < t) {
             //cut less
@@ -134,6 +176,10 @@ vector< vector<Literal> > Suff::findSuff(vector< vector<Literal> > lambda, doubl
     }
 
 }
+
+
+
+
 /*
 vector< vector<Literal> > Suff::findSuff(vector< vector<Literal> > lambda, double epsilon) {
     vector< vector<Literal> > match = Suff::findMatch(lambda);
@@ -469,7 +515,7 @@ void Suff::setInfluence(vector < vector<Literal> >  sp) {
                 //double infl = p1 - p2;
                 double inflPrime = Suff::probMC2(sp_x_t, sp_x_f);
                 cout<<"Literal influence running time: "<<((float)(clock() - t1))/CLOCKS_PER_SEC<<" seconds"<<endl;
-                cout<<sp[i][j].getName()<</*" infl= "<<infl<<*/" paraInfl= "<<inflPrime<<endl;
+                cout<<sp[i][j].getName()<</*" infl= "<<infl<<*/" seqInfl= "<<inflPrime<<endl;
                 infl_x[sp[i][j].getName()] = inflPrime;               
 
             }
@@ -520,7 +566,7 @@ Literal Suff::maxInfluence() {
     double max = 0.0;
     string name = "";
     for(map<string, double>::const_iterator it = infl_x.begin(); it != infl_x.end(); ++it) {
-        if(it->second > max && it->first.compare("r1") != 0 && it->first.compare("r2") != 0 && it->first.compare("r3") != 0 && it->first.compare("ra") != 0) {
+        if(it->second > max && it->first.compare("r1") != 0 && it->first.compare("r2") != 0 && it->first.compare("r3") != 0 && it->first.compare("ra") != 0 && it->first.compare("wordchurch") != 0 && it->first.compare("wordbarn") != 0 && it->first.compare("wordhotel") != 0 && it->first.compare("wordhouse") != 0) {
             max = it->second;
             name = it->first;
         }
