@@ -46,6 +46,7 @@ public:
     void setInfluence(vector < vector<Literal> >);
     vector < vector<Literal> > newLambda(vector < vector<Literal> >, Literal, bool);
     Literal maxInfluence();
+    void sortInfluence(string head = "");
     Literal findMostInfl(vector < vector<Literal> >);
     Literal p_findMostInfl(vector<vector<Literal> > sp, cl::Context context = ::context, cl::CommandQueue queue = ::queue, cl::Program program = ::program);
     vector<Literal> changedLiterals(vector< vector<Literal> >, double);

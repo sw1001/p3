@@ -17,6 +17,7 @@
 #include <time.h>
 #include <valarray>
 #include <random>
+#include <iomanip>
 
 using namespace std;
 
@@ -514,8 +515,8 @@ void Suff::setInfluence(vector < vector<Literal> >  sp) {
                 //double infl = ((p2/sp[i][j].getProb())-p)/(1-sp[i][j].getProb());
                 //double infl = p1 - p2;
                 double inflPrime = Suff::probMC2(sp_x_t, sp_x_f);
-                cout<<"Literal influence running time: "<<((float)(clock() - t1))/CLOCKS_PER_SEC<<" seconds"<<endl;
-                cout<<sp[i][j].getName()<</*" infl= "<<infl<<*/" seqInfl= "<<inflPrime<<endl;
+                //cout<<"Literal influence running time: "<<((float)(clock() - t1))/CLOCKS_PER_SEC<<" seconds"<<"		";
+                //cout<<sp[i][j].getName()<</*" infl= "<<infl<<*/" seqInfl= "<<inflPrime<<endl;
                 infl_x[sp[i][j].getName()] = inflPrime;               
 
             }
@@ -573,6 +574,29 @@ Literal Suff::maxInfluence() {
     }
     return Literal(name, max);
 }
+
+void Suff::sortInfluence(string head){
+	vector<Literal> infl_tmp;
+	for(map<string, double>::const_iterator it = influence.begin(); it != influence.end(); ++it){
+		string name = it->first;
+		if(name.find(head) == 0 || head == ""){
+			Literal l(name, it->second);
+			infl_tmp.push_back(l);
+		}
+
+	}
+	
+	sort(infl_tmp.begin(), infl_tmp.end(), [](const Literal x, const Literal y){
+		return x.getProb() > y.getProb();
+	});
+	for(int i = 0; i < infl_tmp.size(); ++i){
+		cout<<setw(35)<<left<<infl_tmp[i].getName();
+		cout<<"seqInfl="<<infl_tmp[i].getProb()<<endl;
+	}
+	
+}
+
+
 
 Literal Suff::findMostInfl(vector<vector<Literal> > sp) {
     map <string, double> infl_x;

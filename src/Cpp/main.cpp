@@ -99,7 +99,7 @@ int main(int argc, char** argv) {
     while(prov.find("@n257") != string::npos){
     	prov.replace(prov.find("@n257"), 5, "*");
     }
-    cout<<"prov: "<<prov<<endl;
+    //cout<<"prov: "<<prov<<endl;
     
 
 
@@ -203,8 +203,8 @@ int main(int argc, char** argv) {
 	t1 = clock()-t1;
 	cout<<"DNF running time: "<<((float)t1)/CLOCKS_PER_SEC<<" seconds"<<endl;
 	cout<<"DNF number of monomials: "<<dnf.getLambda().size()<<endl;
-	dnf.ShowStructure();
-	cout<<endl<<dnf.ToString()<<endl;
+	//dnf.ShowStructure();
+	//cout<<endl<<dnf.ToString()<<endl;
 	
 	Suff suff;    
 	//cout<<"Original formula: "<<endl;
@@ -212,31 +212,41 @@ int main(int argc, char** argv) {
 	double pLambda = suff.probMC(dnf.getLambda());
 	cout<<"pLambda = "<<pLambda<<endl;
 
-	
+	/*
 	clock_t tsuff = clock();
-	double epsilon = 1*0.01*pLambda; // approximation error
+	double epsilon = 1*0.1*pLambda; // approximation error
 	suff.setSuffProv(dnf.getLambda(), epsilon);
 	tsuff = clock() - tsuff;
 	cout<<"Suff lineage time: "<<((float) tsuff)/CLOCKS_PER_SEC<<" seconds"<<endl;
 	cout<<"Sufficient lineage: "<<endl;
 	suff.printProv(suff.getSuffProv());
 	cout<<endl;
+	*/
 	
-
 	cout<<"Influence:" <<endl;
 	clock_t t2 = clock();
-	//suff.setInfluence(dnf.getLambda());
-	suff.setInfluence(suff.getSuffProv());
-	Literal x = suff.maxInfluence();
+	suff.setInfluence(dnf.getLambda());
+	//suff.setInfluence(suff.getSuffProv());
 	t2 = clock() - t2;
 	cout<<"Sequential influence running time: "<<((float) t2)/CLOCKS_PER_SEC<<" seconds"<<endl;
-	cout<<"Sequential maxInfluence Literal: "<<x.getName()<<" "<<x.getProb()<<endl;
-	cout<<endl;
+	suff.sortInfluence("hasImg");
+	suff.sortInfluence("hasQ");
+	suff.sortInfluence("sim");
+	cout<<endl<<"Unique tuples:"<<endl;
+	suff.sortInfluence("simhouse");
+	//Literal x = suff.maxInfluence();
+	//cout<<"Sequential maxInfluence Literal: "<<x.getName()<<" "<<x.getProb()<<endl;
+	//cout<<endl;
+	
+	
+	
+	
+	
 										
 	/*
 	clock_t t3 = clock();
-	vector<Literal> vcl = suff.changedLiterals(dnf.getLambda(), 0.9);
-	//vector<Literal> vcl = suff.changedLiterals(suff.getSuffProv(), 0.9);
+	//vector<Literal> vcl = suff.changedLiterals(dnf.getLambda(), 0.9);
+	vector<Literal> vcl = suff.changedLiterals(suff.getSuffProv(), 0.9);
 	t3 = clock() - t3;
 	cout<<"Sequential changed literals running time: "<<((float)t3)/CLOCKS_PER_SEC<<" seconds"<<endl<<endl;
 	//cout<<"Changed Literals: "<<endl;
