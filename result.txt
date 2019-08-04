@@ -643,39 +643,39 @@ horse	color	brown	1
 horse	in	field	0.88
 cloud	in	sky	0.85
 building	with	roof	0.5
-steeple	on	building	1
+steeple	on	building	0.6
 only add "steeple", wrong, query "ans-church": 
-pLambda = 0.0165
+pLambda = 0.0124
 Influence:
 Total number of literals: 48
-Sequential influence running time: 46.4196 seconds
+Sequential influence running time: 43.9591 seconds
 hasImgsteepleonbuilding            seqInfl=0.0104
 hasImghorseinfield                 seqInfl=0.0028(min)
 hasImgbuildingwithroof             seqInfl=0.0026(almost min)
 hasImghorsecolorbrown              seqInfl=0.0013(min)
 hasImgcloudinsky                   seqInfl=0.0002(min, since there is no bias in sim.txt now, we should decrease the value of all these "irrelevant information"!)
-hasQbuildingisWHAT                 seqInfl=0.0127
+hasQbuildingisWHAT                 seqInfl=0.0092
 hasQbackgroundbuildingWHAT         seqInfl=0.0031
 hasQbuildinginbackground           seqInfl=0
-simison                            seqInfl=0.0661
-simchurchsteeple                   seqInfl=0.0359
-simchurchhorse                     seqInfl=0.0186
-simchurchcloud                     seqInfl=0.0146
-simiswith                          seqInfl=0.0107
-simisin                            seqInfl=0.0103
-simbuildingin                      seqInfl=0.0102
-simbuildingbuilding                seqInfl=0.0101
-simbuildingcolor                   seqInfl=0.0093
+simison                            seqInfl=0.0413
+simchurchsteeple                   seqInfl=0.0228
+simchurchhorse                     seqInfl=0.019
+simchurchcloud                     seqInfl=0.0148
+simiswith                          seqInfl=0.0108
+simisin                            seqInfl=0.0105
+simbuildingin                      seqInfl=0.0103
+simbuildingcolor                   seqInfl=0.0094
 simiscolor                         seqInfl=0.0085
-simbuildingon                      seqInfl=0.0075
+simbuildingbuilding                seqInfl=0.0068
 simbackgroundbrown                 seqInfl=0.0051
 simchurchbuilding                  seqInfl=0.0049
-simbackgroundroof                  seqInfl=0.0042
+simbuildingon                      seqInfl=0.0045
+simbackgroundroof                  seqInfl=0.0043
 simbackgroundfield                 seqInfl=0.0042
-simbuildingfield                   seqInfl=0.0036
-simbuildingwith                    seqInfl=0.0029
+simbuildingfield                   seqInfl=0.0037
+simbuildingwith                    seqInfl=0.0031
 simbuildingroof                    seqInfl=0.0029
-simbackgroundbuilding              seqInfl=0.0022
+simbackgroundbuilding              seqInfl=0.0015
 simbuildingbrown                   seqInfl=0.0004
 simbackgroundsky                   seqInfl=0.0003
 simbuildingsky                     seqInfl=0.0001
@@ -692,9 +692,9 @@ simbackgroundhorse                 seqInfl=0
 simbackgroundcloud                 seqInfl=0
 
 Unique tuples:
-simchurchsteeple                   seqInfl=0.0359(Influence values are similar for four answers. sim(church, steeple) is the highest, but sim(other, steeple) is not very low. However, sim(church, horse) and sim(church, cloud) are much lower than sim(other, horse/cloud), which means church is less related to the background information than other possible answers. If the weight for background information is just as high as the building's core information, this can confuse the system to give the final answer that is more related to the background.)  
-simchurchhorse                     seqInfl=0.0186
-simchurchcloud                     seqInfl=0.0146
+simchurchsteeple                   seqInfl=0.0228(Influence values are similar for four answers. sim(church, steeple) is the highest, but sim(other, steeple) is not very low. However, sim(church, horse) and sim(church, cloud) are much lower than sim(other, horse/cloud), which means church is less related to the background information than other possible answers. If the weight for background information is just as high as the building's core information, this can confuse the system to give the final answer that is more related to the background.)  
+simchurchhorse                     seqInfl=0.019
+simchurchcloud                     seqInfl=0.0148
 simchurchbuilding                  seqInfl=0.0049
 simchurchbrown                     seqInfl=0
 simchurchfield                     seqInfl=0
@@ -707,39 +707,39 @@ simchurchsky                       seqInfl=0
 
 
 only add "steeple", wrong, query "ans-barn":
-pLambda = 0.0224
+pLambda = 0.0194
 Influence:
 Total number of literals: 48
-Sequential influence running time: 42.2832 seconds
+Sequential influence running time: 41.6377 seconds
 hasImgsteepleonbuilding            seqInfl=0.0094
 hasImghorseinfield                 seqInfl=0.0054
 hasImgcloudinsky                   seqInfl=0.0048
 hasImgbuildingwithroof             seqInfl=0.0032
 hasImghorsecolorbrown              seqInfl=0.0027
-hasQbuildingisWHAT                 seqInfl=0.0133
 hasQbackgroundbuildingWHAT         seqInfl=0.0093
+hasQbuildingisWHAT                 seqInfl=0.0092
 hasQbuildinginbackground           seqInfl=0
-simison                            seqInfl=0.0618
-simisin                            seqInfl=0.0365
-simbuildingin                      seqInfl=0.0359
-simbarnsteeple                     seqInfl=0.0337
-simbarnhorse                       seqInfl=0.0189
+simison                            seqInfl=0.0377
+simisin                            seqInfl=0.0366
+simbuildingin                      seqInfl=0.0362
+simbarnsteeple                     seqInfl=0.0217
+simbarnhorse                       seqInfl=0.0191
 simbuildingcolor                   seqInfl=0.0183
-simiswith                          seqInfl=0.0136
-simbarncloud                       seqInfl=0.0135
+simbarncloud                       seqInfl=0.0137
+simiswith                          seqInfl=0.0137
 simiscolor                         seqInfl=0.0133
 simbackgroundfield                 seqInfl=0.0104
 simbackgroundbrown                 seqInfl=0.0095
-simbuildingbuilding                seqInfl=0.0094
-simbuildingon                      seqInfl=0.0075
-simbackgroundsky                   seqInfl=0.0073
-simbarnbuilding                    seqInfl=0.005
-simbuildingsky                     seqInfl=0.0047
+simbackgroundsky                   seqInfl=0.0074
+simbuildingbuilding                seqInfl=0.006
+simbarnbuilding                    seqInfl=0.0051
+simbuildingsky                     seqInfl=0.0049
+simbuildingon                      seqInfl=0.0046
 simbuildingfield                   seqInfl=0.0042
 simbackgroundroof                  seqInfl=0.0038
 simbuildingroof                    seqInfl=0.0031
-simbuildingwith                    seqInfl=0.0028
-simbackgroundbuilding              seqInfl=0.0017
+simbuildingwith                    seqInfl=0.0029
+simbackgroundbuilding              seqInfl=0.001
 simbuildingbrown                   seqInfl=0.0006
 simbarnsky                         seqInfl=0
 simbarnroof                        seqInfl=0
@@ -754,10 +754,10 @@ simbackgroundhorse                 seqInfl=0
 simbackgroundcloud                 seqInfl=0
 
 Unique tuples:
-simbarnsteeple                     seqInfl=0.0337
-simbarnhorse                       seqInfl=0.0189
-simbarncloud                       seqInfl=0.0135
-simbarnbuilding                    seqInfl=0.005
+simbarnsteeple                     seqInfl=0.0217
+simbarnhorse                       seqInfl=0.0191
+simbarncloud                       seqInfl=0.0137
+simbarnbuilding                    seqInfl=0.0051
 simbarnbrown                       seqInfl=0
 simbarnfield                       seqInfl=0
 simbarnroof                        seqInfl=0
@@ -768,38 +768,39 @@ simbarnsky                         seqInfl=0
 
 
 
+
 only add "steeple", wrong, query "ans-hotel":
-pLambda = 0.0153
+pLambda = 0.0121
 Influence:
 Total number of literals: 48
-Sequential influence running time: 46.9637 seconds
+Sequential influence running time: 53.5514 seconds
 hasImgsteepleonbuilding            seqInfl=0.0075
-hasImghorseinfield                 seqInfl=0.0036
+hasImghorseinfield                 seqInfl=0.0037
 hasImgbuildingwithroof             seqInfl=0.002
 hasImghorsecolorbrown              seqInfl=0.002
 hasImgcloudinsky                   seqInfl=0.0008
-hasQbuildingisWHAT                 seqInfl=0.0103
+hasQbuildingisWHAT                 seqInfl=0.0078
 hasQbackgroundbuildingWHAT         seqInfl=0.0043
 hasQbuildinginbackground           seqInfl=0
-simison                            seqInfl=0.0456
-simhotelsteeple                    seqInfl=0.0356
-simhotelhorse                      seqInfl=0.0186
-simisin                            seqInfl=0.0153
-simhotelcloud                      seqInfl=0.0147
+simison                            seqInfl=0.0282
+simhotelsteeple                    seqInfl=0.0226
+simhotelhorse                      seqInfl=0.0188
+simisin                            seqInfl=0.0154
+simhotelcloud                      seqInfl=0.0148
 simbuildingin                      seqInfl=0.0138
 simbuildingcolor                   seqInfl=0.0127
 simiscolor                         seqInfl=0.0107
-simiswith                          seqInfl=0.0085
-simbuildingbuilding                seqInfl=0.0072
+simiswith                          seqInfl=0.0086
 simbackgroundbrown                 seqInfl=0.0069
 simbackgroundfield                 seqInfl=0.0056
 simhotelbuilding                   seqInfl=0.0049
-simbuildingfield                   seqInfl=0.0045
-simbuildingon                      seqInfl=0.0042
+simbuildingbuilding                seqInfl=0.0048
+simbuildingfield                   seqInfl=0.0046
 simbackgroundroof                  seqInfl=0.0035
+simbuildingon                      seqInfl=0.0023
 simbuildingroof                    seqInfl=0.0023
-simbuildingwith                    seqInfl=0.002
-simbackgroundbuilding              seqInfl=0.0013
+simbuildingwith                    seqInfl=0.0021
+simbackgroundbuilding              seqInfl=0.0008
 simbackgroundsky                   seqInfl=0.0007
 simbuildingsky                     seqInfl=0.0005
 simbuildingbrown                   seqInfl=0.0004
@@ -816,9 +817,9 @@ simbackgroundhorse                 seqInfl=0
 simbackgroundcloud                 seqInfl=0
 
 Unique tuples:
-simhotelsteeple                    seqInfl=0.0356
-simhotelhorse                      seqInfl=0.0186
-simhotelcloud                      seqInfl=0.0147
+simhotelsteeple                    seqInfl=0.0226
+simhotelhorse                      seqInfl=0.0188
+simhotelcloud                      seqInfl=0.0148
 simhotelbuilding                   seqInfl=0.0049
 simhotelbrown                      seqInfl=0
 simhotelfield                      seqInfl=0
@@ -830,62 +831,64 @@ simhotelsky                        seqInfl=0
 
 
 
+
 only add "steeple", wrong, query "ans-house":
-pLambda = 0.0179
+pLambda = 0.0151
 Influence:
 Total number of literals: 48
-Sequential influence running time: 45.1557 seconds
+Sequential influence running time: 53.2005 seconds
 hasImgsteepleonbuilding            seqInfl=0.0065
-hasImghorseinfield                 seqInfl=0.0049
+hasImghorseinfield                 seqInfl=0.005
 hasImgbuildingwithroof             seqInfl=0.0039
 hasImghorsecolorbrown              seqInfl=0.0029
 hasImgcloudinsky                   seqInfl=0.0017
-hasQbuildingisWHAT                 seqInfl=0.0111
-hasQbackgroundbuildingWHAT         seqInfl=0.0062
+hasQbuildingisWHAT                 seqInfl=0.0089
+hasQbackgroundbuildingWHAT         seqInfl=0.0063
 hasQbuildinginbackground           seqInfl=0
-simison                            seqInfl=0.0369
-simhousesteeple                    seqInfl=0.0348
-simisin                            seqInfl=0.0296
+simisin                            seqInfl=0.0299
 simbuildingin                      seqInfl=0.0278
-simhousehorse                      seqInfl=0.0184
-simbuildingcolor                   seqInfl=0.0172
+simison                            seqInfl=0.0226
+simhousesteeple                    seqInfl=0.0221
+simhousehorse                      seqInfl=0.0186
+simbuildingcolor                   seqInfl=0.0174
 simiswith                          seqInfl=0.0146
-simiscolor                         seqInfl=0.0145
-simhousecloud                      seqInfl=0.0143
+simiscolor                         seqInfl=0.0146
+simhousecloud                      seqInfl=0.0144
 simbackgroundbrown                 seqInfl=0.0109
-simbackgroundfield                 seqInfl=0.0078
-simbuildingbuilding                seqInfl=0.0064
-simbuildingfield                   seqInfl=0.0059
+simbackgroundfield                 seqInfl=0.0079
+simbuildingfield                   seqInfl=0.006
 simbackgroundroof                  seqInfl=0.0055
 simhousebuilding                   seqInfl=0.0047
+simbuildingbuilding                seqInfl=0.0042
 simbuildingroof                    seqInfl=0.0038
+simbuildingwith                    seqInfl=0.0036
 simbackgroundsky                   seqInfl=0.0035
-simbuildingwith                    seqInfl=0.0034
-simbuildingon                      seqInfl=0.0034
 simbuildingsky                     seqInfl=0.0022
-simbackgroundbuilding              seqInfl=0.0011
-simbuildingbrown                   seqInfl=0.0005
+simbuildingon                      seqInfl=0.0019
+simbuildingbrown                   seqInfl=0.0006
+simbackgroundbuilding              seqInfl=0.0006
 simhousebrown                      seqInfl=0
 simhousefield                      seqInfl=0
 simhouseroof                       seqInfl=0
 simhousesky                        seqInfl=0
+simbackgroundsteeple               seqInfl=0
 simincolor                         seqInfl=0
 siminin                            seqInfl=0
 siminon                            seqInfl=0
 siminwith                          seqInfl=0
-simbackgroundsteeple               seqInfl=0
 simbackgroundhorse                 seqInfl=0
 simbackgroundcloud                 seqInfl=0
 
 Unique tuples:
-simhousesteeple                    seqInfl=0.0348
-simhousehorse                      seqInfl=0.0184
-simhousecloud                      seqInfl=0.0143
+simhousesteeple                    seqInfl=0.0221
+simhousehorse                      seqInfl=0.0186
+simhousecloud                      seqInfl=0.0144
 simhousebuilding                   seqInfl=0.0047
 simhousebrown                      seqInfl=0
 simhousefield                      seqInfl=0
 simhouseroof                       seqInfl=0
 simhousesky                        seqInfl=0
+
 
 
 
