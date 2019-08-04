@@ -131,7 +131,7 @@ simbuildingroof                    seqInfl=0.0038
 simbarnbuilding                    seqInfl=0.003
 
 Unique tuples:
-simbarncross                       seqInfl=0.0328!
+simbarncross                       seqInfl=0.0328!(should be decrease drastically)
 simbarnhorse                       seqInfl=0.0185
 simbarncloud                       seqInfl=0.0146
 simbarnbuilding                    seqInfl=0.003
@@ -692,7 +692,7 @@ simbackgroundhorse                 seqInfl=0
 simbackgroundcloud                 seqInfl=0
 
 Unique tuples:
-simchurchsteeple                   seqInfl=0.0359
+simchurchsteeple                   seqInfl=0.0359(Influence values are similar for four answers. sim(church, steeple) is the highest, but sim(other, steeple) is not very low. However, sim(church, horse) and sim(church, cloud) are much lower than sim(other, horse/cloud), which means church is less related to the background information than other possible answers. If the weight for background information is just as high as the building's core information, this can confuse the system to give the final answer that is more related to the background.)  
 simchurchhorse                     seqInfl=0.0186
 simchurchcloud                     seqInfl=0.0146
 simchurchbuilding                  seqInfl=0.0049
