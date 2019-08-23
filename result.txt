@@ -1,3 +1,24 @@
+ra 1.0 simRep1(@Local, Z, X, S) :- sim(@Local, Z, X, S). 
+rb 1.0 simRep2(@Local, Z, X, S) :- sim(@Local, Z, X, S).
+
+
+r1 1.0 hasImgAns(@Local, Z, X, Rln, Y) :- word(@Local, Z, S1), hasImg(@Local, X, Rln, Y, S2),
+		     	     	      sim(@Local, Z, X, S3), simRep1(@Local, Z, Y, S4).
+
+r2 0.8 candidate(@Local, Z) :- word(@Local, Z, S). 
+
+r3 1.0 candidate(@Local, Z) :- word(@Local, Z, S1), hasQ(@Local, Y, Rln, X, S2), hasImgAns(@Local, Z, X1, Rln1, Y1), 
+   		     	     sim(@Local, Rln, Rln1, S3), simRep1(@Local, Y, Y1, S4), simRep2(@Local, X, X1, S5). 
+
+r4 1.0 ans(@Local, Z) :- candidate(@Local, Z), hasQ(@Local, X, Rln, Qtn, S1), Qtn == "WHAT",
+	       	       hasImg(@Local, Z, Rln, X, S2). 
+
+r5 0.9 ans(@Local, Z) :- candidate(@Local, Z), hasQ(@Local, X, Rln, Qtn, S1), Qtn == "WHAT",
+	       	       hasImg(@Local, Z1, Rln, X, S2), sim(@Local, Z, Z1, S3). 
+
+r6 0.8 ans(@Local, Z) :- candidate(@Local, Z), hasQ(@Local, X, Rln, Qtn, S1), Qtn == "WHAT",
+	       	       hasImg(@Local, Z1, Rln1, X1, S2), sim(@Local, Z, Z1, S3), simRep1(@Local, Rln, Rln1, S4), simRep2(@Local, X, X1, S5). 
+	       	       
 horse	color	brown	1
 horse	in	field	0.88
 cloud	in	sky	0.85
