@@ -32,7 +32,7 @@ vector< vector< Literal > > DNF::getLambda() {
     return lambda;
 }
 
-
+/*
 void DNF::setLambda(map<string, double> p){
     //read in the string then split it into monomials. 
     //assume the string is the following format: (x1*x2)+(x2*x4*x6)+...
@@ -51,9 +51,9 @@ void DNF::setLambda(map<string, double> p){
     }
     
 }
+*/
 
 
-/*
 void DNF::setLambda(map<string, double> p){
     //read in the string then split it into monomials. 
     //assume the string is the following format: (x1*x2)+(x2*x4*x6)+...
@@ -76,12 +76,12 @@ void DNF::setLambda(map<string, double> p){
             //cout<<p[dnf_vector[i][j]]<<endl;
         }
         if(istrustpath == 0){
-        	cout<<"msize="<<m.size()<<endl;
+        	//cout<<"msize="<<m.size()<<endl;
         	lambda.push_back(m);
         }
     }
 }
-*/
+
 
 /*
 void DNF::setLambda(map<string, double> p){
@@ -293,11 +293,11 @@ DNF::Evaluate() {
 
 void
 DNF::ShowStructure() {
-    for (size_t i=0; i<dnf_vector.size(); i++) {
+    for (size_t i=0; i<lambda.size(); i++) {
         cout << setw(10) << "vector[" << i << "] ";
-        for (size_t j=0; j<dnf_vector[i].size(); j++) {
-            cout << setw(6) << dnf_vector[i][j];
-            if (j != dnf_vector[i].size() - 1) {
+        for (size_t j=0; j<lambda[i].size(); j++) {
+            cout << setw(6) << lambda[i][j].getName();
+            if (j != lambda[i].size() - 1) {
                 cout << ", ";
             }
         }
@@ -308,16 +308,16 @@ DNF::ShowStructure() {
 string
 DNF::ToString(){
     string s = "";
-    for (size_t i=0; i<dnf_vector.size(); i++) {
+    for (size_t i=0; i<lambda.size(); i++) {
         s += "(";
-        for (size_t j=0; j<dnf_vector[i].size(); j++) {
-            s += dnf_vector[i][j];
-            if (j != dnf_vector[i].size() - 1) {
+        for (size_t j=0; j<lambda[i].size(); j++) {
+            s += lambda[i][j].getName();
+            if (j != lambda[i].size() - 1) {
                 s += "*";
             }
         }
         s += ")";
-        if (i != dnf_vector.size() - 1) {
+        if (i != lambda.size() - 1) {
             s += " + ";
         }
     }

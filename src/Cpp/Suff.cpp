@@ -515,8 +515,8 @@ void Suff::setInfluence(vector < vector<Literal> >  sp) {
                 //double infl = ((p2/sp[i][j].getProb())-p)/(1-sp[i][j].getProb());
                 //double infl = p1 - p2;
                 double inflPrime = Suff::probMC2(sp_x_t, sp_x_f);
-                //cout<<"Literal influence running time: "<<((float)(clock() - t1))/CLOCKS_PER_SEC<<" seconds"<<"		";
-                //cout<<sp[i][j].getName()<</*" infl= "<<infl<<*/" seqInfl= "<<inflPrime<<endl;
+                cout<<"Literal influence running time: "<<((float)(clock() - t1))/CLOCKS_PER_SEC<<" seconds"<<"		";
+                cout<<sp[i][j].getName()<</*" infl= "<<infl<<*/" seqInfl= "<<inflPrime<<endl;
                 infl_x[sp[i][j].getName()] = inflPrime;               
 
             }

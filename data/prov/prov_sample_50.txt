@@ -1,0 +1,2 @@
+(r3@n257((ra@n257(((r1@n257(trust1-4))+(r2@n257(trust1-7*((r1@n257(trust7-4)))))+(r2@n257(trust1-19*(r1@n257(trust19-4))))+(r2@n257(trust1-31*((r1@n257(trust31-4)))))+(r2@n257(trust1-2*((r1@n257(trust2-4)))))+(r2@n257(trust1-6*((r1@n257(trust6-4))))))))*((r1@n257(trust4-1))+(r2@n257(trust4-2*((r1@n257(trust2-1)))))+(r2@n257(trust4-31*((r1@n257(trust31-1)))))+(r2@n257(trust4-6*((r1@n257(trust6-1)))))+(r2@n257(trust4-13*((r2@n257(trust13-6*((r1@n257(trust6-1))))))))))) 
+

@@ -1,0 +1,1 @@
+(r3*((ra*(((r1*(trust1-2)))))*((r1*(trust2-1))+(r2*(trust2-13*((r1*(trust13-1))+(r2*(trust13-7*(r1*(trust7-1*trust7-1))))))))))
