@@ -8,32 +8,18 @@
 
 #define N 70 // N > index, which is the total number of literals
 #define BASE 4294967296UL
-//! Represents the state of a particular generator
-typedef struct{ uint x; uint c; } mwc64x_state_t;
 
-enum{ MWC64X_A = 4294883355U };
-enum{ MWC64X_M = 18446383549859758079UL };
-
-void MWC64X_Step(mwc64x_state_t *s)
+uint MWC64X(uint2 *state)
 {
-	uint X=s->x, C=s->c;
-	
-	uint Xn=MWC64X_A*X+C;
-	uint carry=(uint)(Xn<C);				// The (Xn<C) will be zero or one for scalar
-	uint Cn=mad_hi(MWC64X_A,X,carry);  
-	
-	s->x=Xn;
-	s->c=Cn;
+    enum { A=4294883355U};
+    uint x=(*state).x, c=(*state).y;  // Unpack the state
+    uint res=x^c;                     // Calculate the result
+    uint hi=mul_hi(x,A);              // Step the RNG
+    x=x*A+c;
+    c=hi+(x<c);
+    *state=(uint2)(x,c)               // Pack the state back up
+    return res;                       // Return the next result
 }
-
-//! Return a 32-bit integer in the range [0..2^32)
-uint MWC64X_NextUint(mwc64x_state_t *s)
-{
-	uint res=s->x ^ s->c;
-	MWC64X_Step(s);
-	return res;
-}
-
 
 
 __kernel void setInfluence(const int literals, const int size, const int dim1_size, __global int* lambdas, __global float* lambdap, __global int* dim2_size, __global float* influence){   
@@ -43,10 +29,13 @@ __kernel void setInfluence(const int literals, const int size, const int dim1_si
 	int assignment[N];
     //or try to get newlambda like original version does
     if(flag < literals){
-		mwc64x_state_t rng;
+		uint2 rng;
 		for(int i=0; i<count; i++){
 			for(int j=0; j<size; j++){
-			    float rand=MWC64X_NextUint(&rng)*1.0/BASE;
+			    uint randint=MWC64X(&rng);
+			    float rand=randint*1.0/BASE;
+			        if(flag == 1)
+			            printf("randint=%u",randint);
 				if(lambdap[j]<rand)
 					assignment[lambdas[j]]=0;
 				else
@@ -91,8 +80,9 @@ __kernel void setInfluence(const int literals, const int size, const int dim1_si
 		    sum += valuet-valuef;            
 		}
 		influence[flag] = 1.0*sum/count;
-		//printf("%d:", flag);
-		//printf("%f  ", influence[flag]);
+		printf("%d:", flag);
+		printf("sum=%d",sum);
+		printf("%f  ", influence[flag]);
 	}
 }  
 
