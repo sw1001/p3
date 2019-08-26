@@ -90,7 +90,7 @@ int main(int argc, char** argv) {
     }
     */
     //code to read prov from files
-    ifstream pfin("/home/chenyuan/p3/data/prov/prov_sample_200.txt");
+    ifstream pfin("/home/wuchenyuan/p3/data/prov/prov_sample_200.txt");
     stringstream buffer;
     buffer << pfin.rdbuf();
     string prov = buffer.str();
@@ -104,7 +104,7 @@ int main(int argc, char** argv) {
 
 
     //code to read trust data from files   
-    ifstream fin("/home/chenyuan/p3/data/trust/sample_200.csv");
+    ifstream fin("/home/wuchenyuan/p3/data/trust/sample_200.csv");
     string line;
     int i = 0;
     while (getline(fin, line))
