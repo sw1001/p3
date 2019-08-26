@@ -93,7 +93,7 @@ __kernel void setInfluence(const int literals, const int size, const int dim1_si
 		    sum += valuet-valuef;            
 		}
 		influence[flag] = 1.0*sum/count;
-		printf("%d:%f\t", flag, influence[flag]);
+		printf("sum%d:%d\t", flag, sum);
 	}
 }  
 
