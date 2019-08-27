@@ -949,7 +949,7 @@ castle	0.25
 hotel	0.25
 
 
-stadium:
+###stadium:
 building	is	large	1
 building	with	windows	0.87
 grass	on	field	0.37
@@ -1048,7 +1048,7 @@ Parallel influence running time: 1.11859 seconds
 Parallel maxInfluence Literal: simbuildinglarge Infl=0.0356
 
 
-terminal:
+###terminal:
 cars	on	road	1
 planes	are	parked	0.72
 white	color	plane	0.32
@@ -1162,7 +1162,7 @@ index1= 50 size= 971 dim1_size= 60
 Parallel influence running time: 1.13992 seconds
 Parallel maxInfluence Literal: simterminalplanes Infl=0.0426
 
-hotel:
+###hotel:
 building	is	large	1
 building	many	windows	1
 house	with	roof	0.54
@@ -1267,5 +1267,248 @@ index1= 46 size= 954 dim1_size= 60
 
 Parallel influence running time: 1.10934 seconds
 Parallel maxInfluence Literal: simbuildinglarge Infl=0.0443
+
+
+
+
+
+
+
+
+
+2019/08/27 evaluation:
+###200 nodes
+Using OpenCL device: GeForce GTX 1080 Ti
+total number of element: 199
+
+DNF running time: 0.008059 seconds
+DNF number of monomials: 6
+
+(r1*r2*r3*ra*trust1-57*trust110-1*trust4-57*trust57-110*trust57-4) + (r1*r2*r3*ra*trust1-57*trust33-1*trust4-57*trust57-33*trust57-4) + (r1*r2*r3*ra*trust1-57*trust4-1*trust57-4) + (r1*r2*r3*ra*trust1-57*trust4-57*trust57-1*trust57-4) + (r1*r2*r3*ra*trust1-57*trust4-57*trust57-4*trust57-64*trust64-1) + (r1*r2*r3*ra*trust1-57*trust4-57*trust57-4*trust57-7*trust7-1)
+pLambda = 0.4711
+Influence:
+Literal influence running time: 0.011316 seconds		r1 seqInfl= 0.4771
+Literal influence running time: 0.011445 seconds		r2 seqInfl= 0.4771
+Literal influence running time: 0.011313 seconds		r3 seqInfl= 0.4771
+Literal influence running time: 0.011436 seconds		ra seqInfl= 0.4771
+Literal influence running time: 0.011153 seconds		trust1-57 seqInfl= 0.6001
+Literal influence running time: 0.019699 seconds		trust110-1 seqInfl= 0
+Literal influence running time: 0.013614 seconds		trust4-57 seqInfl= 0
+Literal influence running time: 0.01945 seconds			trust57-110 seqInfl= 0
+Literal influence running time: 0.009245 seconds		trust57-4 seqInfl= 0.8026
+Literal influence running time: 0.019544 seconds		trust33-1 seqInfl= 0
+Literal influence running time: 0.019406 seconds		trust57-33 seqInfl= 0
+Literal influence running time: 0.020909 seconds		trust4-1 seqInfl= 0.1208
+Literal influence running time: 0.020512 seconds		trust57-1 seqInfl= 0
+Literal influence running time: 0.020626 seconds		trust57-64 seqInfl= 0
+Literal influence running time: 0.020815 seconds		trust64-1 seqInfl= 0
+Literal influence running time: 0.020598 seconds		trust57-7 seqInfl= 0
+Literal influence running time: 0.020587 seconds		trust7-1 seqInfl= 0
+Total number of literals: 17
+Sequential influence running time: 0.281741 seconds
+Sequential maxInfluence Literal: trust57-4 0.8026
+
+index1= 17 size= 51 dim1_size= 6
+infl0:0.476900	infl1:0.476900	infl2:0.476900	infl3:0.476900	infl4:0.597400	infl5:0.000000	infl6:0.000000	infl7:0.000000	infl8:0.796500	infl9:0.000000	infl10:0.000000	infl11:0.122200	infl12:0.000000	infl13:0.000000	infl14:0.000000	infl15:0.000000infl16:0.000000	
+Parallel influence running time: 0.257681 seconds
+Parallel maxInfluence Literal: trust57-4 Infl=0.7965
+
+
+###80 nodes
+Using OpenCL device: GeForce GTX 1080 Ti
+total number of element: 79
+
+DNF running time: 0.000501 seconds
+DNF number of monomials: 10
+
+(r1*r2*r3*ra*trust1-19*trust19-4*trust4-1) + (r1*r2*r3*ra*trust1-19*trust19-4*trust4-57*trust57-1) + (r1*r2*r3*ra*trust1-31*trust13-1*trust4-1) + (r1*r2*r3*ra*trust1-31*trust13-1*trust4-57*trust57-1) + (r1*r2*r3*ra*trust1-4*trust4-57*trust57-1) + (r1*r2*r3*ra*trust1-57*trust4-1*trust57-4) + (r1*r2*r3*ra*trust1-57*trust4-57*trust57-1*trust57-4) + (r1*r2*r3*ra*trust1-61*trust4-1*trust61-4) + (r1*r2*r3*ra*trust1-61*trust4-57*trust57-1*trust61-4) + (r1*r3*ra*trust1-4*trust4-1)
+pLambda = 1
+Influence:
+Literal influence running time: 0.007637 seconds		r1 seqInfl= 1
+Literal influence running time: 0.009138 seconds		r2 seqInfl= 0
+Literal influence running time: 0.007505 seconds		r3 seqInfl= 1
+Literal influence running time: 0.00753 seconds			ra seqInfl= 1
+Literal influence running time: 0.011968 seconds		trust1-19 seqInfl= 0
+Literal influence running time: 0.010739 seconds		trust19-4 seqInfl= 0
+Literal influence running time: 0.014112 seconds		trust4-1 seqInfl= 0.3624
+Literal influence running time: 0.011669 seconds		trust4-57 seqInfl= 0
+Literal influence running time: 0.011731 seconds		trust57-1 seqInfl= 0
+Literal influence running time: 0.011831 seconds		trust1-31 seqInfl= 0
+Literal influence running time: 0.012799 seconds		trust13-1 seqInfl= 0
+Literal influence running time: 0.013445 seconds		trust1-4 seqInfl= 0.058
+Literal influence running time: 0.013039 seconds		trust1-57 seqInfl= 0
+Literal influence running time: 0.013031 seconds		trust57-4 seqInfl= 0
+Literal influence running time: 0.013274 seconds		trust1-61 seqInfl= 0
+Literal influence running time: 0.013152 seconds		trust61-4 seqInfl= 0
+Total number of literals: 16
+Sequential influence running time: 0.182686 seconds
+Sequential maxInfluence Literal: trust4-1 0.3624
+
+index1= 16 size= 72 dim1_size= 10
+infl0:1.000000	infl1:0.000000	infl2:1.000000	infl3:1.000000	infl4:0.000000	infl5:0.000000	infl6:0.360900	infl7:0.000000	infl8:0.000000	infl9:0.000000	infl10:0.000000	infl11:0.058100	infl12:0.000000	infl13:0.000000	infl14:0.000000	infl15:0.000000
+Parallel influence running time: 0.271566 seconds
+Parallel maxInfluence Literal: trust4-1 Infl=0.3609
+
+
+###50 nodes
+Using OpenCL device: GeForce GTX 1080 Ti
+total number of element: 50
+
+DNF running time: 0.000275 seconds
+DNF number of monomials: 30
+
+(r1*r2*r3*ra*trust1-19*trust13-6*trust19-4*trust4-13*trust6-1) + (r1*r2*r3*ra*trust1-19*trust19-4*trust2-1*trust4-2) + (r1*r2*r3*ra*trust1-19*trust19-4*trust31-1*trust4-31) + (r1*r2*r3*ra*trust1-19*trust19-4*trust4-1) + (r1*r2*r3*ra*trust1-19*trust19-4*trust4-6*trust6-1) + (r1*r2*r3*ra*trust1-2*trust13-6*trust2-4*trust4-13*trust6-1) + (r1*r2*r3*ra*trust1-2*trust2-1*trust2-4*trust4-2) + (r1*r2*r3*ra*trust1-2*trust2-4*trust31-1*trust4-31) + (r1*r2*r3*ra*trust1-2*trust2-4*trust4-1) + (r1*r2*r3*ra*trust1-2*trust2-4*trust4-6*trust6-1) + (r1*r2*r3*ra*trust1-31*trust13-6*trust31-4*trust4-13*trust6-1) + (r1*r2*r3*ra*trust1-31*trust2-1*trust31-4*trust4-2) + (r1*r2*r3*ra*trust1-31*trust31-1*trust31-4*trust4-31) + (r1*r2*r3*ra*trust1-31*trust31-4*trust4-1) + (r1*r2*r3*ra*trust1-31*trust31-4*trust4-6*trust6-1) + (r1*r2*r3*ra*trust1-4*trust13-6*trust4-13*trust6-1) + (r1*r2*r3*ra*trust1-4*trust2-1*trust4-2) + (r1*r2*r3*ra*trust1-4*trust31-1*trust4-31) + (r1*r2*r3*ra*trust1-4*trust4-6*trust6-1) + (r1*r2*r3*ra*trust1-6*trust13-6*trust4-13*trust6-1*trust6-4) + (r1*r2*r3*ra*trust1-6*trust2-1*trust4-2*trust6-4) + (r1*r2*r3*ra*trust1-6*trust31-1*trust4-31*trust6-4) + (r1*r2*r3*ra*trust1-6*trust4-1*trust6-4) + (r1*r2*r3*ra*trust1-6*trust4-6*trust6-1*trust6-4) + (r1*r2*r3*ra*trust1-7*trust13-6*trust4-13*trust6-1*trust7-4) + (r1*r2*r3*ra*trust1-7*trust2-1*trust4-2*trust7-4) + (r1*r2*r3*ra*trust1-7*trust31-1*trust4-31*trust7-4) + (r1*r2*r3*ra*trust1-7*trust4-1*trust7-4) + (r1*r2*r3*ra*trust1-7*trust4-6*trust6-1*trust7-4) + (r1*r3*ra*trust1-4*trust4-1)
+pLambda = 1
+Influence:
+Literal influence running time: 0.015107 seconds		r1 seqInfl= 1
+Literal influence running time: 0.016598 seconds		r2 seqInfl= 0
+Literal influence running time: 0.015481 seconds		r3 seqInfl= 1
+Literal influence running time: 0.015112 seconds		ra seqInfl= 1
+Literal influence running time: 0.02481 seconds			trust1-19 seqInfl= 0
+Literal influence running time: 0.023776 seconds		trust13-6 seqInfl= 0
+Literal influence running time: 0.021815 seconds		trust19-4 seqInfl= 0
+Literal influence running time: 0.025405 seconds		trust4-13 seqInfl= 0
+Literal influence running time: 0.024202 seconds		trust6-1 seqInfl= 0
+Literal influence running time: 0.027062 seconds		trust2-1 seqInfl= 0
+Literal influence running time: 0.026803 seconds		trust4-2 seqInfl= 0
+Literal influence running time: 0.027164 seconds		trust31-1 seqInfl= 0
+Literal influence running time: 0.026643 seconds		trust4-31 seqInfl= 0
+Literal influence running time: 0.028962 seconds		trust4-1 seqInfl= 0.043
+Literal influence running time: 0.027079 seconds		trust4-6 seqInfl= 0
+Literal influence running time: 0.028355 seconds		trust1-2 seqInfl= 0
+Literal influence running time: 0.027321 seconds		trust2-4 seqInfl= 0
+Literal influence running time: 0.026978 seconds		trust1-31 seqInfl= 0
+Literal influence running time: 0.027154 seconds		trust31-4 seqInfl= 0
+Literal influence running time: 0.029173 seconds		trust1-4 seqInfl= 0.0145
+Literal influence running time: 0.028484 seconds		trust1-6 seqInfl= 0
+Literal influence running time: 0.028043 seconds		trust6-4 seqInfl= 0
+Literal influence running time: 0.028528 seconds		trust1-7 seqInfl= 0
+Literal influence running time: 0.028225 seconds		trust7-4 seqInfl= 0
+Total number of literals: 24
+Sequential influence running time: 0.598422 seconds
+Sequential maxInfluence Literal: trust4-1 0.043
+
+index1= 24 size= 234 dim1_size= 30
+infl0:1.000000	infl1:0.000000	infl2:1.000000	infl3:1.000000	infl4:0.000000	infl5:0.000000	infl6:0.000000	infl7:0.000000	infl8:0.000000	infl9:0.000000	infl10:0.000000	infl11:0.000000	infl12:0.000000	infl13:0.043200	infl14:0.000000	infl15:0.000000infl16:0.000000	infl17:0.000000	infl18:0.000000	infl19:0.016200	infl20:0.000000	infl21:0.000000	infl22:0.000000	infl23:0.000000
+Parallel influence running time: 0.661561 seconds
+Parallel maxInfluence Literal: trust4-1 Infl=0.0432
+
+
+###200 nodes
+Using OpenCL device: Intel(R) Xeon(R) CPU E5-2630L v3 @ 1.80GHz
+total number of element: 199
+
+DNF running time: 0.019683 seconds
+DNF number of monomials: 6
+
+(r1*r2*r3*ra*trust1-57*trust110-1*trust4-57*trust57-110*trust57-4) + (r1*r2*r3*ra*trust1-57*trust33-1*trust4-57*trust57-33*trust57-4) + (r1*r2*r3*ra*trust1-57*trust4-1*trust57-4) + (r1*r2*r3*ra*trust1-57*trust4-57*trust57-1*trust57-4) + (r1*r2*r3*ra*trust1-57*trust4-57*trust57-4*trust57-64*trust64-1) + (r1*r2*r3*ra*trust1-57*trust4-57*trust57-4*trust57-7*trust7-1)
+pLambda = 0.4711
+Influence:
+Literal influence running time: 0.028916 seconds		r1 seqInfl= 0.4771
+Literal influence running time: 0.028844 seconds		r2 seqInfl= 0.4771
+Literal influence running time: 0.028923 seconds		r3 seqInfl= 0.4771
+Literal influence running time: 0.028855 seconds		ra seqInfl= 0.4771
+Literal influence running time: 0.028206 seconds		trust1-57 seqInfl= 0.6001
+Literal influence running time: 0.049561 seconds		trust110-1 seqInfl= 0
+Literal influence running time: 0.034928 seconds		trust4-57 seqInfl= 0
+Literal influence running time: 0.049128 seconds		trust57-110 seqInfl= 0
+Literal influence running time: 0.02405 seconds			trust57-4 seqInfl= 0.8026
+Literal influence running time: 0.049493 seconds		trust33-1 seqInfl= 0
+Literal influence running time: 0.049113 seconds		trust57-33 seqInfl= 0
+Literal influence running time: 0.053043 seconds		trust4-1 seqInfl= 0.1208
+Literal influence running time: 0.051704 seconds		trust57-1 seqInfl= 0
+Literal influence running time: 0.052285 seconds		trust57-64 seqInfl= 0
+Literal influence running time: 0.052354 seconds		trust64-1 seqInfl= 0
+Literal influence running time: 0.052265 seconds		trust57-7 seqInfl= 0
+Literal influence running time: 0.052408 seconds		trust7-1 seqInfl= 0
+Total number of literals: 17
+Sequential influence running time: 0.714244 seconds
+Sequential maxInfluence Literal: trust57-4 0.8026
+
+index1= 17 size= 51 dim1_size= 6
+sum0:4769	influence0:0.476900	sum10:0	influence10:0.000000	sum12:0	influence12:0.000000	sum6:0	influence6:0.000000	sum9:0	influence9:0.000000	sum8:7965	influence8:0.796500	sum11:1222	influence11:0.122200	sum4:5974	influence4:0.597400	sum1:4769	influence1:0.476900	sum7:0	influence7:0.000000	sum2:4769	influence2:0.476900	sum13:0	influence13:0.000000	sum5:0	sum14:0	influence14:0.000000	influence5:0.000000	sum15:0	influence15:0.000000	sum16:0	influence16:0.000000	sum3:4769	influence3:0.476900	
+Parallel influence running time: 0.052596 seconds
+Parallel maxInfluence Literal: trust57-4 Infl=0.7965
+
+
+###80 nodes
+Using OpenCL device: Intel(R) Xeon(R) CPU E5-2630L v3 @ 1.80GHz
+total number of element: 79
+
+DNF running time: 0.001056 seconds
+DNF number of monomials: 10
+
+(r1*r2*r3*ra*trust1-19*trust19-4*trust4-1) + (r1*r2*r3*ra*trust1-19*trust19-4*trust4-57*trust57-1) + (r1*r2*r3*ra*trust1-31*trust13-1*trust4-1) + (r1*r2*r3*ra*trust1-31*trust13-1*trust4-57*trust57-1) + (r1*r2*r3*ra*trust1-4*trust4-57*trust57-1) + (r1*r2*r3*ra*trust1-57*trust4-1*trust57-4) + (r1*r2*r3*ra*trust1-57*trust4-57*trust57-1*trust57-4) + (r1*r2*r3*ra*trust1-61*trust4-1*trust61-4) + (r1*r2*r3*ra*trust1-61*trust4-57*trust57-1*trust61-4) + (r1*r3*ra*trust1-4*trust4-1)
+pLambda = 1
+Influence:
+Literal influence running time: 0.019077 seconds		r1 seqInfl= 1
+Literal influence running time: 0.022976 seconds		r2 seqInfl= 0
+Literal influence running time: 0.019103 seconds		r3 seqInfl= 1
+Literal influence running time: 0.019137 seconds		ra seqInfl= 1
+Literal influence running time: 0.029332 seconds		trust1-19 seqInfl= 0
+Literal influence running time: 0.027183 seconds		trust19-4 seqInfl= 0
+Literal influence running time: 0.035213 seconds		trust4-1 seqInfl= 0.3624
+Literal influence running time: 0.029026 seconds		trust4-57 seqInfl= 0
+Literal influence running time: 0.02934 seconds			trust57-1 seqInfl= 0
+Literal influence running time: 0.030176 seconds		trust1-31 seqInfl= 0
+Literal influence running time: 0.032214 seconds		trust13-1 seqInfl= 0
+Literal influence running time: 0.03395 seconds			trust1-4 seqInfl= 0.058
+Literal influence running time: 0.033063 seconds		trust1-57 seqInfl= 0
+Literal influence running time: 0.033006 seconds		trust57-4 seqInfl= 0
+Literal influence running time: 0.033181 seconds		trust1-61 seqInfl= 0
+Literal influence running time: 0.033248 seconds		trust61-4 seqInfl= 0
+Total number of literals: 16
+Sequential influence running time: 0.459409 seconds
+Sequential maxInfluence Literal: trust4-1 0.3624
+
+index1= 16 size= 72 dim1_size= 10
+sum0:10000	influence0:1.000000	sum8:0	influence8:0.000000	sum7:0	influence7:0.000000	sum4:0	influence4:0.000000	sum5:influence5:0.000000	sum2:10000	influence2:1.000000	sum6:3609	influence6:0.360900	sum3:10000	influence3:1.000000	sum12:0	influence12:0.000000	sum9:0	influence9:0.000000	sum1:0	influence1:0.000000	sum11:581	influence11:0.058100	sum10:0	influence10:0.000000	sum14:0	influence14:0.000000	sum15:0	influence15:0.000000	sum13:0	influence13:0.000000	
+Parallel influence running time: 0.05712 seconds
+Parallel maxInfluence Literal: trust4-1 Infl=0.3609
+
+
+###50 nodes
+Using OpenCL device: Intel(R) Xeon(R) CPU E5-2630L v3 @ 1.80GHz
+total number of element: 50
+
+DNF running time: 0.000546 seconds
+DNF number of monomials: 30
+
+(r1*r2*r3*ra*trust1-19*trust13-6*trust19-4*trust4-13*trust6-1) + (r1*r2*r3*ra*trust1-19*trust19-4*trust2-1*trust4-2) + (r1*r2*r3*ra*trust1-19*trust19-4*trust31-1*trust4-31) + (r1*r2*r3*ra*trust1-19*trust19-4*trust4-1) + (r1*r2*r3*ra*trust1-19*trust19-4*trust4-6*trust6-1) + (r1*r2*r3*ra*trust1-2*trust13-6*trust2-4*trust4-13*trust6-1) + (r1*r2*r3*ra*trust1-2*trust2-1*trust2-4*trust4-2) + (r1*r2*r3*ra*trust1-2*trust2-4*trust31-1*trust4-31) + (r1*r2*r3*ra*trust1-2*trust2-4*trust4-1) + (r1*r2*r3*ra*trust1-2*trust2-4*trust4-6*trust6-1) + (r1*r2*r3*ra*trust1-31*trust13-6*trust31-4*trust4-13*trust6-1) + (r1*r2*r3*ra*trust1-31*trust2-1*trust31-4*trust4-2) + (r1*r2*r3*ra*trust1-31*trust31-1*trust31-4*trust4-31) + (r1*r2*r3*ra*trust1-31*trust31-4*trust4-1) + (r1*r2*r3*ra*trust1-31*trust31-4*trust4-6*trust6-1) + (r1*r2*r3*ra*trust1-4*trust13-6*trust4-13*trust6-1) + (r1*r2*r3*ra*trust1-4*trust2-1*trust4-2) + (r1*r2*r3*ra*trust1-4*trust31-1*trust4-31) + (r1*r2*r3*ra*trust1-4*trust4-6*trust6-1) + (r1*r2*r3*ra*trust1-6*trust13-6*trust4-13*trust6-1*trust6-4) + (r1*r2*r3*ra*trust1-6*trust2-1*trust4-2*trust6-4) + (r1*r2*r3*ra*trust1-6*trust31-1*trust4-31*trust6-4) + (r1*r2*r3*ra*trust1-6*trust4-1*trust6-4) + (r1*r2*r3*ra*trust1-6*trust4-6*trust6-1*trust6-4) + (r1*r2*r3*ra*trust1-7*trust13-6*trust4-13*trust6-1*trust7-4) + (r1*r2*r3*ra*trust1-7*trust2-1*trust4-2*trust7-4) + (r1*r2*r3*ra*trust1-7*trust31-1*trust4-31*trust7-4) + (r1*r2*r3*ra*trust1-7*trust4-1*trust7-4) + (r1*r2*r3*ra*trust1-7*trust4-6*trust6-1*trust7-4) + (r1*r3*ra*trust1-4*trust4-1)
+pLambda = 1
+Influence:
+Literal influence running time: 0.040448 seconds		r1 seqInfl= 1
+Literal influence running time: 0.044563 seconds		r2 seqInfl= 0
+Literal influence running time: 0.041386 seconds		r3 seqInfl= 1
+Literal influence running time: 0.040329 seconds		ra seqInfl= 1
+Literal influence running time: 0.063226 seconds		trust1-19 seqInfl= 0
+Literal influence running time: 0.063274 seconds		trust13-6 seqInfl= 0
+Literal influence running time: 0.057689 seconds		trust19-4 seqInfl= 0
+Literal influence running time: 0.066761 seconds		trust4-13 seqInfl= 0
+Literal influence running time: 0.063354 seconds		trust6-1 seqInfl= 0
+Literal influence running time: 0.071604 seconds		trust2-1 seqInfl= 0
+Literal influence running time: 0.070678 seconds		trust4-2 seqInfl= 0
+Literal influence running time: 0.071173 seconds		trust31-1 seqInfl= 0
+Literal influence running time: 0.070392 seconds		trust4-31 seqInfl= 0
+Literal influence running time: 0.076059 seconds		trust4-1 seqInfl= 0.043
+Literal influence running time: 0.071824 seconds		trust4-6 seqInfl= 0
+Literal influence running time: 0.074777 seconds		trust1-2 seqInfl= 0
+Literal influence running time: 0.071056 seconds		trust2-4 seqInfl= 0
+Literal influence running time: 0.072093 seconds		trust1-31 seqInfl= 0
+Literal influence running time: 0.071571 seconds		trust31-4 seqInfl= 0
+Literal influence running time: 0.077345 seconds		trust1-4 seqInfl= 0.0145
+Literal influence running time: 0.07598 seconds			trust1-6 seqInfl= 0
+Literal influence running time: 0.074962 seconds		trust6-4 seqInfl= 0
+Literal influence running time: 0.075788 seconds		trust1-7 seqInfl= 0
+Literal influence running time: 0.075049 seconds		trust7-4 seqInfl= 0
+Total number of literals: 24
+Sequential influence running time: 1.58177 seconds
+Sequential maxInfluence Literal: trust4-1 0.043
+
+index1= 24 size= 234 dim1_size= 30
+sum12:0	influence12:0.000000	sum18:0	influence18:0.000000	sum20:0	influence20:0.000000	sum22:0	influence22:0.000000	sum14:0	influence14:0.000000	sum6:0	influence6:0.000000	sum0:10000	influence0:1.000000	sum2:10000	influence2:1.000000	sum21:0	influence21:0.000000	sum23:0	influence23:0.000000	sum19:162	influence19:0.016200	sum13:432	influence13:0.043200	sum7:0	influence7:0.000000	sum1:0	influence1:0.000000	sum15:0	influence15:0.000000	sum3:10000	influence3:1.000000	sum8:0	influence8:0.000000	sum16:0	influence16:0.000000	sum10:0	influence10:0.000000	sum4:0	influence4:0.000000	sum17:0	influence17:0.000000	sum9:influence9:0.000000	sum11:0	influence11:0.000000	sum5:0	influence5:0.000000	
+Parallel influence running time: 0.255211 seconds
+Parallel maxInfluence Literal: trust4-1 Infl=0.0432
+
 
 
