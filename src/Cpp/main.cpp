@@ -90,7 +90,7 @@ int main(int argc, char** argv) {
     }
     */
     //code to read prov from files
-    ifstream pfin("/home/wuchenyuan/p3/data/prov/prov_sample_200.txt");
+    ifstream pfin("/home/sleepytodeath/rapidnet_v1.0/data/vqa/prov_eval_hotel.txt");
     stringstream buffer;
     buffer << pfin.rdbuf();
     string prov = buffer.str();
@@ -104,6 +104,7 @@ int main(int argc, char** argv) {
 
 
     //code to read trust data from files   
+    /*
     ifstream fin("/home/wuchenyuan/p3/data/trust/sample_200.csv");
     string line;
     int i = 0;
@@ -128,12 +129,12 @@ int main(int argc, char** argv) {
         //cout<<name<<" "<<p[name]<<endl;
     }
     cout<<"total number of element: "<<i<<endl;
-    
+    */
     
     
     //code to read vqa data from files
     //need to change ...maxInfluence, p_findMostInfl(Suff.cpp)
-    /*
+    
     vector<string> filenames;
     filenames.push_back("/home/sleepytodeath/rapidnet_v1.0/data/vqa/eval/word_obs.txt");
     filenames.push_back("/home/sleepytodeath/rapidnet_v1.0/data/vqa/eval/sim_obs.txt");
@@ -183,7 +184,7 @@ int main(int argc, char** argv) {
 			//cout<<"pname="<<pname<<" pp="<<p[pname]<<endl;
 		}		
     }
-    */    
+        
     p["ra"] = 1.0;
     p["rb"] = 1.0;
     p["r0"] = 1.0;
@@ -229,14 +230,14 @@ int main(int argc, char** argv) {
 	//suff.setInfluence(suff.getSuffProv());
 	t2 = clock() - t2;
 	cout<<"Sequential influence running time: "<<((float) t2)/CLOCKS_PER_SEC<<" seconds"<<endl;
-	//suff.sortInfluence("hasImg");
-	//suff.sortInfluence("hasQ");
-	//suff.sortInfluence("sim");
-	//suff.sortInfluence("r");
+	suff.sortInfluence("hasImg");
+	suff.sortInfluence("hasQ");
+	suff.sortInfluence("sim");
+	suff.sortInfluence("r");
 	//cout<<endl<<"Unique tuples:"<<endl;
 	//suff.sortInfluence("simchurch");
-	Literal x = suff.maxInfluence();
-	cout<<"Sequential maxInfluence Literal: "<<x.getName()<<" "<<x.getProb()<<endl<<endl;
+	//Literal x = suff.maxInfluence();
+	//cout<<"Sequential maxInfluence Literal: "<<x.getName()<<" "<<x.getProb()<<endl<<endl;
 	
 	
 	
