@@ -395,53 +395,6 @@ p=0.0139 p1=0.0123
 suffcount=6  MC running time: 0.342403 seconds
 
 Suff lineage time: 2.61036 seconds
-Sufficient lineage: 
-hasImghorseinfield, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundhorse, simbarnfield, simbarnhorse, simbuildingfield, siminin, simisin, wordbarn, 
-hasImgcloudinsky, hasImghorseinfield, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundcloud, simbarncloud, simbarnhorse, simbarnsky, simbuildingfield, simbuildingsky, siminin, simisin, wordbarn, 
-hasImgbuildingwithroof, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbuilding, simbackgroundroof, simbarnbuilding, simbarnroof, simbuildingroof, simbuildingwith, siminwith, wordbarn, 
-hasImgcloudinsky, hasImgcrossonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundcloud, simbarncloud, simbarncross, simbarnsky, simbuildingbuilding, simbuildingsky, siminin, simison, wordbarn, 
-hasImgbuildingwithroof, hasImghorsecolorbrown, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbrown, simbackgroundbuilding, simbarnbuilding, simbarnhorse, simbarnroof, simbuildingcolor, simbuildingroof, siminwith, wordbarn, 
-hasImgcloudinsky, hasImghorseinfield, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundcloud, simbackgroundfield, simbarncloud, simbarnhorse, simbarnsky, simbuildingin, simbuildingsky, siminin, wordbarn, 
-hasImgbuildingwithroof, hasImgcloudinsky, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbuilding, simbackgroundsky, simbarnbuilding, simbarncloud, simbarnroof, simbuildingin, simbuildingroof, siminwith, wordbarn, 
-hasImgbuildingwithroof, hasImgcloudinsky, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundcloud, simbarnbuilding, simbarncloud, simbarnsky, simbuildingroof, simbuildingsky, siminin, simiswith, wordbarn, 
-hasImgcrossonbuilding, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundcross, simbarnbuilding, simbarncross, simbuildingbuilding, siminon, simison, wordbarn, 
-hasImgcloudinsky, hasImghorsecolorbrown, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundbrown, simbackgroundcloud, simbarncloud, simbarnhorse, simbarnsky, simbuildingcolor, simbuildingsky, siminin, wordbarn, 
-hasImgbuildingwithroof, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundbuilding, simbarnbuilding, simbarnroof, simbuildingroof, siminwith, simiswith, wordbarn, 
-hasImgcloudinsky, hasQbackgroundbuildingWHAT, hasQbuildinginbackground, r1, r3, r6, ra, rb, simbackgroundcloud, simbackgroundsky, simbarncloud, simbarnsky, simbuildingin, simbuildingsky, siminin, wordbarn, 
-hasImgcrossonbuilding, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundbuilding, simbarncross, simbuildingon, wordbarn, 
-hasImgcloudinsky, hasQbuildinginbackground, hasQbuildingisWHAT, r1, r3, r6, ra, rb, simbackgroundcloud, simbarncloud, simbarnsky, simbuildingsky, siminin, simisin, wordbarn, 
-hasImghorsecolorbrown, hasQbuildingisWHAT, r2, r6, ra, rb, simbarnhorse, simbuildingbrown, simiscolor, wordbarn, 
-hasImgbuildingwithroof, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundroof, simbarnbuilding, simbuildingwith, wordbarn, 
-hasImghorseinfield, hasQbuildingisWHAT, r2, r6, ra, rb, simbarnhorse, simbuildingfield, simisin, wordbarn, 
-hasImgcrossonbuilding, hasQbuildingisWHAT, r2, r6, ra, rb, simbarncross, simbuildingbuilding, simison, wordbarn, 
-hasImghorseinfield, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundfield, simbarnhorse, simbuildingin, wordbarn, 
-hasImgbuildingwithroof, hasQbuildingisWHAT, r2, r6, ra, rb, simbarnbuilding, simbuildingroof, simiswith, wordbarn, 
-hasImgcloudinsky, hasQbuildingisWHAT, r2, r6, ra, rb, simbarncloud, simbuildingsky, simisin, wordbarn, 
-hasImghorsecolorbrown, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundbrown, simbarnhorse, simbuildingcolor, wordbarn, 
-hasImgcloudinsky, hasQbackgroundbuildingWHAT, r2, r6, ra, rb, simbackgroundsky, simbarncloud, simbuildingin, wordbarn, 
-vector[0] prob: 2.88047e-06
-vector[1] prob: 2.96222e-06
-vector[2] prob: 3.30214e-06
-vector[3] prob: 3.59418e-06
-vector[4] prob: 3.88127e-06
-vector[5] prob: 4.03862e-06
-vector[6] prob: 4.3461e-06
-vector[7] prob: 5.09601e-06
-vector[8] prob: 5.23611e-06
-vector[9] prob: 9.14154e-06
-vector[10] prob: 3.4175e-05
-vector[11] prob: 3.66137e-05
-vector[12] prob: 4.54317e-05
-vector[13] prob: 6.96569e-05
-vector[14] prob: 0.00010601
-vector[15] prob: 0.000390039
-vector[16] prob: 0.000932932
-vector[17] prob: 0.00113196
-vector[18] prob: 0.00127194
-vector[19] prob: 0.00160496
-vector[20] prob: 0.0018071
-vector[21] prob: 0.00287907
-vector[22] prob: 0.00322387
 
 Influence:
 Total number of literals: 46
@@ -1510,5 +1463,102 @@ sum12:0	influence12:0.000000	sum18:0	influence18:0.000000	sum20:0	influence20:0.
 Parallel influence running time: 0.255211 seconds
 Parallel maxInfluence Literal: trust4-1 Infl=0.0432
 
+
+
+
+
+
+2019/9/17 vqa extension and larger scale parallel result:
+horse	color	brown	1
+horse	in	field	0.88
+cloud	in	sky	0.85
+building	with	roof	0.5
+cross	on	building	1
+
+IT IS ACTUALLY A CHURCH,
+wrong, query "ans-church": 
+pLambda = 0.0077 
+wrong, query "ans-barn": 
+pLambda = 0.0234
+wrong, query "ans-hotel":
+pLambda = 0.0142
+wrong, query "ans-house":  
+pLambda = 0.0154
+
+DNF running time: 0.004519 seconds
+DNF number of monomials: 60
+pLambda = 0.0077
+
+Total number of literals: 48
+Sequential influence running time: 42.8676 seconds
+hasImgcrossonbuilding              seqInfl=0.0045
+hasImghorseinfield                 seqInfl=0.0032
+hasImgbuildingwithroof             seqInfl=0.0026
+hasImghorsecolorbrown              seqInfl=0.0012
+hasImgcloudinsky                   seqInfl=0.0001
+hasQbuildingisWHAT                 seqInfl=0.0066
+hasQbackgroundbuildingWHAT         seqInfl=0.0034
+hasQbuildinginbackground           seqInfl=0
+simchurchcross                     seqInfl=0.0356
+simison                            seqInfl=0.0211
+simchurchhorse                     seqInfl=0.0204
+simchurchcloud                     seqInfl=0.0127
+simbuildingcolor                   seqInfl=0.0123
+simbuildingin                      seqInfl=0.0115
+simiswith                          seqInfl=0.0107
+simisin                            seqInfl=0.0105
+simiscolor                         seqInfl=0.0086
+simbackgroundbrown                 seqInfl=0.0062
+simchurchbuilding                  seqInfl=0.0056
+simbackgroundfield                 seqInfl=0.0046
+simbackgroundroof                  seqInfl=0.0042
+simbuildingbuilding                seqInfl=0.0041
+simbuildingfield                   seqInfl=0.0031
+simbuildingroof                    seqInfl=0.0031
+simbuildingwith                    seqInfl=0.0029
+simbuildingon                      seqInfl=0.0027
+simbuildingbrown                   seqInfl=0.0006
+simbackgroundbuilding              seqInfl=0.0006
+simbackgroundsky                   seqInfl=0.0003
+simbuildingsky                     seqInfl=0.0001
+simchurchbrown                     seqInfl=0
+simchurchfield                     seqInfl=0
+simchurchroof                      seqInfl=0
+simchurchsky                       seqInfl=0
+simincolor                         seqInfl=0
+siminin                            seqInfl=0
+siminon                            seqInfl=0
+siminwith                          seqInfl=0
+simbackgroundhorse                 seqInfl=0
+simbackgroundcross                 seqInfl=0
+simbackgroundcloud                 seqInfl=0
+r2                                 seqInfl=0.0102
+r6                                 seqInfl=0.0102
+ra                                 seqInfl=0.0102
+rb                                 seqInfl=0.0102
+r1                                 seqInfl=0
+r3                                 seqInfl=0
+
+Unique tuples:
+simchurchcross                     seqInfl=0.0356
+simchurchhorse                     seqInfl=0.0204
+simchurchcloud                     seqInfl=0.0127
+simchurchbuilding                  seqInfl=0.0056
+simchurchbrown                     seqInfl=0
+simchurchfield                     seqInfl=0
+simchurchroof                      seqInfl=0
+simchurchsky                       seqInfl=0
+Sequential maxInfluence Literal: wordchurch 0.0392
+
+index1= 48 size= 968 dim1_size= 60
+
+Parallel influence running time: 1.24585 seconds
+Parallel maxInfluence Literal: wordchurch Infl=0.0379
+
+plambda=0.0077
+index1= 48 size= 968 dim1_size= 60
+increased plambda=0.0416
+SHOULD increase:simchurchcross  cost=0.423181
+Parallel changed literals running time: 2.30491 seconds
 
 
