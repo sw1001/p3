@@ -6,7 +6,7 @@
  */
 
 
-#define N 70 // N > index, which is the total number of literals
+#define N 100 // N > index, which is the total number of literals
 #define BASE 4294967296UL
 
 //! Represents the state of a particular generator
