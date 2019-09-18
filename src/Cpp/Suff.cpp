@@ -567,7 +567,7 @@ Literal Suff::maxInfluence() {
     double max = 0.0;
     string name = "";
     for(map<string, double>::const_iterator it = infl_x.begin(); it != infl_x.end(); ++it) {
-        if(it->second > max && it->first.compare("r1") != 0 && it->first.compare("r2") != 0 && it->first.compare("r3") != 0 && it->first.compare("ra") != 0 && it->first.compare("wordchurch") != 0 && it->first.compare("wordbarn") != 0 && it->first.compare("wordhotel") != 0 && it->first.compare("wordhouse") != 0) {
+        if(it->second > max && it->first.compare("r1") != 0 && it->first.compare("r2") != 0 && it->first.compare("r3") != 0 && it->first.compare("ra") != 0) {
             max = it->second;
             name = it->first;
         }
@@ -631,7 +631,7 @@ Literal Suff::findMostInfl(vector<vector<Literal> > sp) {
 
 
 
-Literal Suff::p_findMostInfl(vector<vector<Literal> >sp, cl::Context context, cl::CommandQueue queue, cl::Program program){
+Literal Suff::p_findMostInfl(vector<vector<Literal> >sp, string head, cl::Context context, cl::CommandQueue queue, cl::Program program){
 	//prepare for the buffers here
 	vector <int> h_lambdas(0);
 	vector <float> h_lambdap(0);
@@ -685,7 +685,7 @@ Literal Suff::p_findMostInfl(vector<vector<Literal> >sp, cl::Context context, cl
 	double max = 0.0;
 	string max_name = "";
 	for(map<string, double>::const_iterator it = para_influence.begin(); it != para_influence.end(); ++it) {
-		if(it->second > max && it->first.compare("r1") != 0 && it->first.compare("r2") != 0 && it->first.compare("r3") != 0 && it->first.compare("ra") != 0) {
+		if((it->first.find(head) == 0 || head == "") && it->second > max && it->first.compare("r1") != 0 && it->first.compare("r2") != 0 && it->first.compare("r3") != 0 && it->first.compare("ra") != 0) {
 		    max = it->second;
 		    max_name = it->first;
 		}
@@ -697,65 +697,146 @@ Literal Suff::p_findMostInfl(vector<vector<Literal> >sp, cl::Context context, cl
 
 
 
+Literal Suff::p_findMostInfl_wcz(vector<vector<Literal> >sp, string head, cl::Context context, cl::CommandQueue queue, cl::Program program){
+	//prepare for the buffers here
+	map <string, float> para_influence;
+	map <string, double> seq_influence = getInfluence();
+	vector <int> h_lambdas(0);
+	vector <float> h_lambdap(0);
+	vector <int> h_dim2_size(0);		
+	vector < vector<Literal> > h_lambda;
+	h_lambda = sp;
+	int count = 10000;
+	int index1 = 0;
+	int size = 0;
+	int dim1_size = h_lambda.size();
+	//cout<<"size of suff.influence="<<suff.getInfluence().size()<<endl;
+    map <string, int> str2index;// set an index for each string
+	for(int i = 0; i < h_lambda.size(); i++){
+		h_dim2_size.push_back(h_lambda[i].size());
+		size += h_lambda[i].size();
+		for(int j = 0; j < h_lambda[i].size(); j++){
+			//cout<<i<<","<<j<<endl;
+			if(str2index.find(h_lambda[i][j].getName()) == str2index.end()){
+				str2index[h_lambda[i][j].getName()] = index1;
+				index1 ++;               
+			}
+			h_lambdas.push_back(str2index[h_lambda[i][j].getName()]);
+			h_lambdap.push_back(h_lambda[i][j].getProb());
+			
+		}
+	}
+	cout<< "index1= "<<index1<<" "<<"size= "<<size<<" "<<"dim1_size= "<<dim1_size<<endl;
+    vector <int> h_resultOnce(count);//int literals = index1;
+    cl::Buffer d_lambdas, d_lambdap, d_dim2_size, d_resultOnce;
+    d_lambdas = cl::Buffer(context, h_lambdas.begin(), h_lambdas.end(), true);
+    d_lambdap = cl::Buffer(context, h_lambdap.begin(), h_lambdap.end(), true);
+	d_dim2_size = cl::Buffer(context, h_dim2_size.begin(), h_dim2_size.end(), true);
+	d_resultOnce = cl::Buffer(context, CL_MEM_WRITE_ONLY, sizeof(int) * count);
+	cl::make_kernel<int, int, int, int, cl::Buffer, cl::Buffer, cl::Buffer, cl::Buffer, cl::Buffer> setInfluence(program, "setInfluence");    
+	//output the parallel results
+	for(map<string, int>::const_iterator it = str2index.begin(); it != str2index.end(); ++it){
+	    vector <float> h_parameters(0);	
+	    std::default_random_engine generator;
+		std::uniform_real_distribution<float> distribution(0.0,1.0);
+		for(int i = 0; i < count; i++){
+		    for(int j = 0; j < index1; j++){
+		        float prand = distribution(generator);
+		        h_parameters.push_back(prand);
+		    }
+		}				
+
+		cl::Buffer d_parameters;
+		d_parameters = cl::Buffer(context, h_parameters.begin(), h_parameters.end(), true);
+
+		cl::NDRange global(count);
+		setInfluence(cl::EnqueueArgs(queue, global), it->second, index1, size, dim1_size, d_lambdas, d_lambdap, d_dim2_size, d_parameters, d_resultOnce);
+		queue.finish();		
+		cl::copy(queue, d_resultOnce, h_resultOnce.begin(), h_resultOnce.end());		
+		para_influence[it->first] = std::count(h_resultOnce.begin(), h_resultOnce.end(), 1)*1.0/count;
+		//cout<< it->first << "  deltaInfl=" << abs(para_influence[it->first] - seq_influence[it->first]) <<"  ";
+		cout<< it->first << "  paraInfl=" << para_influence[it->first] <<endl;
+			
+	}
+	
+	double max = 0.0;
+	string max_name = "";
+	for(map<string, float>::const_iterator it = para_influence.begin(); it != para_influence.end(); ++it) {
+		if((it->first.find(head) == 0 || head == "") && it->second > max && it->first.compare("r1") != 0 && it->first.compare("r2") != 0 && it->first.compare("r3") != 0 && it->first.compare("ra") != 0) {
+		    max = it->second;
+		    max_name = it->first;
+		}
+	}
+
+	return Literal(max_name, max);
+	
+}
 
 
 
 vector<Literal> 
-Suff::changedLiterals(vector< vector<Literal> > lambda, double t) {
+Suff::changedLiterals(vector< vector<Literal> > lambda, double t, string head) {
     vector<Literal> v(0);
     double p = Suff::probMC(lambda);
+    double inputProb;
     cout<<"plambda="<<p<<endl;
     if(p == t) {
         return v;
     }
     //find most influential literal(or randomly)
-    Literal xm = Suff::p_findMostInfl(lambda);
+    Literal xm = Suff::p_findMostInfl(lambda, head);
+    if(xm.getName() == "") {
+        cout<<"NO MORE UNIQUE TUPLES TO CHANGE!"<<endl;
+        return v;
+    }
 
     if(p < t) {
         // increase most influential literal
-        for(int i = 0; i<lambda.size(); i++) {
-            for(int j = 0; j<lambda[i].size(); j++) {
+        for(int i = 0; i < lambda.size(); i++) {
+            for(int j = 0; j < lambda[i].size(); j++) {
                 if(lambda[i][j].getName() == xm.getName()) {
                     //lambda[i][j].setProb(1.0);
-                    lambda[i].erase(lambda[i].begin()+j);
+                    inputProb = lambda[i][j].getProb();
+                    lambda[i].erase(lambda[i].begin() + j);
                     break;
                 }
             }
         }
         double pp = Suff::probMC(lambda);
-        cout<<"increased pp="<<pp<<endl;
+        cout<<"increased plambda="<<pp<<endl;
         v.push_back(xm);
-        if(pp-t >= 0.0) {
+        if(pp - t >= 0.0) {
             //find delta prob for the most influential literal
-            cout<<xm.getName()<<" cost="<<(t-p)/xm.getProb()<<endl;
+            cout<<"SHOULD increase:"<<xm.getName()<<"  cost="<<(t - p)/xm.getProb()<<endl;
             return v;
         } else {
-            cout<<xm.getName()<<" cost="<<(pp-p)/xm.getProb()<<endl;
-            vector<Literal> v2 = Suff::changedLiterals(lambda, t);
+            cout<<"SHOULD increase:"<<xm.getName()<<"  cost="<<1 - inputProb<<endl;
+            vector<Literal> v2 = Suff::changedLiterals(lambda, t, head);
             v.insert(v.end(), v2.begin(), v2.end());
             return v;
         }
     } else {
         // decrease most influential literal
-        for(int i = 0; i<lambda.size(); i++) {
-            for(int j = 0; j<lambda[i].size(); j++) {
+        for(int i = 0; i < lambda.size(); i++) {
+            for(int j = 0; j < lambda[i].size(); j++) {
                 if(lambda[i][j].getName() == xm.getName()) {
-                    lambda.erase(lambda.begin()+i);
+                    inputProb = lambda[i][j].getProb();
+                    lambda.erase(lambda.begin() + i);
                     i--;
                     break;
                 }
             }
         }
         double pp = Suff::probMC(lambda);
-        cout<<"decreased pp="<<pp<<endl;
+        cout<<"decreased plambda="<<pp<<endl;
         v.push_back(xm);
-        if(t-pp >= 0.0) {
+        if(t - pp >= 0.0) {
             //find delta prob for the most influential literal
-            cout<<xm.getName()<<" cost="<<(t-p)/xm.getProb()<<endl;
+            cout<<"SHOULD decrease:"<<xm.getName()<<"  cost="<<(p - t)/xm.getProb()<<endl;
             return v;
         } else {
-        	cout<<xm.getName()<<" cost="<<(pp-p)/xm.getProb()<<endl;
-            vector<Literal> v2 = Suff::changedLiterals(lambda, t);
+        	cout<<"SHOULD decrease:"<<xm.getName()<<"  cost="<<inputProb<<endl;
+            vector<Literal> v2 = Suff::changedLiterals(lambda, t, head);
             v.insert(v.end(), v2.begin(), v2.end());
             return v;
         }
