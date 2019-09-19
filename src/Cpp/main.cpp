@@ -36,7 +36,7 @@
 
 using namespace std;
 cl::Context context;
-cl::CommandQueue queue;
+vector<cl::CommandQueue> queues;
 cl::Program program;
 
 
@@ -45,31 +45,17 @@ int main(int argc, char** argv) {
 // Create a context and a queue(or queues)
 //-------------------------------------------------------------------------------
 
-    cl_uint deviceIndex = 0;
-    parseArguments(argc, argv, &deviceIndex);
-
     // Get list of devices
     vector<cl::Device> devices;
     unsigned numDevices = getDeviceList(devices);
-
-    // Check device index in range
-    if (deviceIndex >= numDevices)
-    {
-      cout << "Invalid device index (try '--list')\n";
-      return EXIT_FAILURE;
-    }
-
-    cl::Device device = devices[deviceIndex];
-
-    string name;
-    getDeviceName(device, name);
-    cout << "\nUsing OpenCL device: " << name << "\n";
-
-    vector<cl::Device> chosen_device;
-    chosen_device.push_back(device);
-    context = cl::Context(chosen_device);
-    queue = cl::CommandQueue(context, device);
-    program = cl::Program(context, util::loadProgram("../C_setInfluence.cl"), true);
+    context = cl::Context(devices);//a context with all devices
+    for (int i = 0; i < numDevices; i++) {
+        string name;
+        getDeviceName(devices[i], name);
+        cout << "\nUsing OpenCL device: " << name << "\n";
+        queues.push_back(cl::CommandQueue(context, devices[i]));//each device has a queue
+    } 
+    program = cl::Program(context, util::loadProgram("../C_setInfluence_wcz.cl"), true);
     
 //-------------------------------------------------------------------------------
 // Read in the test data
@@ -90,7 +76,7 @@ int main(int argc, char** argv) {
     }
     */
     //code to read prov from files
-    string provfilename = "/home/sleepytodeath/p3/data/prov/prov_sample_500.txt";
+    string provfilename = "/home/chenyuan/p3/data/prov/prov_sample_500.txt";
     //string head = "sim" + provfilename.substr(provfilename.find_last_of("_") + 1, provfilename.find(".txt") - provfilename.find_last_of("_") - 1);
     ifstream pfin(provfilename);
     stringstream buffer;
@@ -107,7 +93,7 @@ int main(int argc, char** argv) {
 
     //code to read trust data from files   
     
-    ifstream fin("/home/sleepytodeath/p3/data/trust/sample_500_shaobo.csv");
+    ifstream fin("/home/chenyuan/p3/data/trust/sample_500_shaobo.csv");
     string line;
     int i = 0;
     while (getline(fin, line))
@@ -257,7 +243,7 @@ int main(int argc, char** argv) {
 //----------------------------------------------------------------------------------
 	
 	clock_t tpara = clock();
-	Literal maxInfl= suff.p_findMostInfl(dnf.getLambda());
+	Literal maxInfl= suff.p_findMostInfl_wcz(dnf.getLambda());
 	//Literal maxInfl= suff.p_findMostInfl(suff.getSuffProv());
 	tpara = clock() - tpara;
 	cout<<endl<<"Parallel influence running time: "<<((float) tpara)/CLOCKS_PER_SEC<<" seconds"<<endl;

@@ -20,7 +20,7 @@
 
 #include "cl.hpp"
 extern cl::Context context;
-extern cl::CommandQueue queue;
+extern vector<cl::CommandQueue> queues;
 extern cl::Program program;
 
 using namespace std;
@@ -48,8 +48,8 @@ public:
     Literal maxInfluence();
     void sortInfluence(string head = "");
     Literal findMostInfl(vector < vector<Literal> >);
-    Literal p_findMostInfl(vector< vector<Literal> > sp, string head = "", cl::Context context = ::context, cl::CommandQueue queue = ::queue, cl::Program program = ::program);
-    Literal p_findMostInfl_wcz(vector< vector<Literal> > sp, string head = "", cl::Context context = ::context, cl::CommandQueue queue = ::queue, cl::Program program = ::program);
+    //Literal p_findMostInfl(vector< vector<Literal> > sp, string head = "", cl::Context context = ::context, cl::CommandQueue queue = ::queue, cl::Program program = ::program);
+    Literal p_findMostInfl_wcz(vector< vector<Literal> > sp, string head = "", cl::Context context = ::context, vector<cl::CommandQueue> queues = ::queues, cl::Program program = ::program);
     vector<Literal> changedLiterals(vector< vector<Literal> > lambda, double t, string head = "");
 private:
     vector < vector<Literal> > suffProv;

@@ -7,8 +7,8 @@
 
 #define N 100 // N > index, which is the total number of literals
 
-__kernel void setInfluence(const int literal, const int literals, const int size, const int dim1_size, __global int* lambdas, __global float* lambdap, __global int* dim2_size, __global float* parameters, __global int* resultOnce) {   
-	int id = get_global_id(0);
+__kernel void setInfluence(const int deviceIndex, const int literal, const int literals, const int size, const int dim1_size, __global int* lambdas, __global float* lambdap, __global int* dim2_size, __global float* parameters, __global int* resultOnce) {   
+	int id = deviceIndex * get_global_size(0) + get_global_id(0);
 	int assignment[N];
     
     //or try to get newlambda like original version does	
