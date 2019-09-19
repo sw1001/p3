@@ -630,7 +630,7 @@ Literal Suff::findMostInfl(vector<vector<Literal> > sp) {
 }
 
 
-/*
+
 Literal Suff::p_findMostInfl(vector<vector<Literal> >sp, string head, cl::Context context, cl::CommandQueue queue, cl::Program program){
 	//prepare for the buffers here
 	vector <int> h_lambdas(0);
@@ -694,10 +694,10 @@ Literal Suff::p_findMostInfl(vector<vector<Literal> >sp, string head, cl::Contex
 	return Literal(max_name, max);
 	
 }
-*/
 
 
-Literal Suff::p_findMostInfl_wcz(vector<vector<Literal> >sp, string head, cl::Context context, vector<cl::CommandQueue> queues, cl::Program program){
+
+Literal Suff::p_findMostInfl_wcz(vector<vector<Literal> >sp, string head, cl::Context context, cl::CommandQueue queue, cl::Program program){
 	//prepare for the buffers here
 	map <string, float> para_influence;
 	map <string, double> seq_influence = getInfluence();
@@ -733,7 +733,7 @@ Literal Suff::p_findMostInfl_wcz(vector<vector<Literal> >sp, string head, cl::Co
     d_lambdap = cl::Buffer(context, h_lambdap.begin(), h_lambdap.end(), true);
 	d_dim2_size = cl::Buffer(context, h_dim2_size.begin(), h_dim2_size.end(), true);
 	d_resultOnce = cl::Buffer(context, CL_MEM_WRITE_ONLY, sizeof(int) * count);
-	cl::make_kernel<int, int, int, int, int, cl::Buffer, cl::Buffer, cl::Buffer, cl::Buffer, cl::Buffer> setInfluence(program, "setInfluence");    
+	cl::make_kernel<int, int, int, int, cl::Buffer, cl::Buffer, cl::Buffer, cl::Buffer, cl::Buffer> setInfluence(program, "setInfluence");    
 	//output the parallel results
 	for(map<string, int>::const_iterator it = str2index.begin(); it != str2index.end(); ++it){
 	    vector <float> h_parameters(0);	
@@ -748,15 +748,11 @@ Literal Suff::p_findMostInfl_wcz(vector<vector<Literal> >sp, string head, cl::Co
 
 		cl::Buffer d_parameters;
 		d_parameters = cl::Buffer(context, h_parameters.begin(), h_parameters.end(), true);
-        for(int i = 0; i < queues.end() - queues.begin(); i++){
-            cl::NDRange global(count/(queues.end() - queues.begin()));
-            setInfluence(cl::EnqueueArgs(queues[i], global), i, it->second, index1, size, dim1_size, d_lambdas, d_lambdap, d_dim2_size, d_parameters, d_resultOnce);
-        }
-		for(int i = 0; i < queues.end() - queues.begin(); i++){
-		    queues[i].finish();
-		}
-	
-		cl::copy(queues[0], d_resultOnce, h_resultOnce.begin(), h_resultOnce.end());		
+
+		cl::NDRange global(count);
+		setInfluence(cl::EnqueueArgs(queue, global), it->second, index1, size, dim1_size, d_lambdas, d_lambdap, d_dim2_size, d_parameters, d_resultOnce);
+		queue.finish();		
+		cl::copy(queue, d_resultOnce, h_resultOnce.begin(), h_resultOnce.end());		
 		para_influence[it->first] = std::count(h_resultOnce.begin(), h_resultOnce.end(), 1)*1.0/count;
 		//cout<< it->first << "  deltaInfl=" << abs(para_influence[it->first] - seq_influence[it->first]) <<"  ";
 		cout<< it->first << "  paraInfl=" << para_influence[it->first] <<endl;
@@ -788,7 +784,7 @@ Suff::changedLiterals(vector< vector<Literal> > lambda, double t, string head) {
         return v;
     }
     //find most influential literal(or randomly)
-    Literal xm = Suff::p_findMostInfl_wcz(lambda, head);
+    Literal xm = Suff::p_findMostInfl(lambda, head);
     if(xm.getName() == "") {
         cout<<"NO MORE UNIQUE TUPLES TO CHANGE!"<<endl;
         return v;
