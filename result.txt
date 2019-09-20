@@ -1561,4 +1561,50 @@ increased plambda=0.0416
 SHOULD increase:simchurchcross  cost=0.423181
 Parallel changed literals running time: 2.30491 seconds
 
+2019/9/18
+ON GPU:work unit is each literal
+Using OpenCL device: GeForce GTX 1080 Ti
+node 500 Parallel influence running time: 0.250298 seconds
+node 450 Parallel influence running time: 0.636219 seconds
+node 400 Parallel influence running time: 2.155 seconds
+node 350 Parallel influence running time: 3.56628 seconds
+node 300 Parallel influence running time: 5.99508 seconds
+node 250 Parallel influence running time: 0.32338 seconds
+node 200 Parallel influence running time: 0.21262 seconds
+
+ON GPU:work unit is each round of MC, pass literals*10000 parameters in kernel
+Using OpenCL device: GeForce GTX 1080 Ti
+node 500 Parallel influence running time: 0.023094 seconds
+node 450 Parallel influence running time: 0.068586 seconds
+node 400 Parallel influence running time: 0.205976 seconds
+node 350 Parallel influence running time: 0.435307 seconds
+node 300 Parallel influence running time: 0.68208 seconds
+node 250 Parallel influence running time: 0.02148 seconds
+node 200 Parallel influence running time: 0.02105 seconds
+
+ON CPU:work unit is each literal
+Using OpenCL device: Intel(R) Xeon(R) CPU E5-2630L v3 @ 1.80GHz
+node 500 Parallel influence running time: 0.060974 seconds
+node 450 Parallel influence running time: 0.28992 seconds
+node 400 Parallel influence running time: 1.95483 seconds
+node 350 Parallel influence running time: 4.41229 seconds
+node 300 Parallel influence running time: 9.18987 seconds
+node 250 Parallel influence running time: 0.075884 seconds
+node 200 Parallel influence running time: 0.04809 seconds
+
+2019/9/19
+ON FOUR GPUS:
+Using OpenCL device: GeForce GTX 1080 Ti
+Using OpenCL device: GeForce GTX 1080 Ti
+Using OpenCL device: GeForce GTX 1080 Ti
+Using OpenCL device: GeForce GTX 1080 Ti
+node 500 Parallel influence running time: 0.063312 seconds
+node 450 Parallel influence running time: 0.161127 seconds
+node 400 Parallel influence running time: 0.490296 seconds
+node 350 Parallel influence running time: 0.920184 seconds
+node 300 Parallel influence running time: 1.38203 seconds
+node 250 Parallel influence running time: 0.058931 seconds
+node 200 Parallel influence running time: 0.05706 seconds
+reason: too much data transfer between the 4 devices!!!
+
 
