@@ -1607,4 +1607,25 @@ node 250 Parallel influence running time: 0.058931 seconds
 node 200 Parallel influence running time: 0.05706 seconds
 reason: too much data transfer between the 4 devices!!!
 
+2019/9/22
+AFTER CODE INTEGRATION:
+ON GPU:work unit is each round of MC, pass literals*10000 parameters in kernel
+
+                                                                             not parallized                                    parallized
+node 500 Parallel Influence running time: 0.021568 seconds    Compute Suff lineage time: 0.024105 seconds    Compute Suff lineage time: 0.006523 seconds
+node 450 Parallel Influence running time: 0.064686 seconds    Compute Suff lineage time: 0.014051 seconds    Compute Suff lineage time: 0.00886 seconds
+node 400 Parallel Influence running time: 0.194916 seconds    Compute Suff lineage time: 0.021801 seconds    Compute Suff lineage time: 0.016556 seconds
+node 350 Parallel Influence running time: 0.42254 seconds     Compute Suff lineage time: 0.049074 seconds    Compute Suff lineage time: 0.033721 seconds
+node 300 Parallel Influence running time: 0.625205 seconds    Compute Suff lineage time: 0.03224 seconds     Compute Suff lineage time: 0.033611 seconds
+node 250 Parallel Influence running time: 0.019632 seconds    Compute Suff lineage time: 0.029108 seconds    Compute Suff lineage time: 0.009147 seconds
+
+ON DEDOS01:
+node 500 Sequential Influence running time: 0.978036 seconds
+node 450 Sequential Influence running time: 1.06728 seconds
+node 400 Sequential Influence running time: 1.85904 seconds
+node 350 Sequential Influence running time: 3.84592 seconds
+node 300 Sequential Influence running time: 3.27871 seconds
+node 250 Sequential Influence running time: 0.781801 seconds
+
+ON DEDOS01:work unit is each literal
 
