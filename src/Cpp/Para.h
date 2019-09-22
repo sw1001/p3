@@ -19,12 +19,14 @@ public:
 
     static double p_monteCarloSim(vector< map<string, double> >);
     void p_setInfluence(vector< map<string, double> >);
+    void p_setInfluence_lit(vector< map<string, double> >);
     vector< pair<string, float> > sortMap(map<string, float>);
 
 private:
     static cl::Context context;
     static cl::CommandQueue queue;
     static cl::Program programInflu;
+    static cl::Program programInflu_lit;
     static cl::Program programMC;
     vector< pair<string, float> > influence;
 };

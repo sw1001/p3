@@ -24,7 +24,7 @@
 
 using namespace std;
 
-#define ProvPath "/home/sleepytodeath/p3/data/prov/prov_sample_450.txt"
+#define ProvPath "/home/sleepytodeath/p3/data/prov/prov_sample_500.txt"
 #define DataPath "/home/sleepytodeath/p3/data/trust/sample_500_shaobo.csv"
 
 /*
@@ -72,7 +72,7 @@ int main(int argc, char** argv) {
     
     cout << "------------------------------" << endl;
     clock_t t_para = clock();
-    para.p_setInfluence(suff.getOrigDNF());
+    para.p_setInfluence_lit(suff.getOrigDNF());
     t_para = clock() - t_para;
     cout << "Parallel Influence running time: " << ((float) t_para)/CLOCKS_PER_SEC << " seconds" << endl;
     
