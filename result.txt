@@ -1619,6 +1619,7 @@ node 350 Parallel Influence running time: 0.42254 seconds     Compute Suff linea
 node 300 Parallel Influence running time: 0.625205 seconds    Compute Suff lineage time: 0.03224 seconds     Compute Suff lineage time: 0.033611 seconds
 node 250 Parallel Influence running time: 0.019632 seconds    Compute Suff lineage time: 0.029108 seconds    Compute Suff lineage time: 0.009147 seconds
 
+
 ON DEDOS01:
 node 500 Sequential Influence running time: 0.978036 seconds
 node 450 Sequential Influence running time: 1.06728 seconds
@@ -1627,5 +1628,4 @@ node 350 Sequential Influence running time: 3.84592 seconds
 node 300 Sequential Influence running time: 3.27871 seconds
 node 250 Sequential Influence running time: 0.781801 seconds
 
-ON DEDOS01:work unit is each literal
 
