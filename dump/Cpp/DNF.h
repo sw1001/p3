@@ -18,6 +18,7 @@
 #include <string>
 #include <set>
 #include <map>
+#include "Literal.h"
 
 using namespace std;
 
@@ -50,7 +51,7 @@ public:
     DNF(const DNF& orig);
     virtual ~DNF();
     DNF(string, map<string, double>);
-    vector< map<string, double> > getLambda();
+    vector< vector<Literal> > getLambda();
     void setLambda(map<string, double>);
     map<string, double> getProbs();
     void setProbs(map<string, double>);
@@ -74,10 +75,10 @@ public:
 
     string ToString();
 private:
-    vector< map<string, double> > lambda;
+    vector< vector<Literal> > lambda;
     map<string, double> probs;
     vector< vector<string> > dnf_vector;
-    string provStr;
+    string str;
     TreeNode* root;
 };
 

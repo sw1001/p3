@@ -16,12 +16,8 @@
 
 #include <vector>
 #include <string>
-#include "DNF.h"
-
-#include "cl.hpp"
-extern cl::Context context;
-extern cl::CommandQueue queue;
-extern cl::Program program;
+#include <random>
+#include <map>
 
 using namespace std;
 
@@ -30,30 +26,29 @@ public:
     Suff();
     Suff(const Suff& orig);
     virtual ~Suff();
-    //
-    vector < vector<Literal> > findSuff(vector < vector<Literal> >, double);
-    vector < vector<Literal> > findMatch(vector < vector<Literal> >);
-    double probMC(vector < vector<Literal> >);
-    double probMC2(vector < vector<Literal> >, vector < vector<Literal> >);
-    double probMatch(vector < vector<Literal> >);
-    double probMono(vector<Literal>);
-    bool isIn(Literal, vector<Literal>);
-    void printProv(vector < vector<Literal> >);
-    void print(vector<Literal>);
-    vector < vector<Literal> > getSuffProv();
-    void setSuffProv(vector < vector<Literal> >, double);
-    map<string, double> getInfluence();
-    void setInfluence(vector < vector<Literal> >);
-    vector < vector<Literal> > newLambda(vector < vector<Literal> >, Literal, bool);
-    Literal maxInfluence();
-    void sortInfluence(string head = "");
-    Literal findMostInfl(vector < vector<Literal> >);
-    Literal p_findMostInfl(vector< vector<Literal> > sp, string head = "", cl::Context context = ::context, cl::CommandQueue queue = ::queue, cl::Program program = ::program);
-    Literal p_findMostInfl_wcz(vector< vector<Literal> > sp, string head = "", cl::Context context = ::context, cl::CommandQueue queue = ::queue, cl::Program program = ::program);
-    vector<Literal> changedLiterals(vector< vector<Literal> > lambda, double t, string head = "");
+    Suff(vector< map<string, double> >, double);
+
+    void setSuffDNF(double);
+    vector< map<string, double> > getSuffDNF();
+
+    void setSuffProb(vector< map<string, double> >);
+    double getSuffProb();
+
+    void setOrigDNF(vector< map<string, double> >);
+    vector < map<string, double> > getOrigDNF();
+
+    void setOrigProb(vector< map<string, double> >);
+    double getOrigProb();
+
+    static double monteCarloSim(vector< map<string, double> >);
+    int singleRound(map<string, int>, vector< map<string, double> >, default_random_engine, uniform_real_distribution<double>);
+    void printDNF(vector< map<string, double> >);
+
 private:
-    vector < vector<Literal> > suffProv;
-    map <string, double> influence;
+    vector< map<string, double> > origDNF;
+    double origProb;
+    vector< map<string, double> > suffDNF;
+    double suffProb;
 };
 
 #endif /* SUFF_H */

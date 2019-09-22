@@ -28,48 +28,120 @@ DNF::DNF(const DNF& orig) {
 DNF::~DNF() {
 }
 
-DNF::DNF(string s, map<string, double> p) {
-    this->provStr = s;
-    setProbs(p);
-    root = new TreeNode(s);
-    DNF::ConvertToDNF();
-    DNF::setLambda(p);
-}
-
-vector< map<string, double > > DNF::getLambda() {
+vector< vector< Literal > > DNF::getLambda() {
     return lambda;
 }
 
+/*
 void DNF::setLambda(map<string, double> p){
-    //read in the string then split it into monomials.
-    //loop through the string and convert it to a vector and store it in dnf
+    //read in the string then split it into monomials. 
+    //assume the string is the following format: (x1*x2)+(x2*x4*x6)+...
+    //loop through the string and convert it to a vector  and store it in dnf
     int s = dnf_vector.size();
     for (int i = 0; i < s; i++) {
-        map<string, double> mono;
+        vector <Literal> m(0);
         int si = dnf_vector[i].size();
-        bool hasIDB = false;
         for (int j = 0; j < si; j++) {
-            if (p.find(dnf_vector[i][j]) != p.end()) {
-                mono[dnf_vector[i][j]] = p[dnf_vector[i][j]];
-            } else {
-                hasIDB = true;
-                break;
-            }
+            //cout<<dnf_vector[i][j]<<" ";
+            Literal xi(dnf_vector[i][j], p[dnf_vector[i][j]]);
+            m.push_back(xi);        
+            //cout<<p[dnf_vector[i][j]]<<endl;
         }
-        if(!hasIDB) {
-            lambda.push_back(mono);
+		lambda.push_back(m);
+    }
+    
+}
+*/
+
+
+void DNF::setLambda(map<string, double> p){
+    //read in the string then split it into monomials. 
+    //assume the string is the following format: (x1*x2)+(x2*x4*x6)+...
+    //loop through the string and convert it to a vector  and store it in dnf
+    int s = dnf_vector.size();
+    for (int i = 0; i < s; i++) {
+        vector <Literal> m(0);
+        int si = dnf_vector[i].size();
+        int istrustpath = 0;
+        for (int j = 0; j < si; j++) {
+            //cout<<dnf_vector[i][j]<<" ";
+            if(p.find(dnf_vector[i][j]) == p.end()){
+            	istrustpath = 1;
+            	break;         	
+            }
+            else{
+            	Literal xi(dnf_vector[i][j], p[dnf_vector[i][j]]);
+            	m.push_back(xi);
+            }
+            //cout<<p[dnf_vector[i][j]]<<endl;
+        }
+        if(istrustpath == 0){
+        	//cout<<"msize="<<m.size()<<endl;
+        	lambda.push_back(m);
         }
     }
 }
+
+
+/*
+void DNF::setLambda(map<string, double> p){
+    //read in the string then split it into monomials. 
+    //assume the string is the following format: (x1*x2)+(x2*x4*x6)+...
+    //loop through the string and convert it to a vector  and store it in dnf
+
+    int s = dnf_vector.size();
+    for (int i = 0; i < s; i++) {
+        vector <Literal> m(0);
+        int si = dnf_vector[i].size();
+        for (int j = 0; j < si; j++) {
+            //cout<<dnf_vector[i][j]<<endl;
+            //cout<<p["x1"]<<endl;
+            double prob = 0.0;
+            if (p.find(dnf_vector[i][j]) != p.end()) {
+                prob = p[dnf_vector[i][j]];
+            }
+            Literal xi(dnf_vector[i][j], prob);
+            //cout<<p[dnf_vector[i][j]]<<endl;
+            m.push_back(xi);
+        }
+        lambda.push_back(m);
+    }
+    for (vector < vector<Literal> >::iterator it = lambda.begin(); it != lambda.end();) {
+        vector <Literal> monomial = *it;
+        bool isZero = false;
+        for (vector <Literal>::iterator it2 = monomial.end(); it2 != monomial.begin(); it2--) {
+            if (it2->getProb() == 0.0 || it2->getProb() == NULL) {
+                isZero = true;
+                break;
+            }
+        }
+        if (isZero) {
+            it = lambda.erase(it);
+        } else {
+            ++it;
+        }
+    }
+
+}
+*/
+
 
 map<string, double> DNF::getProbs() {
     return probs;
 }
 
 void DNF::setProbs(map<string, double> p) {
-    this->probs = p;
+    probs = p;
 }
 
+DNF::DNF(string s, map<string, double> p) {
+    this->str = s;
+    probs = p;
+    //cout<<p["x1"]<<endl;
+    root = new TreeNode(s);
+    DNF::ConvertToDNF();
+    DNF::setLambda(p);    
+}
 
 void
 DNF::ConvertToDNF() {
@@ -221,11 +293,11 @@ DNF::Evaluate() {
 
 void
 DNF::ShowStructure() {
-    for (size_t i=0; i<dnf_vector.size(); i++) {
+    for (size_t i=0; i<lambda.size(); i++) {
         cout << setw(10) << "vector[" << i << "] ";
-        for (size_t j=0; j<dnf_vector[i].size(); j++) {
-            cout << setw(6) << dnf_vector[i][j];
-            if (j != dnf_vector[i].size() - 1) {
+        for (size_t j=0; j<lambda[i].size(); j++) {
+            cout << setw(6) << lambda[i][j].getName();
+            if (j != lambda[i].size() - 1) {
                 cout << ", ";
             }
         }
@@ -236,16 +308,16 @@ DNF::ShowStructure() {
 string
 DNF::ToString(){
     string s = "";
-    for (size_t i=0; i<dnf_vector.size(); i++) {
+    for (size_t i=0; i<lambda.size(); i++) {
         s += "(";
-        for (size_t j=0; j<dnf_vector[i].size(); j++) {
-            s += dnf_vector[i][j];
-            if (j != dnf_vector[i].size() - 1) {
+        for (size_t j=0; j<lambda[i].size(); j++) {
+            s += lambda[i][j].getName();
+            if (j != lambda[i].size() - 1) {
                 s += "*";
             }
         }
         s += ")";
-        if (i != dnf_vector.size() - 1) {
+        if (i != lambda.size() - 1) {
             s += " + ";
         }
     }
