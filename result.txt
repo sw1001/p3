@@ -889,346 +889,6 @@ only add "steeple", right, query "ans-house": pLambda = 0.0096
 
 
 
-
-
-
-
-
-
-2019/08/26:
-stadium	0.25
-terminal	0.25
-castle	0.25
-hotel	0.25
-
-
-###stadium:
-building	is	large	1
-building	with	windows	0.87
-grass	on	field	0.37
-building	with	roof	0.29
-people	on	field	0.25
-
-Influence:
-Literal influence running time: 0.804221 seconds		hasImgbuildingislarge seqInfl= 0.0029
-Literal influence running time: 0.873124 seconds		hasImgbuildingwithroof seqInfl= 0.0013
-Literal influence running time: 0.641064 seconds		hasQbackgroundbuildingWHAT seqInfl= 0.0008
-Literal influence running time: 0.472481 seconds		hasQbuildinginbackground seqInfl= 0
-Literal influence running time: 0.506244 seconds		r1 seqInfl= 0
-Literal influence running time: 0.502663 seconds		r3 seqInfl= 0
-Literal influence running time: 0.437302 seconds		r6 seqInfl= 0.006
-Literal influence running time: 0.43727 seconds			ra seqInfl= 0.006
-Literal influence running time: 0.43822 seconds			rb seqInfl= 0.006
-Literal influence running time: 0.631903 seconds		simbackgroundbuilding seqInfl= 0
-Literal influence running time: 0.831355 seconds		simbackgroundlarge seqInfl= 0
-Literal influence running time: 0.948108 seconds		simbuildingis seqInfl= 0.0036
-Literal influence running time: 0.778214 seconds		simbuildingroof seqInfl= 0.0009
-Literal influence running time: 0.727211 seconds		siminwith seqInfl= 0
-Literal influence running time: 0.488021 seconds		simstadiumbuilding seqInfl= 0.0342
-Literal influence running time: 0.813119 seconds		simstadiumroof seqInfl= 0
-Literal influence running time: 0.435503 seconds		wordstadium seqInfl= 0.0234
-Literal influence running time: 0.932568 seconds		simbackgroundroof seqInfl= 0.0011
-Literal influence running time: 0.7436 seconds			simbuildinglarge seqInfl= 0.0331
-Literal influence running time: 0.798192 seconds		simbuildingwith seqInfl= 0.0072
-Literal influence running time: 0.80505 seconds			siminis seqInfl= 0
-Literal influence running time: 0.794603 seconds		simstadiumlarge seqInfl= 0
-Literal influence running time: 0.640178 seconds		hasQbuildingisWHAT seqInfl= 0.0051
-Literal influence running time: 0.792729 seconds		simiswith seqInfl= 0.0116
-Literal influence running time: 0.971408 seconds		simisis seqInfl= 0.0033
-Literal influence running time: 0.698042 seconds		hasImgbuildingwithwindows seqInfl= 0.0018
-Literal influence running time: 0.752798 seconds		simbuildingwindows seqInfl= 0.003
-Literal influence running time: 0.794247 seconds		simstadiumwindows seqInfl= 0
-Literal influence running time: 0.926793 seconds		simbackgroundwindows seqInfl= 0.003
-Literal influence running time: 0.748728 seconds		hasImggrassonfield seqInfl= 0.0015
-Literal influence running time: 0.793879 seconds		simbackgroundfield seqInfl= 0.0002
-Literal influence running time: 0.79615 seconds			simbuildingon seqInfl= 0.003
-Literal influence running time: 0.743524 seconds		simstadiumgrass seqInfl= 0.0052
-Literal influence running time: 0.920875 seconds		simbackgroundgrass seqInfl= 0
-Literal influence running time: 0.670286 seconds		simbuildingfield seqInfl= 0.0026
-Literal influence running time: 0.737909 seconds		siminon seqInfl= 0
-Literal influence running time: 0.7313 seconds			simstadiumfield seqInfl= 0
-Literal influence running time: 0.899034 seconds		simison seqInfl= 0.0049
-Literal influence running time: 0.754474 seconds		hasImgpeopleonfield seqInfl= 0.0024
-Literal influence running time: 0.728093 seconds		simstadiumpeople seqInfl= 0.0027
-Literal influence running time: 0.932841 seconds		simbackgroundpeople seqInfl= 0
-Literal influence running time: 0.932366 seconds		r2 seqInfl= 0.006
-Total number of literals: 42
-Sequential influence running time: 30.808 seconds
-hasImgbuildingislarge              seqInfl=0.0029
-hasImgpeopleonfield                seqInfl=0.0024
-hasImgbuildingwithwindows          seqInfl=0.0018
-hasImggrassonfield                 seqInfl=0.0015
-hasImgbuildingwithroof             seqInfl=0.0013
-hasQbuildingisWHAT                 seqInfl=0.0051
-hasQbackgroundbuildingWHAT         seqInfl=0.0008
-hasQbuildinginbackground           seqInfl=0
-simstadiumbuilding                 seqInfl=0.0342
-simbuildinglarge                   seqInfl=0.0331
-simiswith                          seqInfl=0.0116
-simbuildingwith                    seqInfl=0.0072
-simstadiumgrass                    seqInfl=0.0052
-simison                            seqInfl=0.0049
-simbuildingis                      seqInfl=0.0036
-simisis                            seqInfl=0.0033
-simbackgroundwindows               seqInfl=0.003
-simbuildingon                      seqInfl=0.003
-simbuildingwindows                 seqInfl=0.003
-simstadiumpeople                   seqInfl=0.0027
-simbuildingfield                   seqInfl=0.0026
-simbackgroundroof                  seqInfl=0.0011
-simbuildingroof                    seqInfl=0.0009
-simbackgroundfield                 seqInfl=0.0002
-siminwith                          seqInfl=0
-siminon                            seqInfl=0
-siminis                            seqInfl=0
-simbackgroundpeople                seqInfl=0
-simbackgroundlarge                 seqInfl=0
-simstadiumfield                    seqInfl=0
-simbackgroundgrass                 seqInfl=0
-simstadiumlarge                    seqInfl=0
-simbackgroundbuilding              seqInfl=0
-simstadiumroof                     seqInfl=0
-simstadiumwindows                  seqInfl=0
-r2                                 seqInfl=0.006
-r6                                 seqInfl=0.006
-ra                                 seqInfl=0.006
-rb                                 seqInfl=0.006
-r1                                 seqInfl=0
-r3                                 seqInfl=0
-index1= 42 size= 961 dim1_size= 60
-
-Parallel influence running time: 1.11859 seconds
-Parallel maxInfluence Literal: simbuildinglarge Infl=0.0356
-
-
-###terminal:
-cars	on	road	1
-planes	are	parked	0.72
-white	color	plane	0.32
-large	train	station	0.2
-white	color	truck	0.15
-
-Influence:
-Literal influence running time: 0.872496 seconds		hasImgcarsonroad seqInfl= 0.0014
-Literal influence running time: 0.910888 seconds		hasImglargetrainstation seqInfl= 0.0008
-Literal influence running time: 0.722653 seconds		hasQbackgroundbuildingWHAT seqInfl= 0.0003
-Literal influence running time: 0.49166 seconds			hasQbuildinginbackground seqInfl= 0
-Literal influence running time: 0.516995 seconds		r1 seqInfl= 0
-Literal influence running time: 0.515693 seconds		r3 seqInfl= 0
-Literal influence running time: 0.462934 seconds		r6 seqInfl= 0.0046
-Literal influence running time: 0.477457 seconds		ra seqInfl= 0.0046
-Literal influence running time: 0.475356 seconds		rb seqInfl= 0.0046
-Literal influence running time: 0.988362 seconds		simbackgroundcars seqInfl= 0
-Literal influence running time: 1.00984 seconds			simbackgroundstation seqInfl= 0.001
-Literal influence running time: 0.793203 seconds		simbuildingroad seqInfl= 0.004
-Literal influence running time: 0.989206 seconds		simbuildingtrain seqInfl= 0.0001
-Literal influence running time: 0.967209 seconds		siminon seqInfl= 0
-Literal influence running time: 0.797506 seconds		simterminalcars seqInfl= 0.0133
-Literal influence running time: 0.772775 seconds		simterminallarge seqInfl= 0.0019
-Literal influence running time: 0.983081 seconds		simterminalroad seqInfl= 0
-Literal influence running time: 0.473333 seconds		wordterminal seqInfl= 0.0211
-Literal influence running time: 0.981665 seconds		simbackgroundlarge seqInfl= 0
-Literal influence running time: 1.00065 seconds			simbackgroundroad seqInfl= 0.0006
-Literal influence running time: 1.02353 seconds			simbuildingon seqInfl= 0.0012
-Literal influence running time: 0.815865 seconds		simbuildingstation seqInfl= 0.001
-Literal influence running time: 0.966679 seconds		simintrain seqInfl= 0
-Literal influence running time: 0.977578 seconds		simterminalstation seqInfl= 0
-Literal influence running time: 0.687807 seconds		hasQbuildingisWHAT seqInfl= 0.0043
-Literal influence running time: 0.989272 seconds		simistrain seqInfl= 0.0007
-Literal influence running time: 0.961966 seconds		simison seqInfl= 0.0128
-Literal influence running time: 0.766716 seconds		hasImgplanesareparked seqInfl= 0.0039
-Literal influence running time: 0.986087 seconds		simbackgroundparked seqInfl= 0.0009
-Literal influence running time: 1.04486 seconds			simbuildingare seqInfl= 0.0012
-Literal influence running time: 0.761621 seconds		simterminalplanes seqInfl= 0.0423
-Literal influence running time: 0.999246 seconds		simbackgroundplanes seqInfl= 0
-Literal influence running time: 0.80679 seconds			simbuildingparked seqInfl= 0.0068
-Literal influence running time: 1.01458 seconds			siminare seqInfl= 0
-Literal influence running time: 0.979862 seconds		simterminalparked seqInfl= 0
-Literal influence running time: 1.00249 seconds			simisare seqInfl= 0.0037
-Literal influence running time: 0.780501 seconds		hasImgwhitecolorplane seqInfl= 0.0011
-Literal influence running time: 0.985622 seconds		simbackgroundplane seqInfl= 0.0018
-Literal influence running time: 0.945342 seconds		simbuildingcolor seqInfl= 0.0026
-Literal influence running time: 0.628643 seconds		simterminalwhite seqInfl= 0.0015
-Literal influence running time: 0.756075 seconds		simbackgroundwhite seqInfl= 0
-Literal influence running time: 0.795362 seconds		simbuildingplane seqInfl= 0.0001
-Literal influence running time: 0.762944 seconds		simincolor seqInfl= 0
-Literal influence running time: 0.969273 seconds		simterminalplane seqInfl= 0
-Literal influence running time: 0.981204 seconds		simiscolor seqInfl= 0.0056
-Literal influence running time: 0.789661 seconds		hasImgwhitecolortruck seqInfl= 0.0003
-Literal influence running time: 1.01031 seconds			simbackgroundtruck seqInfl= 0.0004
-Literal influence running time: 0.907897 seconds		simbuildingtruck seqInfl= 0
-Literal influence running time: 0.955515 seconds		simterminaltruck seqInfl= 0
-Literal influence running time: 0.984225 seconds		r2 seqInfl= 0.0046
-Total number of literals: 50
-Sequential influence running time: 42.2436 seconds
-hasImgplanesareparked              seqInfl=0.0039
-hasImgcarsonroad                   seqInfl=0.0014
-hasImgwhitecolorplane              seqInfl=0.0011
-hasImglargetrainstation            seqInfl=0.0008
-hasImgwhitecolortruck              seqInfl=0.0003
-hasQbuildingisWHAT                 seqInfl=0.0043
-hasQbackgroundbuildingWHAT         seqInfl=0.0003
-hasQbuildinginbackground           seqInfl=0
-simterminalplanes                  seqInfl=0.0423
-simterminalcars                    seqInfl=0.0133
-simison                            seqInfl=0.0128
-simbuildingparked                  seqInfl=0.0068
-simiscolor                         seqInfl=0.0056
-simbuildingroad                    seqInfl=0.004
-simisare                           seqInfl=0.0037
-simbuildingcolor                   seqInfl=0.0026
-simterminallarge                   seqInfl=0.0019
-simbackgroundplane                 seqInfl=0.0018
-simterminalwhite                   seqInfl=0.0015
-simbuildingon                      seqInfl=0.0012
-simbuildingare                     seqInfl=0.0012
-simbuildingstation                 seqInfl=0.001
-simbackgroundstation               seqInfl=0.001
-simbackgroundparked                seqInfl=0.0009
-simistrain                         seqInfl=0.0007
-simbackgroundroad                  seqInfl=0.0006
-simbackgroundtruck                 seqInfl=0.0004
-simbuildingplane                   seqInfl=0.0001
-simbuildingtrain                   seqInfl=0.0001
-simterminalstation                 seqInfl=0
-simterminalroad                    seqInfl=0
-simterminalplane                   seqInfl=0
-simterminalparked                  seqInfl=0
-simterminaltruck                   seqInfl=0
-simbuildingtruck                   seqInfl=0
-simintrain                         seqInfl=0
-siminon                            seqInfl=0
-simincolor                         seqInfl=0
-siminare                           seqInfl=0
-simbackgroundcars                  seqInfl=0
-simbackgroundwhite                 seqInfl=0
-simbackgroundplanes                seqInfl=0
-simbackgroundlarge                 seqInfl=0
-r2                                 seqInfl=0.0046
-r6                                 seqInfl=0.0046
-ra                                 seqInfl=0.0046
-rb                                 seqInfl=0.0046
-r1                                 seqInfl=0
-r3                                 seqInfl=0
-index1= 50 size= 971 dim1_size= 60
-
-Parallel influence running time: 1.13992 seconds
-Parallel maxInfluence Literal: simterminalplanes Infl=0.0426
-
-###hotel:
-building	is	large	1
-building	many	windows	1
-house	with	roof	0.54
-building	is	tall	0.4
-palm	before	building	0.33
-
-Influence:
-Literal influence running time: 0.794361 seconds		hasImgbuildingislarge seqInfl= 0.0032
-Literal influence running time: 0.877546 seconds		hasImgbuildingistall seqInfl= 0
-Literal influence running time: 0.648063 seconds		hasQbackgroundbuildingWHAT seqInfl= 0.0016
-Literal influence running time: 0.476401 seconds		hasQbuildinginbackground seqInfl= 0
-Literal influence running time: 0.510413 seconds		r1 seqInfl= 0
-Literal influence running time: 0.510513 seconds		r3 seqInfl= 0
-Literal influence running time: 0.447344 seconds		r6 seqInfl= 0.0122
-Literal influence running time: 0.446541 seconds		ra seqInfl= 0.0122
-Literal influence running time: 0.448198 seconds		rb seqInfl= 0.0122
-Literal influence running time: 0.629383 seconds		simbackgroundbuilding seqInfl= 0
-Literal influence running time: 0.977894 seconds		simbackgroundlarge seqInfl= 0
-Literal influence running time: 0.816559 seconds		simbuildingis seqInfl= 0.0075
-Literal influence running time: 0.804497 seconds		simbuildingtall seqInfl= 0.017
-Literal influence running time: 0.4746 seconds			simhotelbuilding seqInfl= 0.0269
-Literal influence running time: 0.934314 seconds		simhoteltall seqInfl= 0
-Literal influence running time: 0.750937 seconds		siminis seqInfl= 0
-Literal influence running time: 0.449349 seconds		wordhotel seqInfl= 0.0438
-Literal influence running time: 0.961691 seconds		simbackgroundtall seqInfl= 0
-Literal influence running time: 0.754494 seconds		simbuildinglarge seqInfl= 0.0475
-Literal influence running time: 0.908978 seconds		simhotellarge seqInfl= 0
-Literal influence running time: 0.659379 seconds		hasQbuildingisWHAT seqInfl= 0.0104
-Literal influence running time: 0.868833 seconds		simisis seqInfl= 0.0038
-Literal influence running time: 0.716891 seconds		hasImgbuildingmanywindows seqInfl= 0.0023
-Literal influence running time: 0.767156 seconds		simbuildingwindows seqInfl= 0.004
-Literal influence running time: 0.940937 seconds		simhotelwindows seqInfl= 0
-Literal influence running time: 0.929508 seconds		siminmany seqInfl= 0
-Literal influence running time: 0.969769 seconds		simbackgroundwindows seqInfl= 0.0053
-Literal influence running time: 0.950228 seconds		simbuildingmany seqInfl= 0.01
-Literal influence running time: 0.948956 seconds		simismany seqInfl= 0.0116
-Literal influence running time: 0.762241 seconds		hasImghousewithroof seqInfl= 0.0065
-Literal influence running time: 0.958712 seconds		simbackgroundroof seqInfl= 0.0082
-Literal influence running time: 0.968934 seconds		simbuildingwith seqInfl= 0.0048
-Literal influence running time: 0.759023 seconds		simhotelhouse seqInfl= 0.0072
-Literal influence running time: 0.916281 seconds		simbackgroundhouse seqInfl= 0
-Literal influence running time: 0.795773 seconds		simbuildingroof seqInfl= 0.0089
-Literal influence running time: 0.933253 seconds		simhotelroof seqInfl= 0
-Literal influence running time: 0.939697 seconds		siminwith seqInfl= 0
-Literal influence running time: 0.98475 seconds			simiswith seqInfl= 0.0251
-Literal influence running time: 0.786978 seconds		hasImgpalmbeforebuilding seqInfl= 0.0047
-Literal influence running time: 0.966068 seconds		simbuildingbefore seqInfl= 0.0002
-Literal influence running time: 0.764193 seconds		simhotelpalm seqInfl= 0.0188
-Literal influence running time: 0.947491 seconds		simbackgroundpalm seqInfl= 0
-Literal influence running time: 0.791622 seconds		simbuildingbuilding seqInfl= 0.0023
-Literal influence running time: 0.937538 seconds		siminbefore seqInfl= 0
-Literal influence running time: 0.967737 seconds		simisbefore seqInfl= 0.0059
-Literal influence running time: 0.949526 seconds		r2 seqInfl= 0.0121
-Total number of literals: 46
-Sequential influence running time: 36.5061 seconds
-hasImghousewithroof                seqInfl=0.0065
-hasImgpalmbeforebuilding           seqInfl=0.0047
-hasImgbuildingislarge              seqInfl=0.0032
-hasImgbuildingmanywindows          seqInfl=0.0023
-hasImgbuildingistall               seqInfl=0
-hasQbuildingisWHAT                 seqInfl=0.0104
-hasQbackgroundbuildingWHAT         seqInfl=0.0016
-hasQbuildinginbackground           seqInfl=0
-simbuildinglarge                   seqInfl=0.0475
-simhotelbuilding                   seqInfl=0.0269
-simiswith                          seqInfl=0.0251
-simhotelpalm                       seqInfl=0.0188
-simbuildingtall                    seqInfl=0.017
-simismany                          seqInfl=0.0116
-simbuildingmany                    seqInfl=0.01
-simbuildingroof                    seqInfl=0.0089
-simbackgroundroof                  seqInfl=0.0082
-simbuildingis                      seqInfl=0.0075
-simhotelhouse                      seqInfl=0.0072
-simisbefore                        seqInfl=0.0059
-simbackgroundwindows               seqInfl=0.0053
-simbuildingwith                    seqInfl=0.0048
-simbuildingwindows                 seqInfl=0.004
-simisis                            seqInfl=0.0038
-simbuildingbuilding                seqInfl=0.0023
-simbuildingbefore                  seqInfl=0.0002
-simhotelwindows                    seqInfl=0
-simbackgroundhouse                 seqInfl=0
-simbackgroundlarge                 seqInfl=0
-simbackgroundpalm                  seqInfl=0
-siminwith                          seqInfl=0
-siminmany                          seqInfl=0
-siminis                            seqInfl=0
-siminbefore                        seqInfl=0
-simhoteltall                       seqInfl=0
-simhotelroof                       seqInfl=0
-simbackgroundtall                  seqInfl=0
-simhotellarge                      seqInfl=0
-simbackgroundbuilding              seqInfl=0
-r6                                 seqInfl=0.0122
-ra                                 seqInfl=0.0122
-rb                                 seqInfl=0.0122
-r2                                 seqInfl=0.0121
-r1                                 seqInfl=0
-r3                                 seqInfl=0
-index1= 46 size= 954 dim1_size= 60
-
-Parallel influence running time: 1.10934 seconds
-Parallel maxInfluence Literal: simbuildinglarge Infl=0.0443
-
-
-
-
-
-
-
-
-
 2019/08/27 evaluation:
 ###200 nodes
 Using OpenCL device: GeForce GTX 1080 Ti
@@ -1627,5 +1287,610 @@ node 400 Sequential Influence running time: 1.85904 seconds
 node 350 Sequential Influence running time: 3.84592 seconds
 node 300 Sequential Influence running time: 3.27871 seconds
 node 250 Sequential Influence running time: 0.781801 seconds
+
+2019/9/22
+###stadium.jpg:
+INFO FROM DENSECAP:
+building	is	large	1
+building	with	windows	0.87
+grass	on	field	0.37
+building	with	roof	0.29
+people	on	field	0.25
+
+CANDIDATE ANSWERS:
+stadium	0.25
+terminal	0.25
+castle	0.25
+hotel	0.25
+
+PREDICTION RESULTS:
+terminal pLambda = 0.0082
+stadium pLambda = 0.0068
+hotel  pLambda = 0.0066
+castle pLambda = 0.004
+
+hasImgpeopleonfield                seqInfl=0.0042
+hasImgbuildingislarge              seqInfl=0.0026
+hasImgbuildingwithwindows          seqInfl=0.0021
+hasImgbuildingwithroof             seqInfl=0.0017
+hasImggrassonfield                 seqInfl=0.0007
+hasQbuildingisWHAT                 seqInfl=0.0061
+hasQbackgroundbuildingWHAT         seqInfl=0.0006
+hasQbuildinginbackground           seqInfl=0
+simbuildinglarge                   seqInfl=0.0404
+simterminalbuilding                seqInfl=0.0303
+simiswith                          seqInfl=0.0148
+simison                            seqInfl=0.0082
+simbuildingwith                    seqInfl=0.0072
+simbuildingon                      seqInfl=0.0063
+simbuildingis                      seqInfl=0.0049
+simbackgroundwindows               seqInfl=0.0048
+simterminalgrass                   seqInfl=0.0044
+simisis                            seqInfl=0.0029
+simterminalpeople                  seqInfl=0.0028
+simbuildingwindows                 seqInfl=0.0028
+simbuildingfield                   seqInfl=0.0026
+simbackgroundfield                 seqInfl=0.0015
+simbuildingroof                    seqInfl=0.0009
+simbackgroundroof                  seqInfl=0.0009
+simbackgroundlarge                 seqInfl=0.0001
+siminis                            seqInfl=0
+siminon                            seqInfl=0
+siminwith                          seqInfl=0
+simbackgroundpeople                seqInfl=0
+simterminalfield                   seqInfl=0
+simbackgroundgrass                 seqInfl=0
+simterminallarge                   seqInfl=0
+simbackgroundbuilding              seqInfl=0
+simterminalroof                    seqInfl=0
+simterminalwindows                 seqInfl=0
+rb                                 seqInfl=0.0086
+r6                                 seqInfl=0.007
+r2                                 seqInfl=0.0062
+ra                                 seqInfl=0.0051
+r1                                 seqInfl=0
+r3                                 seqInfl=0
+
+Unique tuples:
+simterminalbuilding                seqInfl=0.0303
+simterminalgrass                   seqInfl=0.0044
+simterminalpeople                  seqInfl=0.0028
+simterminalfield                   seqInfl=0
+simterminallarge                   seqInfl=0
+simterminalroof                    seqInfl=0
+simterminalwindows                 seqInfl=0
+maxInfluence Literal: simbuildinglarge 0.0404
+
+
+Parallel influence running time: 0.985391 seconds
+
+
+
+
+###terminal.jpg:
+INFO FROM DENSECAP:
+cars	on	road	1
+planes	are	parked	0.72
+white	color	plane	0.32
+large	train	station	0.2
+white	color	truck	0.15
+
+CANDIDATE ANSWERS:
+stadium	0.25
+terminal	0.25
+castle	0.25
+hotel	0.25
+
+PREDICTION RESULTS:
+terminal pLambda = 0.0081
+castle pLambda = 0.0069
+hotel  pLambda = 0.0055
+stadium pLambda = 0.0023
+
+hasImgplanesareparked              seqInfl=0.0038
+hasImgcarsonroad                   seqInfl=0.0015
+hasImglargetrainstation            seqInfl=0.0011
+hasImgwhitecolorplane              seqInfl=0.0008
+hasImgwhitecolortruck              seqInfl=0.0002
+hasQbuildingisWHAT                 seqInfl=0.0052
+hasQbackgroundbuildingWHAT         seqInfl=0.0002
+hasQbuildinginbackground           seqInfl=0
+simterminalplanes                  seqInfl=0.0405
+simterminalcars                    seqInfl=0.0127
+simison                            seqInfl=0.0112
+simbuildingparked                  seqInfl=0.0088
+simiscolor                         seqInfl=0.008
+simbuildingroad                    seqInfl=0.0058
+simisare                           seqInfl=0.0046
+simterminallarge                   seqInfl=0.0034
+simbuildingcolor                   seqInfl=0.0026
+simbackgroundplane                 seqInfl=0.0024
+simbuildingon                      seqInfl=0.002
+simterminalwhite                   seqInfl=0.0017
+simbuildingare                     seqInfl=0.0014
+simbackgroundtruck                 seqInfl=0.0009
+simbackgroundstation               seqInfl=0.0009
+simbackgroundroad                  seqInfl=0.0009
+simbuildingstation                 seqInfl=0.0006
+simbackgroundparked                seqInfl=0.0006
+simistrain                         seqInfl=0.0003
+simbuildingtruck                   seqInfl=0.0001
+simbuildingtrain                   seqInfl=0.0001
+siminon                            seqInfl=0
+simintrain                         seqInfl=0
+simincolor                         seqInfl=0
+siminare                           seqInfl=0
+simbackgroundcars                  seqInfl=0
+simbuildingplane                   seqInfl=0
+simbackgroundwhite                 seqInfl=0
+simterminalparked                  seqInfl=0
+simterminalplane                   seqInfl=0
+simbackgroundplanes                seqInfl=0
+simterminalroad                    seqInfl=0
+simterminalstation                 seqInfl=0
+simterminaltruck                   seqInfl=0
+simbackgroundlarge                 seqInfl=0
+r2                                 seqInfl=0.0057
+ra                                 seqInfl=0.0049
+rb                                 seqInfl=0.0048
+r6                                 seqInfl=0.0046
+r1                                 seqInfl=0
+r3                                 seqInfl=0
+
+Unique tuples:
+simterminalplanes                  seqInfl=0.0405
+simterminalcars                    seqInfl=0.0127
+simterminallarge                   seqInfl=0.0034
+simterminalwhite                   seqInfl=0.0017
+simterminalparked                  seqInfl=0
+simterminalplane                   seqInfl=0
+simterminalroad                    seqInfl=0
+simterminalstation                 seqInfl=0
+simterminaltruck                   seqInfl=0
+maxInfluence Literal: simterminalplanes 0.0405
+
+
+Parallel influence running time: 1.13268 seconds
+
+
+
+###hotel.jpg:
+INFO FROM DENSECAP:
+building	is	large	1
+building	many	windows	1
+house	with	roof	0.54
+building	is	tall	0.4
+palm	before	building	0.33
+
+CANDIDATE ANSWERS:
+house	0.25
+horse	0.25
+barn	0.25
+hotel	0.25
+
+PREDICTION RESULTS:
+house pLambda = 0.0216
+barn pLambda = 0.019
+hotel pLambda = 0.0125
+horse pLambda = 0.0075
+
+hasImghousewithroof                seqInfl=0.0108
+hasImgpalmbeforebuilding           seqInfl=0.0089
+hasImgbuildingislarge              seqInfl=0.0067
+hasImgbuildingmanywindows          seqInfl=0.0036
+hasImgbuildingistall               seqInfl=0
+hasQbuildingisWHAT                 seqInfl=0.0173
+hasQbackgroundbuildingWHAT         seqInfl=0.0027
+hasQbuildinginbackground           seqInfl=0
+simbuildinglarge                   seqInfl=0.0772
+simiswith                          seqInfl=0.0515
+simbuildingtall                    seqInfl=0.0316
+simhousebuilding                   seqInfl=0.0298
+simismany                          seqInfl=0.0187
+simisbefore                        seqInfl=0.0183
+simbuildingmany                    seqInfl=0.0168
+simhousepalm                       seqInfl=0.0144
+simbuildingroof                    seqInfl=0.013
+simbackgroundroof                  seqInfl=0.0126
+simbuildingis                      seqInfl=0.0121
+simbuildingwith                    seqInfl=0.0111
+simbackgroundwindows               seqInfl=0.0087
+simbuildingwindows                 seqInfl=0.008
+simhousehouse                      seqInfl=0.0065
+simisis                            seqInfl=0.0061
+simbuildingbuilding                seqInfl=0.0027
+simbuildingbefore                  seqInfl=0.002
+simbackgroundlarge                 seqInfl=0.0002
+simbackgroundbuilding              seqInfl=0.0001
+simbackgroundhouse                 seqInfl=0
+simbackgroundpalm                  seqInfl=0
+siminwith                          seqInfl=0
+siminmany                          seqInfl=0
+siminis                            seqInfl=0
+siminbefore                        seqInfl=0
+simhousewindows                    seqInfl=0
+simhousetall                       seqInfl=0
+simhouseroof                       seqInfl=0
+simbackgroundtall                  seqInfl=0
+simhouselarge                      seqInfl=0
+rb                                 seqInfl=0.0218
+ra                                 seqInfl=0.021
+r6                                 seqInfl=0.02
+r2                                 seqInfl=0.0184
+r1                                 seqInfl=0
+r3                                 seqInfl=0
+
+Unique tuples:
+simhousebuilding                   seqInfl=0.0298
+simhousepalm                       seqInfl=0.0144
+simhousehouse                      seqInfl=0.0065
+simhouselarge                      seqInfl=0
+simhouseroof                       seqInfl=0
+simhousetall                       seqInfl=0
+simhousewindows                    seqInfl=0
+maxInfluence Literal: wordhouse 0.0788
+
+
+Parallel influence running time: 1.11155 seconds
+
+SHOULD increase:simhotelbuilding  cost=0.290735
+Parallel changed literals running time: 2.01455 seconds
+
+###skyscraper.jpg
+INFO FROM DENSECAP:
+tall	white	building	1
+sky	is	blue	0.6
+sky	is	clear	0.6
+buildings	in	background	0.33
+
+CANDIDATE ANSWERS:
+skyscraper	0.25
+library	0.25
+barn	0.25
+college	0.25
+
+PREDICTINO RESULTS:
+skyscraper pLambda = 0.0522
+barn pLambda = 0.0284
+college pLambda = 0.0139
+library pLambda = 0.0068
+
+hasImgtallwhitebuilding            seqInfl=0.0271
+hasImgskyisblue                    seqInfl=0.0213
+hasImgbuildingsinbackground        seqInfl=0.0131
+hasImgskyisclear                   seqInfl=0.0097
+hasQbuildingisWHAT                 seqInfl=0.0464
+hasQbackgroundbuildingWHAT         seqInfl=0.0087
+hasQbuildinginbackground           seqInfl=0
+simiswhite                         seqInfl=0.1066
+simbuildingclear                   seqInfl=0.0606
+simbuildingblue                    seqInfl=0.059
+simskyscrapertall                  seqInfl=0.05
+simskyscrapersky                   seqInfl=0.0398
+simbuildingin                      seqInfl=0.0279
+simbackgroundbuilding              seqInfl=0.0236
+simbuildingbuilding                seqInfl=0.0207
+simisis                            seqInfl=0.0198
+simbuildingis                      seqInfl=0.0154
+simbuildingwhite                   seqInfl=0.0127
+simskyscraperbuildings             seqInfl=0.0094
+simisin                            seqInfl=0.0042
+simbackgroundbackground            seqInfl=0.0036
+simbuildingbackground              seqInfl=0.0025
+simbackgroundclear                 seqInfl=0.0003
+simbackgroundtall                  seqInfl=0
+siminin                            seqInfl=0
+siminis                            seqInfl=0
+siminwhite                         seqInfl=0
+simbackgroundsky                   seqInfl=0
+simskyscraperbackground            seqInfl=0
+simskyscraperblue                  seqInfl=0
+simskyscraperbuilding              seqInfl=0
+simskyscraperclear                 seqInfl=0
+simbackgroundbuildings             seqInfl=0
+simbackgroundblue                  seqInfl=0
+ra                                 seqInfl=0.0544
+r2                                 seqInfl=0.0534
+r6                                 seqInfl=0.0516
+rb                                 seqInfl=0.0477
+r1                                 seqInfl=0
+r3                                 seqInfl=0
+
+Unique tuples:
+simskyscrapertall                  seqInfl=0.05
+simskyscrapersky                   seqInfl=0.0398
+simskyscraperbuildings             seqInfl=0.0094
+simskyscraperbackground            seqInfl=0
+simskyscraperblue                  seqInfl=0
+simskyscraperbuilding              seqInfl=0
+simskyscraperclear                 seqInfl=0
+maxInfluence Literal: wordskyscraper 0.2183
+
+
+Parallel influence running time: 0.65331 seconds
+
+###college.jpg
+INFO FROM DENSECAP:
+man	ride	bicycle	1
+girl	with	shirt	0.95
+large	green	tree	0.6
+tree	before	building	0.5
+
+CANDIDATE ANSWERS:
+factory	0.25
+library	0.25
+barn	0.25
+college	0.25
+
+PREDICTION RESULTS:
+barn pLambda = 0.0127
+college pLambda = 0.0076
+library pLambda = 0.0047
+factory pLambda = 0.0042
+
+hasImgtreebeforebuilding           seqInfl=0.0197
+hasImggirlwithshirt                seqInfl=0.0018
+hasImglargegreentree               seqInfl=0.0003
+hasQbuildingisWHAT                 seqInfl=0.0122
+hasQbackgroundbuildingWHAT         seqInfl=0.002
+hasQbuildinginbackground           seqInfl=0
+simisbefore                        seqInfl=0.0451
+simbarntree                        seqInfl=0.0237
+simbuildingbuilding                seqInfl=0.0129
+simbuildingwith                    seqInfl=0.0116
+simbarnlarge                       seqInfl=0.0109
+simbarngirl                        seqInfl=0.0104
+simbackgroundshirt                 seqInfl=0.0057
+simbuildingbefore                  seqInfl=0.0046
+simiswith                          seqInfl=0.0041
+simbuildingshirt                   seqInfl=0.0041
+simbuildinggreen                   seqInfl=0.0009
+simbackgroundtree                  seqInfl=0.0003
+simisgreen                         seqInfl=0.0003
+simbuildingtree                    seqInfl=0.0001
+simbarnshirt                       seqInfl=0
+simbarnbuilding                    seqInfl=0
+simbackgroundlarge                 seqInfl=0
+siminbefore                        seqInfl=0
+simingreen                         seqInfl=0
+siminwith                          seqInfl=0
+simbackgroundgirl                  seqInfl=0
+simbackgroundbuilding              seqInfl=0
+rb                                 seqInfl=0.0135
+ra                                 seqInfl=0.0131
+r6                                 seqInfl=0.012
+r2                                 seqInfl=0.0102
+r1                                 seqInfl=0
+r3                                 seqInfl=0
+
+Unique tuples:
+simbarntree                        seqInfl=0.0237
+simbarnlarge                       seqInfl=0.0109
+simbarngirl                        seqInfl=0.0104
+simbarnbuilding                    seqInfl=0
+simbarnshirt                       seqInfl=0
+maxInfluence Literal: wordbarn 0.0466
+
+
+Parallel influence running time: 0.32849 seconds
+
+SHOULD increase:simcollegetree  cost=0.175862
+Parallel changed literals running time: 0.691982 seconds
+
+###library.jpg
+INFO FROM DENSECAP:
+man	wears	pants	1
+a	book	shelf	0.9
+shelf	with	books	0.8
+shelf	with	books	0.7
+shelf	with	books	0.6
+
+CANDIDATE ANSWERS:
+factory	0.25
+library	0.25
+barn	0.25
+college	0.25
+
+PREDICTION RESULTS:
+barn pLambda = 0.0026
+college pLambda = 0.0017
+factory pLambda = 0.0014
+library pLambda = 0.0008
+
+hasImgshelfwithbooks               seqInfl=0.0021
+hasImgmanwearspants                seqInfl=0.0012
+hasImgabookshelf                   seqInfl=0.0003
+hasQbackgroundbuildingWHAT         seqInfl=0.0016
+hasQbuildingisWHAT                 seqInfl=0.0012
+hasQbuildinginbackground           seqInfl=0
+simbuildingwears                   seqInfl=0.0099
+simiswears                         seqInfl=0.0071
+simbuildingwith                    seqInfl=0.0068
+simbarnman                         seqInfl=0.0068
+simbackgroundpants                 seqInfl=0.0054
+simbarnshelf                       seqInfl=0.0051
+simbarna                           seqInfl=0.0044
+simbuildingpants                   seqInfl=0.0041
+simisbook                          seqInfl=0.0025
+simbackgroundbooks                 seqInfl=0.0024
+simbuildingbooks                   seqInfl=0.0022
+simiswith                          seqInfl=0.0017
+simbuildingbook                    seqInfl=0.0009
+simbuildingshelf                   seqInfl=0.0008
+simbackgroundshelf                 seqInfl=0.0001
+simbackgrounda                     seqInfl=0
+simbarnpants                       seqInfl=0
+simbarnbooks                       seqInfl=0
+siminbook                          seqInfl=0
+siminwears                         seqInfl=0
+siminwith                          seqInfl=0
+simbackgroundman                   seqInfl=0
+r2                                 seqInfl=0.0025
+ra                                 seqInfl=0.0023
+r6                                 seqInfl=0.0022
+rb                                 seqInfl=0.0022
+r1                                 seqInfl=0
+r3                                 seqInfl=0
+
+Unique tuples:
+simbarnman                         seqInfl=0.0068
+simbarnshelf                       seqInfl=0.0051
+simbarna                           seqInfl=0.0044
+simbarnbooks                       seqInfl=0
+simbarnpants                       seqInfl=0
+maxInfluence Literal: simbuildingwears 0.0099
+
+
+Parallel influence running time: 0.334756 seconds
+
+SHOULD increase:simlibraryman  cost=0.257143
+Parallel changed literals running time: 0.728002 seconds
+
+###factory.jpg
+INFO FORM DENSECAP:
+large	city	scene	1
+a	tall	tower	0.5
+blue	white	sign	0.4
+
+CANDIDATE ANSWERS:
+factory	0.25
+library	0.25
+barn	0.25
+college	0.25
+
+PREDICTION RESULTS:
+library pLambda = 0.0061
+college pLambda = 0.0051
+factory pLambda = 0.0041
+barn pLambda = 0.0033
+
+hasImglargecityscene               seqInfl=0.0059
+hasImgbluewhitesign                seqInfl=0.0022
+hasImgatalltower                   seqInfl=0.0004
+hasQbackgroundbuildingWHAT         seqInfl=0.0039
+hasQbuildingisWHAT                 seqInfl=0.002
+hasQbuildinginbackground           seqInfl=0
+simbackgroundscene                 seqInfl=0.0227
+simlibrarylarge                    seqInfl=0.0164
+simbuildingcity                    seqInfl=0.0114
+simiscity                          seqInfl=0.0095
+simbuildingscene                   seqInfl=0.0078
+simlibraryblue                     seqInfl=0.0073
+simlibrarya                        seqInfl=0.006
+simbuildingsign                    seqInfl=0.0025
+simbackgroundsign                  seqInfl=0.0023
+simiswhite                         seqInfl=0.002
+simbuildingwhite                   seqInfl=0.0008
+simistall                          seqInfl=0.0003
+simbuildingtower                   seqInfl=0.0002
+simbuildingtall                    seqInfl=0.0001
+simincity                          seqInfl=0
+simlibraryscene                    seqInfl=0
+simlibrarysign                     seqInfl=0
+simlibrarytower                    seqInfl=0
+siminwhite                         seqInfl=0
+simintall                          seqInfl=0
+simbackgrounda                     seqInfl=0
+simbackgroundtower                 seqInfl=0
+simbackgroundlarge                 seqInfl=0
+simbackgroundblue                  seqInfl=0
+ra                                 seqInfl=0.0068
+rb                                 seqInfl=0.0061
+r2                                 seqInfl=0.0056
+r6                                 seqInfl=0.005
+r1                                 seqInfl=0
+r3                                 seqInfl=0
+
+Unique tuples:
+simlibrarylarge                    seqInfl=0.0164
+simlibraryblue                     seqInfl=0.0073
+simlibrarya                        seqInfl=0.006
+simlibraryscene                    seqInfl=0
+simlibrarysign                     seqInfl=0
+simlibrarytower                    seqInfl=0
+maxInfluence Literal: wordlibrary 0.0269
+
+
+Parallel influence running time: 0.336843 seconds
+
+SHOULD increase:simfactorylarge  cost=0.097561
+Parallel changed literals running time: 0.67196 seconds
+
+###station.jpg
+INFO FROM DENSECAP:
+train	on	tracks	1
+a	train	station	0.95
+blue	white	sign	0.6
+sign	on	pole	0.05
+
+CANDIDATE ANSWERS:
+factory	0.25
+library	0.25
+station	0.25
+college	0.25
+
+PREDICTION RESULTS:
+station pLambda = 0.0034
+college pLambda = 0.003
+library pLambda = 0.0015
+factory pLambda = 0.0009
+
+hasImgatrainstation                seqInfl=0.001
+hasImgtrainontracks                seqInfl=0.0007
+hasImgsignonpole                   seqInfl=0.0006
+hasImgbluewhitesign                seqInfl=0.0002
+hasQbuildingisWHAT                 seqInfl=0.0035
+hasQbackgroundbuildingWHAT         seqInfl=0.0007
+hasQbuildinginbackground           seqInfl=0
+simison                            seqInfl=0.0118
+simstationblue                     seqInfl=0.0112
+simstationa                        seqInfl=0.0101
+simbuildingtracks                  seqInfl=0.0081
+simstationtrain                    seqInfl=0.0069
+simbuildingstation                 seqInfl=0.0069
+simbackgroundstation               seqInfl=0.006
+simbackgroundtracks                seqInfl=0.0037
+simistrain                         seqInfl=0.0032
+simbuildingon                      seqInfl=0.0031
+simbuildingsign                    seqInfl=0.0009
+simiswhite                         seqInfl=0.0009
+simbackgroundsign                  seqInfl=0.0005
+simstationsign                     seqInfl=0.0004
+simbuildingtrain                   seqInfl=0.0004
+simbuildingwhite                   seqInfl=0.0002
+siminwhite                         seqInfl=0
+simintrain                         seqInfl=0
+siminon                            seqInfl=0
+simbackgrounda                     seqInfl=0
+simbuildingpole                    seqInfl=0
+simbackgroundtrain                 seqInfl=0
+simstationpole                     seqInfl=0
+simbackgroundpole                  seqInfl=0
+simstationstation                  seqInfl=0
+simstationtracks                   seqInfl=0
+simbackgroundblue                  seqInfl=0
+r6                                 seqInfl=0.0046
+ra                                 seqInfl=0.0045
+rb                                 seqInfl=0.0039
+r2                                 seqInfl=0.0031
+r1                                 seqInfl=0
+r3                                 seqInfl=0
+
+Unique tuples:
+simstationblue                     seqInfl=0.0112
+simstationa                        seqInfl=0.0101
+simstationtrain                    seqInfl=0.0069
+simstationsign                     seqInfl=0.0004
+simstationpole                     seqInfl=0
+simstationstation                  seqInfl=0
+simstationtracks                   seqInfl=0
+maxInfluence Literal: wordstation 0.0122
+
+
+Parallel influence running time: 0.626196 seconds
+
+
+
+
 
 
