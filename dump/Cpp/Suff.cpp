@@ -596,7 +596,31 @@ void Suff::sortInfluence(string head){
 	
 }
 
+void Suff::findMostContri(vector<vector<Literal> > lambda) {
+    sort(lambda.begin(), lambda.end(), [](const vector<Literal> lhs, const vector<Literal> rhs) {
+        double p_lhs = 1.0;
+        for (int i = 0; i < lhs.size(); i++) {
+            p_lhs *= lhs[i].getProb();
+        }
 
+        double p_rhs = 1.0;
+        for (int i = 0; i < rhs.size(); i++) {
+            p_rhs *= rhs[i].getProb();
+        }
+
+        return p_lhs > p_rhs;
+    });
+
+	cout << "Most contributive Derivation: " << endl;
+    for(int i = 0; i<lambda[0].size(); i++) {
+            if(lambda[0][i].getName()!="ra" && lambda[0][i].getName()!="rb" && lambda[0][i].getName()!="rc" && lambda[0][i].getName()!="r0" && lambda[0][i].getName()!="r1" && lambda[0][i].getName()!="r2" && lambda[0][i].getName()!="r3" && lambda[0][i].getName()!="r4" && lambda[0][i].getName()!="r5" && lambda[0][i].getName()!="r6") {
+                cout<<"name="<<lambda[0][i].getName()<<" prob="<<lambda[0][i].getProb()<<endl;
+            }
+    }
+	
+    
+    
+}
 
 Literal Suff::findMostInfl(vector<vector<Literal> > sp) {
     map <string, double> infl_x;
@@ -681,6 +705,7 @@ Literal Suff::p_findMostInfl(vector<vector<Literal> >sp, string head, cl::Contex
 		//cout<< it->first << "  paraInfl=" << para_influence[it->first] <<endl;
 			
 	}
+	this->influence = para_influence;
 	
 	double max = 0.0;
 	string max_name = "";
@@ -690,8 +715,9 @@ Literal Suff::p_findMostInfl(vector<vector<Literal> >sp, string head, cl::Contex
 		    max_name = it->first;
 		}
 	}
-
+    
 	return Literal(max_name, max);
+	
 	
 }
 

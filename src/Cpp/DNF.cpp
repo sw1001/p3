@@ -57,6 +57,15 @@ void DNF::setLambda(map<string, double> p){
             }
         }
         if(!hasIDB) {
+            mono.erase("ra");
+            mono.erase("rb");
+            mono.erase("r0");
+            mono.erase("r1");
+            mono.erase("r2");
+            mono.erase("r3");
+            mono.erase("r4");
+            mono.erase("r5");
+            mono.erase("r6");
             lambda.push_back(mono);
         }
     }

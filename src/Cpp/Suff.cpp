@@ -50,7 +50,11 @@ vector<map<string, double> > Suff::getOrigDNF() {
 }
 
 void Suff::setOrigProb(vector< map<string, double> > lambda) {
-    this->origProb = Suff::monteCarloSim(lambda);
+    clock_t t = clock();
+    this->origProb = monteCarloSim(lambda);
+    //this->origProb = shannonExpan(lambda);
+    t = clock() - t;
+    cout << "MC time: "<<((float) t)/CLOCKS_PER_SEC << " seconds" << endl;
 }
 
 double Suff::getOrigProb() {
@@ -144,17 +148,28 @@ double Suff::monteCarloSim(vector< map<string, double> > lambda) {
     int rounds = 10000;
     int sum = 0;
     //simulation
-    default_random_engine generator;
+    //default_random_engine generator;
+    random_device rd;
+    mt19937 generator(rd());
     uniform_real_distribution<double> distribution(0.0,1.0);
     for(int i = 0; i < rounds; i++) {
         map<string, int> assignment;
-        // sum += Suff::singleRound(assignment, lambda, generator, distribution);
+        /*
+        assignment["ra"] = 1;
+        assignment["rb"] = 1;
+        assignment["r0"] = 1;
+        assignment["r1"] = 1;
+        assignment["r2"] = 1;
+        assignment["r3"] = 1;
+        assignment["r4"] = 1;
+        assignment["r5"] = 1;
+        assignment["r6"] = 1;
+        */
         int lambdaValue = 0;
         // for each mono in lambda
         // from the first literal, if it is not in assignment, roll dice and record its assignment
-        // if the assigned value of this literal equals zero, then the mono == 0
+        // if the assigned value == 0, then the mono == 0
         // if assigned value is one, then continue on next literal
-        // if any mono == 1, then lambda == 1, record the value and continue on next round
         for(vector< map<string, double> >::iterator mono = lambda.begin(); mono != lambda.end(); mono++) {
             int monoValue = 1;
             for(map<string, double>::iterator lit = (*mono).begin(); lit != (*mono).end(); lit++) {
@@ -166,6 +181,7 @@ double Suff::monteCarloSim(vector< map<string, double> > lambda) {
                         break;
                     } else {
                         assignment[lit->first] = 1;
+                        continue;
                     }
                 } else {
                     if (assignment[lit->first] == 0) {
@@ -174,6 +190,7 @@ double Suff::monteCarloSim(vector< map<string, double> > lambda) {
                     }
                 }
             }
+            // if any mono == 1, then lambda == 1, record the value and continue on next round
             if(monoValue == 1) {
                 lambdaValue = 1;
                 break;
@@ -182,40 +199,6 @@ double Suff::monteCarloSim(vector< map<string, double> > lambda) {
         sum += lambdaValue;
     }
     return 1.0 * sum / rounds;
-}
-
-int Suff::singleRound(map<string, int> assignment, vector< map<string, double> > lambda, default_random_engine generator, uniform_real_distribution<double> distribution) {
-    int lambdaValue = 0;
-    // for each mono in lambda
-    // from the first literal, if it is not in assignment, roll dice and record its assignment
-    // if the assigned value of this literal equals zero, then the mono == 0
-    // if assigned value is one, then continue on next literal
-    // if any mono == 1, then lambda == 1, record the value and continue on next round
-    for(vector< map<string, double> >::iterator mono = lambda.begin(); mono != lambda.end(); mono++) {
-        int monoValue = 1;
-        for(map<string, double>::iterator lit = (*mono).begin(); lit != (*mono).end(); lit++) {
-            if(assignment.find(lit->first) == assignment.end()) {
-                double prand = distribution(generator);
-                if (lit->second < prand) {
-                    assignment[lit->first] = 0;
-                    monoValue = 0;
-                    break;
-                } else {
-                    assignment[lit->first] = 1;
-                }
-            } else {
-                if (assignment[lit->first] == 0) {
-                    monoValue = 0;
-                    break;
-                }
-            }
-        }
-        if(monoValue == 1) {
-            lambdaValue = 1;
-            break;
-        }
-    }
-    return lambdaValue;
 }
 
 void Suff::printDNF(vector< map<string, double> > lambda) {
@@ -230,7 +213,50 @@ void Suff::printDNF(vector< map<string, double> > lambda) {
     }
 }
 
-
-
+double Suff::shannonExpan(vector<map<string, double> > lambda) {
+    // lambda = x * ( lambda(x=1) ) + (1-x) * ( lambda(x=0) )
+    if(lambda.size() == 1) {
+        double p_m = 1.0;
+        for(vector< map<string, double> >::iterator mono = lambda.begin(); mono != lambda.end(); mono++) {
+            for(map<string, double>::iterator lit = (*mono).begin(); lit != (*mono).end(); lit++) {
+                p_m *= lit->second;
+            }
+        }
+        return p_m;
+    } else {
+        string name = lambda.front().begin()->first;
+        double p = lambda.front().begin()->second;
+        vector< map<string, double> > lambda1(lambda);
+        double l1 = 0.0;
+        // cout << "Literal: " << literal.first << " " << literal.second << endl;
+        for (vector<map<string, double> >::iterator mono = lambda1.begin(); mono != lambda1.end(); mono++) {
+            if (mono->find(name) != mono->end()) {
+                mono->erase(name);
+            }
+            if(mono->size() == 0) {
+                l1 = 1.0;
+            }
+        }
+        vector< map<string, double> > lambda0;
+        double l2 = 1.0;
+        for (vector<map<string, double> >::iterator mono = lambda.begin(); mono != lambda.end(); mono++) {
+            if (mono->find(name) == mono->end()) {
+                lambda0.push_back((*mono));
+            }
+        }
+        if(lambda0.size() == 0) {
+            l2 = 0.0;
+        }
+        if(l1 == 1.0 && l2 == 0.0) {
+            return p;
+        } else if(l1 == 1.0 && l2 != 0.0) {
+            return p + (1-p) * shannonExpan(lambda0);
+        } else if(l1 != 1.0 && l2 == 0.0) {
+            return p * shannonExpan(lambda1);
+        } else {
+            return p * shannonExpan(lambda1) + (1-p) * shannonExpan(lambda0);
+        }
+    }
+}
 
 

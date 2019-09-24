@@ -19,7 +19,7 @@ COMMON_DIR = ../../Cpp_common
 
 INC = -I $(COMMON_DIR)
 
-MMUL_OBJS = main.o Load.o DNF.o Suff.o Influ.o Para.o 
+MMUL_OBJS = main.o Load.o DNF.o Suff.o Influ.o Change.o Para.o 
 EXEC = query
 
 # Check our platform and make sure we define the APPLE variable
@@ -50,9 +50,11 @@ Suff.o:  Suff.h Para.h
 
 Influ.o:  Influ.h Suff.h Para.h
 
+Change.o:  Change.h Influ.h Suff.h Para.h
+
 Para.o:  Para.h
 
-main.o:  Load.h DNF.h Suff.h Influ.h
+main.o:  Load.h DNF.h Suff.h Influ.h Change.h Para.h
 
 clean:
 	rm -f $(MMUL_OBJS) $(EXEC)

@@ -19,12 +19,12 @@
 #include "DNF.h"
 #include "Suff.h"
 #include "Influ.h"
+#include "Change.h"
 #include "Para.h"
-#include "cl.hpp"
 
 using namespace std;
 
-#define ProvPath "/home/sleepytodeath/p3/data/prov/prov_sample_500.txt"
+#define ProvPath "/home/sleepytodeath/p3/data/prov/test3.txt"
 #define DataPath "/home/sleepytodeath/p3/data/trust/sample_500_shaobo.csv"
 
 /*
@@ -39,12 +39,14 @@ int main(int argc, char** argv) {
     cout << "------------------------------" << endl;
 
     DNF dnf(load.getProv(), load.getProbs());
-    //cout << dnf.ToString() << endl;
+    cout<<"DNF number of monomials: "<<dnf.getLambda().size()<<endl;
+    //dnf.ShowStructure();
 
     cout << "------------------------------" << endl;
 
     double errRate = 0.01; // approximation error rate
     Suff suff(dnf.getLambda(), errRate);
+    // print results
     //cout << "The original DNF is: " << endl;
     //suff.printDNF(suff.getOrigDNF());
     cout << "Original Probability = " << suff.getOrigProb() << endl;
@@ -56,26 +58,23 @@ int main(int argc, char** argv) {
     cout << "------------------------------" << endl;
 
     Influ influ(suff.getOrigDNF(), suff.getOrigProb());
-    cout << "Sequential Influence: " << endl;
+    cout << "Influence: " << endl;
     influ.printInflu(influ.getInfluence(0));
-    cout << "Sequential Most Influential Tuple: " << endl;
-    influ.printInflu(influ.getInfluence(1));
     cout << endl;
     /*
-    clock_t t = clock();
-    influ.setChangeOrder(influ.getInfluence(0), influ.getDNFProb() - 0.1);
-    t = clock() - t;
-    cout << "Changing order running time: " << ((float) t)/CLOCKS_PER_SEC << " seconds" << endl;
-    cout << "Changing order: " << endl;
-    influ.printInflu(influ.getChangeOrder());
+    cout << "------------------------------" << endl;
+
+    Change change(influ.getDNF(), influ.getDNFProb(), influ.getInfluence(1).front(), influ.getDNFProb()-0.1);
+    cout << "Change order: " << endl;
+    change.printChangeOrder(change.getChangeOrder());
     */
-    
     cout << "------------------------------" << endl;
     clock_t t_para = clock();
-    para.p_setInfluence_lit(suff.getOrigDNF());
+    para.p_setInfluence(suff.getOrigDNF());
     t_para = clock() - t_para;
     cout << "Parallel Influence running time: " << ((float) t_para)/CLOCKS_PER_SEC << " seconds" << endl;
     
+
     return 0;
 }
 

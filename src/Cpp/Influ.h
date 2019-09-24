@@ -27,17 +27,13 @@ public:
     void setInfluence(vector< map<string, double> >);
     vector< pair<string, double> > getInfluence(int);
 
-    void setChangeOrder(vector< pair<string, double> >, double);
-    vector< pair<string, double> > getChangeOrder();
-
     double computeInflu(vector< map<string, double> >, pair<string, double>);
-    double monteCarloSim(vector< map<string, double> >);
-    vector< pair<string, double> > sortMap(map<string, double>);
+    double monteCarloSim2(vector< map<string, double> >, vector< map<string, double> >);
+    vector< pair<string, double> > sortInflu(map<string, double>);
     void printInflu(vector< pair<string, double> >);
 
 private:
     vector< pair<string, double> > influence;
-    vector< pair<string, double> > changeOrder;
     vector< map<string, double> > DNF;
     double DNFProb;
 };

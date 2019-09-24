@@ -40,9 +40,9 @@ public:
     void setOrigProb(vector< map<string, double> >);
     double getOrigProb();
 
+    static double shannonExpan(vector< map<string, double> >);
     static double monteCarloSim(vector< map<string, double> >);
-    int singleRound(map<string, int>, vector< map<string, double> >, default_random_engine, uniform_real_distribution<double>);
-    void printDNF(vector< map<string, double> >);
+    static void printDNF(vector< map<string, double> >);
 
 private:
     vector< map<string, double> > origDNF;

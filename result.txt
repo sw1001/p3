@@ -1364,6 +1364,10 @@ maxInfluence Literal: simbuildinglarge 0.0404
 
 Parallel influence running time: 0.985391 seconds
 
+SHOULD increase:simstadiumbuilding  cost=0.0479452
+Parallel changed literals running time: 1.82957 seconds
+
+
 
 
 
@@ -1382,10 +1386,20 @@ castle	0.25
 hotel	0.25
 
 PREDICTION RESULTS:
-terminal pLambda = 0.0081
+pLambda = 0.0107
 castle pLambda = 0.0069
 hotel  pLambda = 0.0055
 stadium pLambda = 0.0023
+
+Most contributive Derivation: 
+name=hasImgplanesareparked prob=0.72
+name=hasQbuildingisWHAT prob=1
+name=simbuildingparked prob=0.395049
+name=simisare prob=0.587614
+name=simterminalplanes prob=0.208016
+name=wordterminal prob=0.25
+
+
 
 hasImgplanesareparked              seqInfl=0.0038
 hasImgcarsonroad                   seqInfl=0.0015
@@ -1474,6 +1488,9 @@ barn pLambda = 0.019
 hotel pLambda = 0.0125
 horse pLambda = 0.0075
 
+Most contributive EDBtuple: hasImgbuildingislarge
+Probability: 1
+
 hasImghousewithroof                seqInfl=0.0108
 hasImgpalmbeforebuilding           seqInfl=0.0089
 hasImgbuildingislarge              seqInfl=0.0067
@@ -1554,6 +1571,15 @@ skyscraper pLambda = 0.0522
 barn pLambda = 0.0284
 college pLambda = 0.0139
 library pLambda = 0.0068
+
+Most contributive Derivation: 
+name=hasImgtallwhitebuilding prob=1
+name=hasQbuildingisWHAT prob=1
+name=simbuildingbuilding prob=1
+name=simiswhite prob=0.20683
+name=simskyscrapertall prob=0.5
+name=wordskyscraper prob=0.25
+
 
 hasImgtallwhitebuilding            seqInfl=0.0271
 hasImgskyisblue                    seqInfl=0.0213
@@ -1697,26 +1723,29 @@ college pLambda = 0.0017
 factory pLambda = 0.0014
 library pLambda = 0.0008
 
-hasImgshelfwithbooks               seqInfl=0.0021
-hasImgmanwearspants                seqInfl=0.0012
-hasImgabookshelf                   seqInfl=0.0003
-hasQbackgroundbuildingWHAT         seqInfl=0.0016
-hasQbuildingisWHAT                 seqInfl=0.0012
+Most contributive EDBtuple: hasImgmanwearspants
+Probability: 1
+
+hasImgmanwearspants                seqInfl=0.0023
+hasImgshelfwithbooks               seqInfl=0.0017
+hasImgabookshelf                   seqInfl=0.0001
+hasQbackgroundbuildingWHAT         seqInfl=0.0024
+hasQbuildingisWHAT                 seqInfl=0.001
 hasQbuildinginbackground           seqInfl=0
-simbuildingwears                   seqInfl=0.0099
-simiswears                         seqInfl=0.0071
-simbuildingwith                    seqInfl=0.0068
-simbarnman                         seqInfl=0.0068
-simbackgroundpants                 seqInfl=0.0054
-simbarnshelf                       seqInfl=0.0051
-simbarna                           seqInfl=0.0044
-simbuildingpants                   seqInfl=0.0041
-simisbook                          seqInfl=0.0025
-simbackgroundbooks                 seqInfl=0.0024
-simbuildingbooks                   seqInfl=0.0022
-simiswith                          seqInfl=0.0017
-simbuildingbook                    seqInfl=0.0009
-simbuildingshelf                   seqInfl=0.0008
+simbuildingwears                   seqInfl=0.0098
+simbackgroundpants                 seqInfl=0.0064
+simiswears                         seqInfl=0.0063
+simbuildingwith                    seqInfl=0.0063
+simbarnman                         seqInfl=0.0058
+simbarnshelf                       seqInfl=0.0057
+simbuildingpants                   seqInfl=0.005
+simbarna                           seqInfl=0.0046
+simbackgroundbooks                 seqInfl=0.0031
+simisbook                          seqInfl=0.0026
+simbuildingbooks                   seqInfl=0.0025
+simiswith                          seqInfl=0.0018
+simbuildingbook                    seqInfl=0.0013
+simbuildingshelf                   seqInfl=0.0013
 simbackgroundshelf                 seqInfl=0.0001
 simbackgrounda                     seqInfl=0
 simbarnpants                       seqInfl=0
@@ -1725,20 +1754,20 @@ siminbook                          seqInfl=0
 siminwears                         seqInfl=0
 siminwith                          seqInfl=0
 simbackgroundman                   seqInfl=0
-r2                                 seqInfl=0.0025
-ra                                 seqInfl=0.0023
-r6                                 seqInfl=0.0022
-rb                                 seqInfl=0.0022
+r2                                 seqInfl=0.0034
+r6                                 seqInfl=0.0034
+ra                                 seqInfl=0.0034
+rb                                 seqInfl=0.0034
 r1                                 seqInfl=0
 r3                                 seqInfl=0
 
 Unique tuples:
-simbarnman                         seqInfl=0.0068
-simbarnshelf                       seqInfl=0.0051
-simbarna                           seqInfl=0.0044
+simbarnman                         seqInfl=0.0058
+simbarnshelf                       seqInfl=0.0057
+simbarna                           seqInfl=0.0046
 simbarnbooks                       seqInfl=0
 simbarnpants                       seqInfl=0
-maxInfluence Literal: simbuildingwears 0.0099
+maxInfluence Literal: simbuildingwears 0.0098
 
 
 Parallel influence running time: 0.334756 seconds
@@ -1763,6 +1792,9 @@ library pLambda = 0.0061
 college pLambda = 0.0051
 factory pLambda = 0.0041
 barn pLambda = 0.0033
+
+Most contributive EDBtuple: hasImglargecityscene
+Probability: 1
 
 hasImglargecityscene               seqInfl=0.0059
 hasImgbluewhitesign                seqInfl=0.0022
@@ -1835,6 +1867,16 @@ college pLambda = 0.003
 library pLambda = 0.0015
 factory pLambda = 0.0009
 
+Most contributive Derivation: 
+name=hasImgtrainontracks prob=1
+name=hasQbuildingisWHAT prob=1
+name=simbuildingtracks prob=0.171049
+name=simison prob=0.144489
+name=simstationtrain prob=0.238387
+name=wordstation prob=0.25
+
+
+
 hasImgatrainstation                seqInfl=0.001
 hasImgtrainontracks                seqInfl=0.0007
 hasImgsignonpole                   seqInfl=0.0006
@@ -1888,7 +1930,6 @@ maxInfluence Literal: wordstation 0.0122
 
 
 Parallel influence running time: 0.626196 seconds
-
 
 
 

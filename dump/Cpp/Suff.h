@@ -50,6 +50,7 @@ public:
     Literal findMostInfl(vector < vector<Literal> >);
     Literal p_findMostInfl(vector< vector<Literal> > sp, string head = "", cl::Context context = ::context, cl::CommandQueue queue = ::queue, cl::Program program = ::program);
     Literal p_findMostInfl_wcz(vector< vector<Literal> > sp, string head = "", cl::Context context = ::context, cl::CommandQueue queue = ::queue, cl::Program program = ::program);
+    void findMostContri(vector<vector<Literal> >);
     vector<Literal> changedLiterals(vector< vector<Literal> > lambda, double t, string head = "");
 private:
     vector < vector<Literal> > suffProv;
