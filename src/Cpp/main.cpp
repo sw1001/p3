@@ -24,7 +24,7 @@
 
 using namespace std;
 
-#define ProvPath "/home/sleepytodeath/p3/data/prov/test3.txt"
+#define ProvPath "/home/sleepytodeath/p3/data/prov/long.txt"
 #define DataPath "/home/sleepytodeath/p3/data/trust/sample_500_shaobo.csv"
 
 /*
