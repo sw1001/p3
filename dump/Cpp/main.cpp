@@ -90,7 +90,7 @@ int main(int argc, char** argv) {
     }
     */
     //code to read prov from files
-    string provfilename = "/home/sleepytodeath/rapidnet_v1.0/data/vqa/terminal/prov_eval_terminal.txt";
+    string provfilename = "/home/sleepytodeath/rapidnet_v1.0/data/vqa/factory/prov_eval_factory.txt";
     string head = "sim" + provfilename.substr(provfilename.find_last_of("_") + 1, provfilename.find(".txt") - provfilename.find_last_of("_") - 1);
     ifstream pfin(provfilename);
     stringstream buffer;
@@ -139,7 +139,7 @@ int main(int argc, char** argv) {
     
     vector<string> filenames;
     string path = "/home/sleepytodeath/rapidnet_v1.0/data/vqa/";
-    string foldername = "terminal";
+    string foldername = "factory";
     filenames.push_back(path + foldername + "/word_obs.txt");
     filenames.push_back(path + foldername + "/sim_obs.txt");
     filenames.push_back(path + foldername + "/hasq_obs.txt");
@@ -228,7 +228,7 @@ int main(int argc, char** argv) {
 	//suff.printProv(suff.getSuffProv());
 	cout<<endl;
 	*/
-	/*
+	
 	clock_t t2 = clock();
 	suff.setInfluence(dnf.getLambda());
 	//suff.setInfluence(suff.getSuffProv());
@@ -242,7 +242,7 @@ int main(int argc, char** argv) {
 	suff.sortInfluence(head);
 	Literal x1 = suff.maxInfluence();
 	cout<<"Sequential maxInfluence Literal: "<<x1.getName()<<" "<<x1.getProb()<<endl<<endl;
-	*/
+	
 	
 	suff.findMostContri(dnf.getLambda());
 											
@@ -278,7 +278,7 @@ int main(int argc, char** argv) {
 	
 	
 	clock_t t3 = clock();
-	vector<Literal> vcl = suff.changedLiterals(dnf.getLambda(), 0.0082, head);
+	vector<Literal> vcl = suff.changedLiterals(dnf.getLambda(), 0.0026, head);
 	//vector<Literal> vcl = suff.changedLiterals(suff.getSuffProv(), 0.9, head);
 	t3 = clock() - t3;
 	cout<<"Parallel changed literals running time: "<<((float)t3)/CLOCKS_PER_SEC<<" seconds"<<endl<<endl;

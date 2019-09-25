@@ -1488,8 +1488,6 @@ barn pLambda = 0.019
 hotel pLambda = 0.0125
 horse pLambda = 0.0075
 
-Most contributive EDBtuple: hasImgbuildingislarge
-Probability: 1
 
 hasImghousewithroof                seqInfl=0.0108
 hasImgpalmbeforebuilding           seqInfl=0.0089
@@ -1723,8 +1721,7 @@ college pLambda = 0.0017
 factory pLambda = 0.0014
 library pLambda = 0.0008
 
-Most contributive EDBtuple: hasImgmanwearspants
-Probability: 1
+
 
 hasImgmanwearspants                seqInfl=0.0023
 hasImgshelfwithbooks               seqInfl=0.0017
