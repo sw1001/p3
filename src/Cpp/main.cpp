@@ -47,28 +47,32 @@ int main(int argc, char** argv) {
     double errRate = 0.01; // approximation error rate
     Suff suff(dnf.getLambda(), errRate);
     // print results
-    //cout << "The original DNF is: " << endl;
-    //suff.printDNF(suff.getOrigDNF());
+    // cout << "The original DNF is: " << endl;
+    // suff.printDNF(suff.getOrigDNF());
+    cout << "Original DNF size: " << suff.getOrigDNF().size() << endl;
     cout << "Original Probability = " << suff.getOrigProb() << endl;
     cout << endl;
-    cout << "The sufficient DNF is: " << endl;
-    suff.printDNF(suff.getSuffDNF());
+    // cout << "The sufficient DNF is: " << endl;
+    // suff.printDNF(suff.getSuffDNF());
+    cout << "Sufficient DNF size: " << suff.getSuffDNF().size() << endl;
     cout << "SuffProv Probability = " << suff.getSuffProb() << endl;
 
     cout << "------------------------------" << endl;
 
     Influ influ(suff.getOrigDNF(), suff.getOrigProb());
-    cout << "Influence: " << endl;
+    cout << "Original lambda influence: " << endl;
     influ.printInflu(influ.getInfluence(0));
+    //cout << "Distinct literals in original lambda: " << influ.getInfluence(0).size() << endl;
     cout << endl;
-    /*
+
+    cout << "------------------------------" << endl;
+/*
+    Change change(influ.getDNF(), influ.getDNFProb(), influ.getInfluence(1).front().first, influ.getDNFProb()+0.1);
+    cout << "Changing order: " << endl;
+    change.printChangeOrder(change.getChangeOrder());
+*/
     cout << "------------------------------" << endl;
 
-    Change change(influ.getDNF(), influ.getDNFProb(), influ.getInfluence(1).front(), influ.getDNFProb()-0.1);
-    cout << "Change order: " << endl;
-    change.printChangeOrder(change.getChangeOrder());
-    */
-    cout << "------------------------------" << endl;
     clock_t t_para = clock();
     para.p_setInfluence(suff.getOrigDNF());
     t_para = clock() - t_para;

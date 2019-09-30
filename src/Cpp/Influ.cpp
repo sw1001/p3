@@ -56,7 +56,7 @@ void Influ::setInfluence(vector< map<string, double> > lambda) {
         for(map<string, double>::iterator literal = (*mono).begin(); literal != (*mono).end(); literal++) {
             if(memory.find(literal->first) == memory.end()) {
                 //compute its influence
-                influTemp[literal->first] = Influ::computeInflu(lambda, (*literal));
+                influTemp[literal->first] = Influ::computeInflu(lambda, literal->first);
                 //update memory
                 memory.insert(literal->first);
             }
@@ -87,17 +87,17 @@ vector< pair<string, double> > Influ::getInfluence(int k) {
     }
 }
 
-double Influ::computeInflu(vector< map<string, double> > lambda, pair<string, double> literal) {
+double Influ::computeInflu(vector< map<string, double> > lambda, string literal) {
     vector< map<string, double> > lambda1(lambda);
     // cout << "Literal: " << literal.first << " " << literal.second << endl;
     for (vector<map<string, double> >::iterator mono = lambda1.begin(); mono != lambda1.end(); mono++) {
-        if (mono->find(literal.first) != mono->end()) {
-            mono->erase(literal.first);
+        if (mono->find(literal) != mono->end()) {
+            mono->erase(literal);
         }
     }
     vector< map<string, double> > lambda0;
     for (vector<map<string, double> >::iterator mono = lambda.begin(); mono != lambda.end(); mono++) {
-        if (mono->find(literal.first) == mono->end()) {
+        if (mono->find(literal) == mono->end()) {
             lambda0.push_back((*mono));
         }
     }
