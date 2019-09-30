@@ -27,8 +27,8 @@ public:
     void setInfluence(vector< map<string, double> >);
     vector< pair<string, double> > getInfluence(int);
 
-    double computeInflu(vector< map<string, double> >, string);
-    double monteCarloSim2(vector< map<string, double> >, vector< map<string, double> >);
+    static double computeInflu(vector< map<string, double> >, string);
+    static double monteCarloSim2(vector< map<string, double> >, vector< map<string, double> >);
     vector< pair<string, double> > sortInflu(map<string, double>);
     void printInflu(vector< pair<string, double> >);
 
