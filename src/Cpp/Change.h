@@ -16,9 +16,9 @@ public:
     Change();
     Change(const Change & orig);
     virtual ~Change();
-    Change(vector< map<string, double> >, double, pair<string, double>, double);
+    Change(vector< map<string, double> >, double, string, double);
 
-    void setChangeOrder(vector< map<string, double> >, double, pair<string, double>, double);
+    void setChangeOrder(vector< map<string, double> >, double, string, double);
     vector< pair<string, double> > getChangeOrder();
 
     void printChangeOrder(vector< pair<string, double> >);
