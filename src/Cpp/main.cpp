@@ -24,8 +24,8 @@
 
 using namespace std;
 
-#define ProvPath "/home/sleepytodeath/p3/data/prov/long.txt"
-#define DataPath "/home/sleepytodeath/p3/data/trust/sample_500_shaobo.csv"
+#define ProvPath "/home/chenyuan/new/p3/data/prov/prove_sample_500.txt"
+#define DataPath "/home/chenyuan/new/p3/data/trust/sample_500_shaobo.csv"
 
 /*
  * main method to compute the sufficient lineage given a k-mDNF formula and 
