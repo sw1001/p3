@@ -65,12 +65,18 @@ int main(int argc, char** argv) {
     //cout << "Distinct literals in original lambda: " << influ.getInfluence(0).size() << endl;
     cout << endl;
 
+    Influ influSuff(suff.getSuffDNF(), suff.getSuffProb());
+    cout << "Sufficient lineage influence: " << endl;
+    influSuff.printInflu(influSuff.getInfluence(0));
+    cout << "Total number of literals in sufficient lineage: " << influSuff.getInfluence(0).size() << endl;
+    cout << endl;
+
     cout << "------------------------------" << endl;
-/*
+
     Change change(influ.getDNF(), influ.getDNFProb(), influ.getInfluence(1).front().first, influ.getDNFProb()+0.1);
     cout << "Changing order: " << endl;
     change.printChangeOrder(change.getChangeOrder());
-*/
+
     cout << "------------------------------" << endl;
 
     clock_t t_para = clock();
