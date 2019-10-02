@@ -24,7 +24,7 @@
 
 using namespace std;
 
-#define ProvPath "/home/chenyuan/new/p3/data/prov/prov_sample_500.txt"
+#define ProvPath "/home/chenyuan/new/p3/data/prov/prov_sample_150.txt"
 #define DataPath "/home/chenyuan/new/p3/data/trust/sample_500_shaobo.csv"
 
 /*
@@ -73,7 +73,7 @@ int main(int argc, char** argv) {
 
     cout << "------------------------------" << endl;
 
-    Change change(influ.getDNF(), influ.getDNFProb(), influ.getInfluence(1).front().first, influ.getDNFProb()+0.1);
+    Change change(influ.getDNF(), influ.getDNFProb(), influ.getInfluence(1).front().first, influ.getDNFProb()-0.5);
     cout << "Changing order: " << endl;
     change.printChangeOrder(change.getChangeOrder());
 

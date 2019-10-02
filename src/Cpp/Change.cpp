@@ -52,9 +52,9 @@ void Change::setChangeOrder(vector< map<string, double> > lambda, double lambdaP
             // keep running
             this->changeOrder.emplace_back(topLiteral + " current prob =", probTemp);
             // find suffDNF for DNFTemp and compute its most influential tuple
-            Suff suff(DNFTemp, 0.05);
+            Suff suff(DNFTemp, 0.01);
             Influ influ(suff.getSuffDNF(), suff.getSuffProb());
-            //Influ influ(DNFTemp, probTemp);
+            // Influ influ(DNFTemp, probTemp);
             cout << "Top influ literal: ";
             influ.printInflu(influ.getInfluence(1));
             cout << endl;
@@ -78,9 +78,9 @@ void Change::setChangeOrder(vector< map<string, double> > lambda, double lambdaP
         if(probTemp > target) {
             this->changeOrder.emplace_back(topLiteral + " current prob =", probTemp);
             // find suffDNF for DNFTemp and compute its most influential tuple
-            Suff suff(DNFTemp, 0.05);
+            Suff suff(DNFTemp, 0.01);
             Influ influ(suff.getSuffDNF(), suff.getSuffProb());
-            //Influ influ(DNFTemp, probTemp);
+            // Influ influ(DNFTemp, probTemp);
             cout << "Top influ literal: ";
             influ.printInflu(influ.getInfluence(1));
             cout << endl;
