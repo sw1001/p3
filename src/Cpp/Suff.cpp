@@ -144,6 +144,7 @@ double Suff::getSuffProb() {
 }
 
 //MC simulation
+/*
 double Suff::monteCarloSim(vector< map<string, double> > lambda) {
     int rounds = 10000;
     int sum = 0;
@@ -199,6 +200,12 @@ double Suff::monteCarloSim(vector< map<string, double> > lambda) {
         sum += lambdaValue;
     }
     return 1.0 * sum / rounds;
+}
+*/
+
+// Para monteCarloSimulation
+double Suff::monteCarloSim(vector< map<string, double> > lambda) {
+	return Para::p_monteCarloSim(lambda);
 }
 
 void Suff::printDNF(vector< map<string, double> > lambda) {

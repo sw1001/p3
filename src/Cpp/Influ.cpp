@@ -8,6 +8,10 @@
 #include <random>
 #include <algorithm>
 #include <set>
+#include "cl.hpp"
+#include "util.hpp"
+#include "err_code.h"
+#include "device_picker.hpp"
 
 using namespace std;
 
@@ -49,6 +53,7 @@ vector< map<string, double> > Influ::getDNF() {
 }
 
 // influence is defined as: For a literal x in lambda, Infl(x) =  P(lambda | x=1) - P(lambda | x=0)
+/*
 void Influ::setInfluence(vector< map<string, double> > lambda) {
     map<string, double> influTemp;
     set<string> memory;
@@ -62,7 +67,7 @@ void Influ::setInfluence(vector< map<string, double> > lambda) {
             }
         }
     }
-    /* remove rule literal if needed*/
+    // remove rule literal if needed
     influTemp.erase("ra");
     influTemp.erase("rb");
     influTemp.erase("r0");
@@ -74,6 +79,76 @@ void Influ::setInfluence(vector< map<string, double> > lambda) {
     influTemp.erase("r6");
 
     this->influence = Influ::sortInflu(influTemp);
+}
+*/
+
+void Influ::setInfluence(vector< map<string, double> > lambda) {
+	//prepare for the buffers here
+	map <string, double> para_influence;
+	vector <int> h_lambdas(0);
+	vector <double> h_lambdap(0);
+	vector <int> h_dim2_size(0);		
+	vector < map<string, double > > h_lambda;
+	h_lambda = lambda;
+	int count = 10000;
+	int index1 = 0;
+	int size = 0;
+	int dim1_size = h_lambda.size();
+    map <string, int> str2index;// set an index for each string
+	for(vector< map<string, double> >::iterator mono = h_lambda.begin(); mono != h_lambda.end(); mono++) {
+		h_dim2_size.push_back((*mono).size());
+		size += (*mono).size();
+		for(map<string, double>::iterator lit = (*mono).begin(); lit != (*mono).end(); lit++) {
+		    if(str2index.find(lit->first) == str2index.end()) {
+		        str2index[lit->first] = index1;
+		        index1 ++;
+		    }
+		    h_lambdas.push_back(str2index[lit->first]);
+		    h_lambdap.push_back(lit->second);
+		}
+	}
+	cout<< "index1= "<<index1<<" "<<"size= "<<size<<" "<<"dim1_size= "<<dim1_size<<endl;
+    vector <int> h_resultOnce(count);//int literals = index1;
+    cl::Buffer d_lambdas, d_lambdap, d_dim2_size, d_resultOnce;
+    d_lambdas = cl::Buffer(context, h_lambdas.begin(), h_lambdas.end(), true);
+    d_lambdap = cl::Buffer(context, h_lambdap.begin(), h_lambdap.end(), true);
+	d_dim2_size = cl::Buffer(context, h_dim2_size.begin(), h_dim2_size.end(), true);
+	d_resultOnce = cl::Buffer(context, CL_MEM_WRITE_ONLY, sizeof(int) * count);
+	cl::make_kernel<int, int, int, int, cl::Buffer, cl::Buffer, cl::Buffer, cl::Buffer, cl::Buffer> setInfluence(programInflu, "setInfluence");    
+	//set the parallel influence results
+	for(map<string, int>::const_iterator it = str2index.begin(); it != str2index.end(); ++it){
+	    vector <double> h_parameters(0);	
+	    std::default_random_engine generator;
+		std::uniform_real_distribution<double> distribution(0.0,1.0);
+		for(int i = 0; i < count; i++){
+		    for(int j = 0; j < index1; j++){
+		        double prand = distribution(generator);
+		        h_parameters.push_back(prand);
+		    }
+		}				
+
+		cl::Buffer d_parameters;
+		d_parameters = cl::Buffer(context, h_parameters.begin(), h_parameters.end(), true);
+
+		cl::NDRange global(count);
+		setInfluence(cl::EnqueueArgs(queue, global), it->second, index1, size, dim1_size, d_lambdas, d_lambdap, d_dim2_size, d_parameters, d_resultOnce);
+		queue.finish();		
+		cl::copy(queue, d_resultOnce, h_resultOnce.begin(), h_resultOnce.end());		
+		para_influence[it->first] = std::count(h_resultOnce.begin(), h_resultOnce.end(), 1)*1.0/count;
+
+		//cout<< it->first << "  paraInfl=" << para_influence[it->first] <<endl;			
+	}
+    para_influence.erase("ra");
+    para_influence.erase("rb");
+    para_influence.erase("r0");
+    para_influence.erase("r1");
+    para_influence.erase("r2");
+    para_influence.erase("r3");
+    para_influence.erase("r4");
+    para_influence.erase("r5");
+    para_influence.erase("r6");
+	
+	this->influence = Influ::sortMap(para_influence);
 }
 
 // get the top-k most influential literals
