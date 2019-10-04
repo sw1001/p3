@@ -20,7 +20,7 @@ public:
     static double p_monteCarloSim(vector< map<string, double> >);
     void p_setInfluence(vector< map<string, double> >);
     void p_setInfluence_lit(vector< map<string, double> >);
-    vector< pair<string, float> > sortMap(map<string, float>);
+    vector< pair<string, double> > sortMap(map<string, double>);
 
 private:
     static cl::Context context;
@@ -28,7 +28,7 @@ private:
     static cl::Program programInflu;
     static cl::Program programInflu_lit;
     static cl::Program programMC;
-    vector< pair<string, float> > influence;
+    vector< pair<string, double> > influence;
 };
 
 #endif //SUFFICIENTLINEAGE_PARA_H

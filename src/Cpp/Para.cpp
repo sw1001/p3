@@ -20,7 +20,25 @@ cl::Program Para::programInflu_lit;
 cl::Program Para::programMC;
 
 Para::Para() {
+	cl_uint deviceIndex = 0;
 
+    // Get list of devices
+    vector<cl::Device> devices;
+    unsigned numDevices = getDeviceList(devices);
+
+    cl::Device device = devices[deviceIndex];
+
+    string name;
+    getDeviceName(device, name);
+    cout << "\nUsing OpenCL device: " << name << "\n";
+
+    vector<cl::Device> chosen_device;
+    chosen_device.push_back(device);
+    context = cl::Context(chosen_device);
+    queue = cl::CommandQueue(context, device);
+    programInflu = cl::Program(context, util::loadProgram("../computeInflu.cl"), true);
+    programInflu_lit = cl::Program(context, util::loadProgram("../computeInflu_lit.cl"), true);
+    programMC = cl::Program(context, util::loadProgram("../computeMC.cl"), true); 
 }
 
 Para::Para(const Para &orig) {
@@ -54,12 +72,12 @@ Para::Para(int argc, char** argv) {
     programMC = cl::Program(context, util::loadProgram("../computeMC.cl"), true);  
 }
 
-vector< pair<string, float> > Para::sortMap(map<string, float> influTemp) {
-    vector< pair<string, float> > sortedInflu;
-    for(map<string, float>::iterator it = influTemp.begin(); it != influTemp.end(); it++) {
+vector< pair<string, double> > Para::sortMap(map<string, double> influTemp) {
+    vector< pair<string, double> > sortedInflu;
+    for(map<string, double>::iterator it = influTemp.begin(); it != influTemp.end(); it++) {
         sortedInflu.push_back(make_pair(it->first, it->second));
     }
-    sort(sortedInflu.begin(), sortedInflu.end(), [] (const pair<string, float> & lhs, const pair<string, float> & rhs) {
+    sort(sortedInflu.begin(), sortedInflu.end(), [] (const pair<string, double> & lhs, const pair<string, double> & rhs) {
         return lhs.second > rhs.second;
     });
     return sortedInflu;
@@ -67,9 +85,9 @@ vector< pair<string, float> > Para::sortMap(map<string, float> influTemp) {
 
 void Para::p_setInfluence_lit(vector< map<string, double> > lambda) {
 	//prepare for the buffers here
-	map <string, float> para_influence;
+	map <string, double> para_influence;
 	vector <int> h_lambdas(0);
-	vector <float> h_lambdap(0);
+	vector <double> h_lambdap(0);
 	vector <int> h_dim2_size(0);		
 	vector < map<string, double > > h_lambda;
 	h_lambda = lambda;
@@ -90,14 +108,14 @@ void Para::p_setInfluence_lit(vector< map<string, double> > lambda) {
 		    h_lambdap.push_back(lit->second);
 		}
 	}
-    vector <float> h_influence(index1);//int literals = index1;
+    vector <double> h_influence(index1);//int literals = index1;
 	cout<< "index1= "<<index1<<" "<<"size= "<<size<<" "<<"dim1_size= "<<dim1_size<<endl;	
 
 	cl::Buffer d_lambdas, d_lambdap, d_dim2_size, d_influence;
 	d_lambdas = cl::Buffer(context, h_lambdas.begin(), h_lambdas.end(), true);
 	d_lambdap = cl::Buffer(context, h_lambdap.begin(), h_lambdap.end(), true);
 	d_dim2_size = cl::Buffer(context, h_dim2_size.begin(), h_dim2_size.end(), true);
-	d_influence = cl::Buffer(context, CL_MEM_WRITE_ONLY, sizeof(float) * index1);
+	d_influence = cl::Buffer(context, CL_MEM_WRITE_ONLY, sizeof(double) * index1);
 
 	cl::make_kernel<int, int, int, cl::Buffer, cl::Buffer, cl::Buffer, cl::Buffer> setInfluence_lit(programInflu_lit, "setInfluence_lit");
 	cl::NDRange global(index1);
@@ -126,9 +144,9 @@ void Para::p_setInfluence_lit(vector< map<string, double> > lambda) {
 
 void Para::p_setInfluence(vector< map<string, double> > lambda) {
 	//prepare for the buffers here
-	map <string, float> para_influence;
+	map <string, double> para_influence;
 	vector <int> h_lambdas(0);
-	vector <float> h_lambdap(0);
+	vector <double> h_lambdap(0);
 	vector <int> h_dim2_size(0);		
 	vector < map<string, double > > h_lambda;
 	h_lambda = lambda;
@@ -159,12 +177,12 @@ void Para::p_setInfluence(vector< map<string, double> > lambda) {
 	cl::make_kernel<int, int, int, int, cl::Buffer, cl::Buffer, cl::Buffer, cl::Buffer, cl::Buffer> setInfluence(programInflu, "setInfluence");    
 	//set the parallel influence results
 	for(map<string, int>::const_iterator it = str2index.begin(); it != str2index.end(); ++it){
-	    vector <float> h_parameters(0);	
+	    vector <double> h_parameters(0);	
 	    std::default_random_engine generator;
-		std::uniform_real_distribution<float> distribution(0.0,1.0);
+		std::uniform_real_distribution<double> distribution(0.0,1.0);
 		for(int i = 0; i < count; i++){
 		    for(int j = 0; j < index1; j++){
-		        float prand = distribution(generator);
+		        double prand = distribution(generator);
 		        h_parameters.push_back(prand);
 		    }
 		}				
@@ -198,7 +216,7 @@ void Para::p_setInfluence(vector< map<string, double> > lambda) {
 double Para::p_monteCarloSim(vector< map<string, double> > lambda) {
 	//prepare for the buffers here
 	vector <int> h_lambdas(0);
-	vector <float> h_lambdap(0);
+	vector <double> h_lambdap(0);
 	vector <int> h_dim2_size(0);		
 	vector < map<string, double > > h_lambda;
 	h_lambda = lambda;
@@ -228,12 +246,12 @@ double Para::p_monteCarloSim(vector< map<string, double> > lambda) {
 	d_resultOnce = cl::Buffer(context, CL_MEM_WRITE_ONLY, sizeof(int) * count);
 	cl::make_kernel<int, int, int, cl::Buffer, cl::Buffer, cl::Buffer, cl::Buffer, cl::Buffer> getMC(programMC, "getMC");    
 	//output the parallel MC result	
-    vector <float> h_parameters(0);	
+    vector <double> h_parameters(0);	
     std::default_random_engine generator;
-	std::uniform_real_distribution<float> distribution(0.0,1.0);
+	std::uniform_real_distribution<double> distribution(0.0,1.0);
 	for(int i = 0; i < count; i++){
 	    for(int j = 0; j < index1; j++){
-	        float prand = distribution(generator);
+	        double prand = distribution(generator);
 	        h_parameters.push_back(prand);
 	    }
 	}				
