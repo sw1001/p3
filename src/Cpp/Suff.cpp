@@ -165,7 +165,7 @@ double Suff::monteCarloSim(vector< map<string, double> > lambda) {
         assignment["r4"] = 1;
         assignment["r5"] = 1;
         assignment["r6"] = 1;
-        */
+        *//*
         int lambdaValue = 0;
         // for each mono in lambda
         // from the first literal, if it is not in assignment, roll dice and record its assignment
