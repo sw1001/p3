@@ -266,7 +266,15 @@ double Para::p_monteCarloSim(vector< map<string, double> > lambda) {
 	return std::count(h_resultOnce.begin(), h_resultOnce.end(), 1)*1.0/count;
 }
 
-
+vector< pair<string, double> > Para::p_getInfluence(int k) {
+    if(k <= 0 || k > this->influence.size()) {
+        return this->influence;
+    } else {
+        vector< pair<string, double> > k_influ;
+        k_influ.assign(this->influence.begin(), this->influence.begin()+k);
+        return k_influ;
+    }
+}
 
 
 

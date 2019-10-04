@@ -21,6 +21,7 @@ public:
     void p_setInfluence(vector< map<string, double> >);
     void p_setInfluence_lit(vector< map<string, double> >);
     vector< pair<string, double> > sortMap(map<string, double>);
+	vector< pair<string, double> > p_getInfluence(int);
 
 private:
     static cl::Context context;

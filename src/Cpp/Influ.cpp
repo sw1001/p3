@@ -84,7 +84,7 @@ void Influ::setInfluence(vector< map<string, double> > lambda) {
 void Influ::setInfluence(vector< map<string, double> > lambda) {
 	Para para;
 	para.p_setInfluence(lambda);
-	this->influence = para.influence;
+	this->influence = para.p_getInfluence(1);
 }
 
 // get the top-k most influential literals
