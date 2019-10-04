@@ -20,7 +20,7 @@ public:
     static double p_monteCarloSim(vector< map<string, double> >);
     void p_setInfluence(vector< map<string, double> >);
     void p_setInfluence_lit(vector< map<string, double> >);
-    vector< pair<string, double> > sortMap(map<string, double>);
+    static vector< pair<string, double> > sortMap(map<string, double>);
 	static vector< pair<string, double> > p_getInfluence(vector< map<string, double> >, int);
 
 private:
