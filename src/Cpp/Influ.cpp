@@ -8,10 +8,6 @@
 #include <random>
 #include <algorithm>
 #include <set>
-#include "cl.hpp"
-#include "util.hpp"
-#include "err_code.h"
-#include "device_picker.hpp"
 
 using namespace std;
 
@@ -82,9 +78,7 @@ void Influ::setInfluence(vector< map<string, double> > lambda) {
 }
 */
 void Influ::setInfluence(vector< map<string, double> > lambda) {
-	Para para;
-	para.p_setInfluence(lambda);
-	this->influence = para.p_getInfluence(1);
+	this->influence = Para::p_getInfluence(lambda, 1);
 }
 
 // get the top-k most influential literals
