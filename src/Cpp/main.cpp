@@ -65,6 +65,7 @@ int main(int argc, char** argv) {
     cout << "Distinct literals in original lambda: " << influ.getInfluence(0).size() << endl;
     cout << endl;
 
+
     Influ influSuff(suff.getSuffDNF(), suff.getSuffProb());
     cout << "Sufficient lineage influence: " << endl;
     influSuff.printInflu(influSuff.getInfluence(0));
@@ -73,7 +74,7 @@ int main(int argc, char** argv) {
 
     cout << "------------------------------" << endl;
 
-    Change change(influ.getDNF(), influ.getDNFProb(), influ.getInfluence(1).front().first, influ.getDNFProb()-0.2, true);
+    Change change(influ.getDNF(), influ.getDNFProb(), influ.getInfluence(1).front().first, influ.getDNFProb()-0.5, false);
     cout << "Changing order: " << endl;
     change.printChangeOrder(change.getChangeOrder());
 
