@@ -91,7 +91,7 @@ void Para::p_setInfluence_lit(vector< map<string, double> > lambda) {
 	vector <int> h_dim2_size(0);		
 	vector < map<string, double > > h_lambda;
 	h_lambda = lambda;
-	int count = 10000;
+	int count = 100000;
 	int index1 = 0;
 	int size = 0;
 	int dim1_size = h_lambda.size();
@@ -150,7 +150,7 @@ void Para::p_setInfluence(vector< map<string, double> > lambda) {
 	vector <int> h_dim2_size(0);		
 	vector < map<string, double > > h_lambda;
 	h_lambda = lambda;
-	int count = 10000;
+	int count = 100000;
 	int index1 = 0;
 	int size = 0;
 	int dim1_size = h_lambda.size();
@@ -220,7 +220,7 @@ double Para::p_monteCarloSim(vector< map<string, double> > lambda) {
 	vector <int> h_dim2_size(0);		
 	vector < map<string, double > > h_lambda;
 	h_lambda = lambda;
-	int count = 10000;
+	int count = 100000;
 	int index1 = 0;
 	int size = 0;
 	int dim1_size = h_lambda.size();
@@ -274,7 +274,7 @@ vector< pair<string, double> > Para::p_getInfluence(vector< map<string, double> 
 	vector <int> h_dim2_size(0);		
 	vector < map<string, double > > h_lambda;
 	h_lambda = lambda;
-	int count = 10000;
+	int count = 100000;
 	int index1 = 0;
 	int size = 0;
 	int dim1_size = h_lambda.size();

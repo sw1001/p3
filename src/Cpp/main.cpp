@@ -44,7 +44,7 @@ int main(int argc, char** argv) {
 
     cout << "------------------------------" << endl;
 
-    double errRate = 0.01; // approximation error rate
+    double errRate = 0.05; // approximation error rate
     Suff suff(dnf.getLambda(), errRate);
     // print results
     // cout << "The original DNF is: " << endl;
@@ -74,17 +74,33 @@ int main(int argc, char** argv) {
 
     cout << "------------------------------" << endl;
 
-    Change change(influ.getDNF(), influ.getDNFProb(), influ.getInfluence(1).front().first, influ.getDNFProb()-0.5, false);
+    Change change(influSuff.getDNF(), influSuff.getDNFProb(), influSuff.getInfluence(1).front().first, influSuff.getDNFProb()-0.5, false);
     cout << "Changing order: " << endl;
     change.printChangeOrder(change.getChangeOrder());
 
     cout << "------------------------------" << endl;
 
+    clock_t t_para_mc = clock();
+    cout << "Parallel Orig MC result: " << para.p_monteCarloSim(suff.getOrigDNF()) << endl;
+    t_para_mc = clock() - t_para_mc;
+    cout << "Parallel Orig MC running time: " << ((float) t_para_mc)/CLOCKS_PER_SEC << " seconds" << endl;
+   
+    clock_t t_para_mc2 = clock();
+    cout << "Parallel Suff MC result: " << para.p_monteCarloSim(suff.getSuffDNF()) << endl;
+    t_para_mc2 = clock() - t_para_mc2;
+    cout << "Parallel Suff MC running time: " << ((float) t_para_mc2)/CLOCKS_PER_SEC << " seconds" << endl;
+    
     clock_t t_para = clock();
     para.p_setInfluence(suff.getOrigDNF());
     t_para = clock() - t_para;
-    cout << "Parallel Influence running time: " << ((float) t_para)/CLOCKS_PER_SEC << " seconds" << endl;
+    cout << "Parallel Orig Influence running time: " << ((float) t_para)/CLOCKS_PER_SEC << " seconds" << endl;
     
+    clock_t t_para1 = clock();
+    para.p_setInfluence(suff.getSuffDNF());
+    t_para1 = clock() - t_para1;
+    cout << "Parallel Suff Influence running time: " << ((float) t_para1)/CLOCKS_PER_SEC << " seconds" << endl;
+    
+
 
     return 0;
 }

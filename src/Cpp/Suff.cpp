@@ -144,9 +144,9 @@ double Suff::getSuffProb() {
 }
 
 //MC simulation
-/*
+
 double Suff::monteCarloSim(vector< map<string, double> > lambda) {
-    int rounds = 10000;
+    int rounds = 100000;
     int sum = 0;
     //simulation
     //default_random_engine generator;
@@ -165,7 +165,7 @@ double Suff::monteCarloSim(vector< map<string, double> > lambda) {
         assignment["r4"] = 1;
         assignment["r5"] = 1;
         assignment["r6"] = 1;
-        *//*
+        */
         int lambdaValue = 0;
         // for each mono in lambda
         // from the first literal, if it is not in assignment, roll dice and record its assignment
@@ -201,12 +201,14 @@ double Suff::monteCarloSim(vector< map<string, double> > lambda) {
     }
     return 1.0 * sum / rounds;
 }
-*/
+
 
 // Para monteCarloSimulation
+/*
 double Suff::monteCarloSim(vector< map<string, double> > lambda) {
 	return Para::p_monteCarloSim(lambda);
 }
+*/
 
 void Suff::printDNF(vector< map<string, double> > lambda) {
     for(vector< map<string, double> >::iterator mono = lambda.begin(); mono != lambda.end(); mono++) {

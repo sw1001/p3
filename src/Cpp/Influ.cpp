@@ -49,7 +49,7 @@ vector< map<string, double> > Influ::getDNF() {
 }
 
 // influence is defined as: For a literal x in lambda, Infl(x) =  P(lambda | x=1) - P(lambda | x=0)
-/*
+
 void Influ::setInfluence(vector< map<string, double> > lambda) {
     map<string, double> influTemp;
     set<string> memory;
@@ -76,11 +76,11 @@ void Influ::setInfluence(vector< map<string, double> > lambda) {
 
     this->influence = Influ::sortInflu(influTemp);
 }
-*/
+/*
 void Influ::setInfluence(vector< map<string, double> > lambda) {
 	this->influence = Para::p_getInfluence(lambda, 1);
 }
-
+*/
 // get the top-k most influential literals
 vector< pair<string, double> > Influ::getInfluence(int k) {
     if(k <= 0 || k > this->influence.size()) {
@@ -110,7 +110,7 @@ double Influ::computeInflu(vector< map<string, double> > lambda, string literal)
     return Influ::monteCarloSim2(lambda1, lambda0);
 }
 double Influ::monteCarloSim2(vector< map<string, double> > lambda1, vector< map<string, double> > lambda0) {
-    int rounds = 10000;
+    int rounds = 100000;
     int sum1 = 0;
     int sum0 = 0;
     //simulation

@@ -57,7 +57,7 @@ void Change::setChangeOrder(vector< map<string, double> > lambda, double lambdaP
             if(suffOn) {
                 suff.setOrigDNF(DNFTemp);
                 suff.setOrigProb(DNFTemp);
-                suff.setSuffDNF(0.01);
+                suff.setSuffDNF(0.05);
                 suff.setSuffProb(suff.getSuffDNF());
                 influ.setDNF(suff.getSuffDNF());
                 influ.setDNFProb(suff.getSuffProb());
@@ -95,7 +95,7 @@ void Change::setChangeOrder(vector< map<string, double> > lambda, double lambdaP
             if(suffOn) {
                 suff.setOrigDNF(DNFTemp);
                 suff.setOrigProb(DNFTemp);
-                suff.setSuffDNF(0.01);
+                suff.setSuffDNF(0.05);
                 suff.setSuffProb(suff.getSuffDNF());
                 influ.setDNF(suff.getSuffDNF());
                 influ.setDNFProb(suff.getSuffProb());
